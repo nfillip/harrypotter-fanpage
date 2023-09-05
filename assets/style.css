@@ -1,7 +1,27 @@
 .container {
     border: .2rem solid black;
+    
 }
 
 nav {
     border: .2rem solid black;
 }
+
+#sortable1, #sortable2, #sortable3, #sortable4 {
+    border: 1px solid #eee;
+    width: 142px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: .5rem;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+    font-size: .5rem;
+  }
