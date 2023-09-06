@@ -3,12 +3,17 @@ var quizSubmitButton = $("#quiz-submit-button");
 var quizStartButton = $("#quiz-start-button")
 var mainQuizDiv = $("#main-quiz-div");
 var randomizeSection = $("#randomize-section");
-var answerKey = {
-  "gryffindor": ["Harry Potter", "Hermione", "Ron" ,"Ginny", "Neville"],
-  "slytherin": ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
-  "hufflepuff": ["Cedric Diggory", "Helga Hufflepuff", "Nymphadora Tonks", "New Scamander", "Remus Lupin"],
-  "ravenclaw": ["Rowena Ravenclaw", "Gilderoy Lockhart", "Luna Lovegood", "Cho Change", "Moaning Myrtle"]
-}
+// var answerKey = {
+//   "gryffindor": ["Harry Potter", "Hermione", "Ron" ,"Ginny", "Neville"],
+//   "slytherin": ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
+//   "hufflepuff": ["Cedric Diggory", "Helga Hufflepuff", "Nymphadora Tonks", "New Scamander", "Remus Lupin"],
+//   "ravenclaw": ["Rowena Ravenclaw", "Gilderoy Lockhart", "Luna Lovegood", "Cho Change", "Moaning Myrtle"]
+// }
+var gryffindorArray = ["Harry Potter", "Hermione", "Ron" ,"Ginny", "Neville"];
+var slytherinArray = ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"];
+var hufflepuffArray = ["Cedric Diggory", "Helga Hufflepuff", "Nymphadora Tonks", "New Scamander", "Remus Lupin"];
+var ravenclaw = ["Rowena Ravenclaw", "Gilderoy Lockhart", "Luna Lovegood", "Cho Change", "Moaning Myrtle"];
+
 var answerKeyHouses = ["gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
 var answerKeyNames = ["Rowena Ravenclaw", "Gilderoy Lockhart", "Luna Lovegood", "Cho Change", "Moaning Myrtle", "Cedric Diggory", "Helga Hufflepuff", "Nymphadora Tonks", "New Scamander", "Remus Lupin" ,"Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle", "Harry Potter", "Hermione", "Ron" ,"Ginny", "Neville"]
 //Sortable Function through jQueryUI - Fillip
@@ -20,11 +25,7 @@ $( function() {
   } );
 
   //Quiz Functions
-  //testanswers
-  function testAnswers(){
-
-    console.log(answerKey);
-  }
+  
   
 //Shuffle Names on Start of Quiz
   function shuffleQuiz(){
@@ -54,6 +55,17 @@ $( function() {
     console.log(50);
     randomizeSection.append('<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>');
   }
+
+  //testanswers
+  function testAnswers(){
+    var currentList = [];
+    for (var x = 0; x<4; x++){
+      for (var y = 0; y<5; y++){
+        currentList.push(randomizeSection.children().eq(x).children().eq(y).text());
+    console.log(answerKey);
+  }
+}
+}
 //Event Listener
   quizStartButton.on("click", function(){
     console.log(5);
@@ -61,7 +73,8 @@ $( function() {
     shuffleQuiz();
   })
   //Event Listener - Submit button
-  quizSubmitButton.on("click", function() {
+  randomizeSection.on("click", "#quiz-submit-button", function() {
     testAnswers();
+    console.log(40);
   })
 
