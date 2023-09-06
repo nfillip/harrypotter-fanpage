@@ -46,73 +46,131 @@
                     <a class="nav-link" href="#footer">Contact Us</a>
                   </li>
               </ul>
+
             </div>
-          </nav>
-        <!-- Content here -->
-    <div class = "container">
-        <div class = row>
-            
-            <div class = "container col-12 col-md-10 col-lg-10">
-                <div class="container">
-                    WEATHER
-                    <!-- MITCH -->
-                    <!-- Content here -->
-                </div>
-                <div class="container">
-                    CHARACTERS
-                    <!-- DALLAS -->
-                    <!-- Content here -->
-                </div>
-                <div class="container sortable-containment d-flex">
-                    <div class = "column">
-                    <h1>QUIZ</h1>
-                    <section id = "testbr" class = "quizsection">           
-                    <ul id="sortable1" class="connectedSortable"> Names
-                        <li>Harry</li>
-                        <li>Hermione</li>
-                        <li>Ron</li>
-                        <li>Cho Change</li>
-                        <li>Draco</li>
-                        <li>Ginny</li>
-                        <li>Cedrik</li>
-                        <li>Goyle</li>
-                        <li>Crab</li>
-                        <li>Tom Riddle</li>
-                        <li>Lily Potter</li>
-                        
-                        
-                    </ul>
-                    <ul id="sortable2" class="connectedSortable">
-                        Griffyndor
-                        <li>Spot Gryfindor</li>
-                        <li>Magnonigal</li>
-                        <li>Hagrid</li>
-                        <li>Hedwig</li>
-                        <li>Person</li>
-                    </ul >
-                    <ul id="sortable3" class="connectedSortable">
-                        Slytherin
-                        <li>Spot Hufflepuff</li>
-                        <li>Neville</li>
-                        <li>Snape</li>
-                        <li>Dumbledore</li>
-                        <li>Lucius</li>
-                        <li>Lupin</li>
-                    </ul>
-                    <ul id="sortable4" class="connectedSortable">
-                        Hufflepuff
-                        <li>Spot Ravenclaw</li>
-                        <li>Spot Ravenclaw</li>
-                    </ul>
-                    
-                      
-                     <ul id="sortable5" class="connectedSortable">
-                        Ravenclaw
-                        <li>Spot Slytherin</li>
-                    </ul> -->
-            <!-- NICK -->
+        </nav>
+    <!-- Content here -->
+    <div class="row" style="border: 2px solid red">
+      <!-- drop -->
+      <div class="dropdown col-4">
+        <select
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="dropDown"
+          class="dropdown-menu"
+        >
+          <option id="Alnwick" value="Alnwick,uk">Hogwarts</option>
+          <option id="Diagon Alley" value="London,uk">Diagon Alley</option>
+          <option id="Hogsmeade"  value="Scarborough,uk">Hogsmeade</option>
+          <option id="Azkaban" value="Virkie,uk">Azkaban</option>
+          <option value="Alnwick,uk">Hogwarts</option>
+        </select>
+        <!-- City description  -->
+        <h2 id="locationName"></h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+          consequatur, possimus, rem delectus itaque odio similique natus
+          repudiandae quisquam id architecto quidem placeat praesentium voluptas
+          distinctio animi accusamus perferendis facilis.
+        </p>
+      </div>
+      <!-- card -->
+      <div class="card col-4">
+        <div class="card-body">
+          <h5 id="locationName" class="card-title"></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+      <!-- three day  -->
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <!-- MITCH -->
+      <!-- Content here -->
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="container col-12 col-md-10 col-lg-10">
+          <div class="container">
+            CHARACTERS
+            <!-- DALLAS -->
             <!-- Content here -->
           </div>
+          <div class="container sortable-containment quiz-section" id = "main-quiz-div">
+            <div class = "column quiz-section1">
+            <h1>QUIZ- Can you sort these names?</h1>
+            <button type="button" class="btn btn-danger my-2" id="quiz-start-button">Start Quiz</button>
+            <section class = "row d-flex justify-content-center align-items-center d-flex quiz-section2" id = "randomize-section">
+            
+            <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable1">
+              GRYFFINDOR
+              <li class="list-group-item">Dumbledore</li>
+              <li class="list-group-item">Luna Lovegood</li>
+              <li class="list-group-item">Cho Change</li>
+              <li class="list-group-item">Moaning Myrtle</li>
+              <li class="list-group-item">Helena Ravenclaw</li>
+            </ul>
+            <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable3">
+              SLYTHERIN
+              <li class="list-group-item">Ginny</li>
+              <li class="list-group-item">Draco Malfoy</li>
+              <li class="list-group-item">Newt Scamander</li>
+              <li class="list-group-item">Nymphadora Tonks</li>
+              <li class="list-group-item">Helga Hufflepuff</li>
+            </ul>
+            <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
+              RAVENCLAW
+              <li class="list-group-item">Draco Malfoy</li>
+              <li class="list-group-item">Snape</li>
+              <li class="list-group-item">Harry Potter</li>
+              <li class="list-group-item">Hermoine Granger</li>
+              <li class="list-group-item">Cedric Diggory</li>
+            </ul>
+            <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
+              HUFFLEPUFF
+              <li class="list-group-item">Neville Longbottom</li>
+              <li class="list-group-item">Crab</li>
+              <li class="list-group-item">Tom Riddle</li>
+              <li class="list-group-item">Lucius Malfoy</li>
+              <li class="list-group-item">Ron Weasley</li>
+            </ul>
+          
+            
+            </div>
+        </div>
+
         </div>
         <div class="container col-12 col-md-2 col-lg-2">
           <!-- ALEX -->

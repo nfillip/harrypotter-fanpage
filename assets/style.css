@@ -41,8 +41,10 @@ nav {
     display: flex;
     flex-direction: row;
 }
+
   
 #advertisement {
   position: -webkit-sticky;
   position: sticky;
 }
+
