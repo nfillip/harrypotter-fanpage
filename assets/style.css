@@ -6,7 +6,7 @@ nav {
   border: 0.2rem solid black;
 }
 
-#sortable1,
+/* #sortable1,
 #sortable2,
 #sortable3,
 #sortable4,
@@ -31,17 +31,20 @@ nav {
   font-size: 1.2em;
   width: 120px;
   font-size: 0.5rem;
+} */
+
+  #testbr {
+    border: .2rem solid red;
 }
 
-#testbr {
-  border: 0.2rem solid red;
+.quizsection{
+    display: flex;
+    flex-direction: row;
 }
 
-.quizsection {
-  display: flex;
-  flex-direction: row;
+  
+#advertisement {
+  position: -webkit-sticky;
+  position: sticky;
 }
-
-/* Weather Css */
-
 
