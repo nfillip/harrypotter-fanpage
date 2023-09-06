@@ -85,20 +85,22 @@
     <div class="row" style="border: 2px solid red">
       <!-- drop -->
       <div class="dropdown col-4">
-        <button
+        <select
           class="btn btn-secondary dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          id="dropDown"
+          class="dropdown-menu"
         >
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+          <option id="Alnwick" value="Alnwick,uk">Hogwarts</option>
+          <option id="Diagon Alley" value="London,uk">Diagon Alley</option>
+          <option id="Hogsmeade"  value="Scarborough,uk">Hogsmeade</option>
+          <option id="Azkaban" value="Virkie,uk">Azkaban</option>
+          <option value="Alnwick,uk">Hogwarts</option>
+        </select>
         <!-- City description  -->
+        <h2 id="locationName"></h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
           consequatur, possimus, rem delectus itaque odio similique natus
@@ -109,7 +111,7 @@
       <!-- card -->
       <div class="card col-4">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 id="locationName" class="card-title"></h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
