@@ -21,303 +21,394 @@
     <title>Document</title>
   </head>
   <body>
-    
-        <!-- ALEX -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-        <!-- Content here -->
-    <div class = "container">
-        <div class = row>
-            
-            <div class = "container col-12 col-md-10 col-lg-10">
-                <div class="container">
-                    WEATHER
-                    <!-- MITCH -->
-                    <!-- Content here -->
-                </div>
-                <div class="container">
-                    CHARACTERS
-                    <!-- DALLAS -->
-                    <!-- Content here -->
-                </div>
-                <div class="container sortable-containment quiz-section" id = "main-quiz-div">
-                    <div class = "column quiz-section1">
-                    <h1>QUIZ- Can you sort these names?</h1>
-                    <button type="button" class="btn btn-danger my-2" id="quiz-start-button">Start Quiz</button>
-                    <section class = "row d-flex justify-content-center align-items-center d-flex quiz-section2" id = "randomize-section">
-                    
-                    <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable1">
-                      GRYFFINDOR
-                      <li class="list-group-item">Dumbledore</li>
-                      <li class="list-group-item">Luna Lovegood</li>
-                      <li class="list-group-item">Cho Change</li>
-                      <li class="list-group-item">Moaning Myrtle</li>
-                      <li class="list-group-item">Helena Ravenclaw</li>
-                    </ul>
-                    <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable3">
-                      SLYTHERIN
-                      <li class="list-group-item">Ginny</li>
-                      <li class="list-group-item">Draco Malfoy</li>
-                      <li class="list-group-item">Newt Scamander</li>
-                      <li class="list-group-item">Nymphadora Tonks</li>
-                      <li class="list-group-item">Helga Hufflepuff</li>
-                    </ul>
-                    <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
-                      RAVENCLAW
-                      <li class="list-group-item">Draco Malfoy</li>
-                      <li class="list-group-item">Snape</li>
-                      <li class="list-group-item">Harry Potter</li>
-                      <li class="list-group-item">Hermoine Granger</li>
-                      <li class="list-group-item">Cedric Diggory</li>
-                    </ul>
-                    <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
-                      HUFFLEPUFF
-                      <li class="list-group-item">Neville Longbottom</li>
-                      <li class="list-group-item">Crab</li>
-                      <li class="list-group-item">Tom Riddle</li>
-                      <li class="list-group-item">Lucius Malfoy</li>
-                      <li class="list-group-item">Ron Weasley</li>
-                    </ul>
-                  
-                    
-                    </div>
-                </div>
-            </div>
-            <div class=  "container col-12 col-md-2 col-lg-2">
-                <!-- ALEX -->
-                RIGHT AD
-            </div>
+    <!-- ALEX -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
         </div>
+      </div>
+    </nav>
+    <!-- Content here -->
+    <div class="row" style="border: 2px solid red">
+      <!-- drop -->
+      <div class="dropdown col-4">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+        <!-- City description  -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+          consequatur, possimus, rem delectus itaque odio similique natus
+          repudiandae quisquam id architecto quidem placeat praesentium voluptas
+          distinctio animi accusamus perferendis facilis.
+        </p>
+      </div>
+      <!-- card -->
+      <div class="card col-4">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+      <!-- three day  -->
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Date</div>
+          <div id="three-day">
+            <blockquote class="blockquote mb-0 row">
+              <div class="col-md-6">temp</div>
+              <div class="col-md-6">wether emoji</div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <!-- MITCH -->
+      <!-- Content here -->
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="container col-12 col-md-10 col-lg-10">
+          <div class="container">
+            CHARACTERS
+            <!-- DALLAS -->
+            <!-- Content here -->
+          </div>
+          <div class="container sortable-containment">
+            <h1>QUIZ</h1>
+
+            <ul id="sortable1" class="connectedSortable">
+              Names
+              <li>Harry</li>
+              <li>Hermoone</li>
+              <li>Ron</li>
+              <li>Cho Change</li>
+              <li>Draco</li>
+              <li>Ginny</li>
+              <li>Cedrik</li>
+              <li>Goyle</li>
+              <li>Crab</li>
+              <li>Tom Riddle</li>
+              <li>Lily Potter</li>
+            </ul>
+            <ul id="sortable2" class="connectedSortable">
+              Griffyndor
+              <li>Spot Gryfindor</li>
+              <li>Magnonigal</li>
+              <li>Hagrid</li>
+              <li>Hedwig</li>
+              <li>Person</li>
+            </ul>
+            <ul id="sortable3" class="connectedSortable">
+              Slytherin
+              <li>Spot Hufflepuff</li>
+              <li>Neville</li>
+              <li>Snape</li>
+              <li>Dumbledore</li>
+              <li>Lucius</li>
+              <li>Lupin</li>
+            </ul>
+            <ul id="sortable4" class="connectedSortable">
+              Hufflepuff
+              <li>Spot Ravenclaw</li>
+              <li>Spot Ravenclaw</li>
+            </ul>
+            <!-- <ul id="sortable5" class="connectedSortable">
+                        <li>Spot Slytherin</li>
+                    </ul> -->
+            <!-- NICK -->
+            <!-- Content here -->
+          </div>
+        </div>
+        <div class="container col-12 col-md-2 col-lg-2">
+          <!-- ALEX -->
+          RIGHT AD
+        </div>
+      </div>
     </div>
 
     <!-- ALEX -->
     <footer
-          class="text-center text-lg-start text-white my-3"
-          style="background-color: #3e4551"
-          >
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: Links -->
-      <section class="">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">FOOTER CONTENT</h5>
+      class="text-center text-lg-start text-white my-3"
+      style="background-color: #3e4551"
+    >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">FOOTER CONTENT</h5>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae modi cum ipsam ad, illo possimus laborum ut
-              reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-              Reiciendis assumenda iusto sapiente inventore animi?
-            </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae modi cum ipsam ad, illo possimus laborum ut reiciendis
+                obcaecati. Ducimus, quas. Corrupti, pariatur eaque? Reiciendis
+                assumenda iusto sapiente inventore animi?
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
           </div>
-          <!--Grid column-->
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
+        <hr class="mb-4" />
 
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Register for free</span>
+            <button type="button" class="btn btn-outline-light btn-rounded">
+              Sign up!
+            </button>
+          </p>
+        </section>
+        <!-- Section: CTA -->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
+        <hr class="mb-4" />
 
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
-
-      <hr class="mb-4" />
-
-      <!-- Section: CTA -->
-      <section class="">
-        <p class="d-flex justify-content-center align-items-center">
-          <span class="me-3">Register for free</span>
-          <button type="button" class="btn btn-outline-light btn-rounded">
-            Sign up!
-          </button>
-        </p>
-      </section>
-      <!-- Section: CTA -->
-
-      <hr class="mb-4" />
-
-      <!-- Section: Social media -->
-      <section class="mb-4 text-center">
-        <!-- Facebook -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-facebook-f"></i
+        <!-- Section: Social media -->
+        <section class="mb-4 text-center">
+          <!-- Facebook -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
           ></a>
 
-        <!-- Twitter -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-twitter"></i
+          <!-- Twitter -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
           ></a>
 
-        <!-- Google -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-google"></i
+          <!-- Google -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
           ></a>
 
-        <!-- Instagram -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-instagram"></i
+          <!-- Instagram -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
           ></a>
 
-        <!-- Linkedin -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-linkedin-in"></i
+          <!-- Linkedin -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
           ></a>
 
-        <!-- Github -->
-        <a
-           class="btn btn-outline-light btn-floating m-1"
-           href="#!"
-           role="button"
-           ><i class="fab fa-github"></i
+          <!-- Github -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
           ></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >MDBootstrap.com</a
         >
     </div>
     <!-- Copyright -->
   </footer>
     
+    
+
+
+
+
+
+
     <!-- jQuery script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- DayJS script -->
