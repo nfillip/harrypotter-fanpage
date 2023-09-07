@@ -50,11 +50,11 @@
             </div>
         </nav>
     <!-- Content here -->
-    <div class="row m-1" style="border: 2px solid red">
+    <div id="destInfo" class="row m-1 align-items-center">
       <!-- drop -->
-      <div class="dropdown col-4">
+      <div class="dropdown col-4 text-center">
         <select
-          class="btn btn-secondary dropdown-toggle"
+          class="btn btn-secondary dropdown-toggle m-2 col-6 align-items-baseline"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
@@ -67,14 +67,14 @@
           <option id="Azkaban" value="Virkie,uk">Azkaban</option>
         </select>
         <!-- City description  -->
-        <h2 class="locationName"></h2>
+        <h1 class="locationName m-4"></h1>
         <p id="destinationInfo">
         </p>
       </div>
       <!-- card -->
-      <div class="card col-4">
+      <div class="col-4 d-flex align-items-center" >
         <div class="card-body">
-          <h5 class="card-title locationName"></h5>
+          <h3 class="text-center card-title locationName"></h3>
         <div class=" text-center">
           <div class="row">
           <p class="col-5" id="status">Status</p>
@@ -89,34 +89,8 @@
       </div>
       </div>
       <!-- three day  -->
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">Date</div>
-          <div id="three-day">
-            <blockquote class="blockquote mb-0 row">
-              <div class="col-md-6">temp</div>
-              <div class="col-md-6">wether emoji</div>
-            </blockquote>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">Date</div>
-          <div id="three-day">
-            <blockquote class="blockquote mb-0 row">
-              <div class="col-md-6">temp</div>
-              <div class="col-md-6">wether emoji</div>
-            </blockquote>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">Date</div>
-          <div id="three-day">
-            <blockquote class="blockquote mb-0 row">
-              <div class="col-md-6">temp</div>
-              <div class="col-md-6">wether emoji</div>
-            </blockquote>
-          </div>
-        </div>
+      <div class="col-4 d-flex align-items-center" style="border: 2px solid red">
+        <div id="destImg"  ></div>
       </div>
       <!-- MITCH -->
       <!-- Content here -->

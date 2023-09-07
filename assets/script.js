@@ -117,6 +117,7 @@ $(document).ready(function () {
   var todayWindEl = $("#todayWind");
   var todayHumidEl = $("#todayHumid");
   var placeInfo = $("#destinationInfo");
+  var destinationImg = $("#destImg");
   var alley =
     "Diagon Alley is the main wizarding shopping street in London. On this street we can find any number of shops specifically for wizards, including an apothecary, Eeylops Owl Emporium, Florean Fortescue's Ice Cream Parlor, Flourish and Blott's bookstore, Gringotts Wizarding Bank, Madam Malkin's Robes for All Occasions, The Magical Menagerie pet store, Ollivanders: Makers of Fine Wands since 382 BC, and Quality Quidditch Supplies. The Leaky Cauldron pub, which serves as the gateway to Muggle London, backs onto this street, and the entrance to Knockturn Alley lies in this street as well. The merchants of Diagon Alley are well prepared for the annual influx of students needing to buy supplies for their year at Hogwarts.";
   var hogwarts =
@@ -130,10 +131,7 @@ $(document).ready(function () {
 
   function getWeather() {
     var selectedOption = $("#dropDown").val();
-    var requestWeather =
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      selectedOption +
-      "&units=imperial&APPID=6125957e3b746825efbf44ae31af7452";
+    var requestWeather = `https://api.openweathermap.org/data/2.5/weather?q=${selectedOption}&units=imperial&APPID=6125957e3b746825efbf44ae31af7452`;
 
     $.ajax({
       url: requestWeather,
@@ -150,21 +148,50 @@ $(document).ready(function () {
         todayWindEl.text(`Wind: ${data.wind.speed} mph`);
         todayHumidEl.text(`Humidity: ${data.main.humidity}%`);
 
+        var alleyImg =
+          "https://imgix.bustle.com/rehost/2016/9/13/bc5f1c4d-c4a5-4ade-a16b-05fadd1ad391.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress";
+        var hogImg =
+          "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg/revision/latest?cb=20120128145344";
+        var meadeImg =
+          "https://i.pinimg.com/originals/ca/e5/5a/cae55a87045ef2b7c2b303ffaad1ca1a.jpg";
+        var azcaImg =
+          "https://static.wikia.nocookie.net/harrypotter/images/b/b6/Azkaban_concept_art.png/revision/latest?cb=20161216053518";
+        destinationImg.empty();
+
         if (selectedOption === "London,uk") {
           placeInfo.text(alley);
+          const img = $("<img>");
+          img.attr("id", "infoImg");
+          img.attr("class", "col-12 m-1 align-self-center");
+          img.attr("src", alleyImg);
+          destinationImg.append(img);
         } else if (selectedOption === "Alnwick,uk") {
           placeInfo.text(hogwarts);
+          const img = $("<img>");
+          img.attr("id", "infoImg");
+          img.attr("class", "col-12 m-1 align-self-center");
+          img.attr("src", hogImg);
+          destinationImg.append(img);
         } else if (selectedOption === "Scarborough,uk") {
           placeInfo.text(meade);
+          const img = $("<img>");
+          img.attr("src", meadeImg);
+          img.attr("id", "infoImg");
+          img.attr("class", "col-12 m-1");
+          destinationImg.append(img);
         } else {
           placeInfo.text(azzz);
+          const img = $("<img>");
+          img.attr("src", azcaImg);
+          img.attr("id", "infoImg");
+          img.attr("class", "col-12 m-1");
+          destinationImg.append(img);
         }
       },
       error: function (error) {
         console.error(error);
       },
     });
-    destination(selectedOption);
   }
   getWeather();
 });
