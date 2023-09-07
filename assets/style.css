@@ -33,21 +33,23 @@ nav {
   font-size: 0.5rem;
 } */
 
-  #testbr {
-    border: .2rem solid red;
+#testbr {
+  border: 0.2rem solid red;
 }
 
-.quizsection{
-    display: flex;
-    flex-direction: row;
+.quizsection {
+  display: flex;
+  flex-direction: row;
 }
 
-  
 #advertisement {
   position: -webkit-sticky;
   position: sticky;
 }
 
+#destInfo {
+  height: 35rem;
+}
 .connectedSortable:hover {
   cursor: grab;
 }
