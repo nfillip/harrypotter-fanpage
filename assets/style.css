@@ -2,26 +2,34 @@
   border: 0.2rem solid black;
 }
 
+body {
+  font-family: "Merienda", cursive;
+}
 
+#noGood {
+  font-family: "Bigelow Rules", cursive;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
 nav {
   border: 0.2rem solid black;
   background:#112c38;
   font-family: "Bigelow Rules", cursive;
 }
 
-nav div ul{
-  margin:0;
-  padding:0;
-  display:flex;
+nav div ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-nav div ul li{
-  list-style:none;
-  margin:0 20px;
-  transition:0.5s;
+nav div ul li {
+  list-style: none;
+  margin: 0 20px;
+  transition: 0.5s;
 }
 
-nav div ul li a{
+nav div ul li a {
   display: block;
   position:relative;
   text-decoration:none;
@@ -33,38 +41,38 @@ nav div ul li a{
   transition:0.5s;
 }
 
-nav div ul:hover li a{
-  transform:scale(1.0);
-  opacity:0.2;
-  filter:blur(5px);
+nav div ul:hover li a {
+  transform: scale(1);
+  opacity: 0.2;
+  filter: blur(5px);
 }
 
-nav div ul li a:hover{
-  transform:scale(1);
-  opacity:1;
-  filter:blur(0);
-  text-decoration:none;
-  color:#fff;
+nav div ul li a:hover {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: none;
+  color: #fff;
 }
 
-nav div ul li a:before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:80%;
-  background:tan;
-  transition:1.0s;
-  transform-origin:right;
-  transform:scaleX(0);
-  z-index:-1;
+nav div ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: tan;
+  transition: 1s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
 }
 
-nav div ul li a:hover:before{
-  transition:transform 1.0s;
-  transform-origin:left;
-  transform:scaleX(1);
+nav div ul li a:hover:before {
+  transition: transform 1s;
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 #footer-text {
@@ -167,7 +175,7 @@ view raw
 
 /* Destintion Info */
 #destInfo {
-  font-family: "Parisienne", cursive;
+  font-family: "Merienda", cursive;
   height: 35rem;
   margin-bottom: 1rem;
 }
@@ -177,6 +185,7 @@ h2,
 h3,
 h4 {
   font-family: "Bigelow Rules", cursive;
+  color: rgb(104, 41, 41);
 }
 
 #destHead,
@@ -199,7 +208,7 @@ h4 {
   background-color: rgba(240, 243, 246, 0.555);
   box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
   border: none;
-  color: black;
+  color: rgb(104, 41, 41);
   height: auto;
   margin-bottom: 2rem;
 }
@@ -214,7 +223,7 @@ h4 {
 }
 
 #destinationInfo {
-  font-size: 1.25rem;
+  font-size: 1rem;
   background-color: rgba(240, 243, 246, 0.555);
   box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
   margin-top: 2rem;
@@ -250,10 +259,9 @@ h4 {
 }
 
 .quiz-section1 h1 {
-  border-bottom: .2rem solid rgb(187, 50, 50);
+  border-bottom: 0.2rem solid rgb(187, 50, 50);
   text-align: center;
-  color:rgb(187, 50, 50);
-  
+  color: rgb(187, 50, 50);
 }
 
 #sortable1 p {
