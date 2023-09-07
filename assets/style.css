@@ -47,16 +47,87 @@ nav {
   position: sticky;
 }
 
+/* Destintion Info */
 #destInfo {
+  font-family: "Parisienne", cursive;
   height: 35rem;
+  margin-bottom: 1rem;
 }
+
+#destInfo h1,
+h2,
+h3,
+h4 {
+  font-family: "Bigelow Rules", cursive;
+}
+
+#destHead,
+#weather {
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+}
+
+#weather {
+  margin: 2rem;
+  font-size: 1.25rem;
+}
+
+#destHead {
+  font-size: 3.25rem;
+}
+#dropDown {
+  font-family: "Bigelow Rules", cursive;
+  font-size: 3.5rem;
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+  border: none;
+  color: black;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+#weatHead {
+  font-size: 2.5rem;
+  margin: 2rem;
+}
+
+#weather h2 {
+  font-size: 2rem !important;
+}
+
+#destinationInfo {
+  font-size: 1.25rem;
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+  margin-top: 2rem;
+}
+
+#infoImg {
+  box-shadow: 1px 3px 3px 2px black;
+  height: auto;
+  width: 30rem;
+}
+
+#photoBorder {
+  box-shadow: 5px 10px 30px 0px black;
+  padding: 2rem;
+  background-image: url(https://img.freepik.com/free-vector/grunge-texture-background_1048-9279.jpg?w=2000);
+}
+
+#backDrop {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  background-attachment: fixed;
+}
+
+/* Destintion Info */
+
 .connectedSortable:hover {
   cursor: grab;
 }
 
 .connectedSortable li {
   /* background-color: rgb(rgb(240,248,255, 0.6)); */
-  background-color: rgb(240,248,255, 0.3);
+  background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
 }
 
@@ -67,29 +138,27 @@ nav {
   
 }
 
-#sortable1 p{
+#sortable1 p {
   background-color: rgba(68, 22, 22, 0.5);
   margin-bottom: none;
 }
 
-#sortable2 p{
+#sortable2 p {
   background-color: rgba(76, 175, 80, 0.3);
   margin-bottom: none;
 }
 
-#sortable3 p{
-  background-color: 	rgb(230,230,250, .3);
+#sortable3 p {
+  background-color: rgb(230, 230, 250, 0.3);
   margin-bottom: none;
 }
 
-#sortable4 p{
-  background-color: rgb(255, 174,66, 0.3);
+#sortable4 p {
+  background-color: rgb(255, 174, 66, 0.3);
   margin-bottom: none;
 }
 
 .sortable-containment {
   background-image: url(./quiz-background-image.avif);
   background-size: cover;
-  
 }
-

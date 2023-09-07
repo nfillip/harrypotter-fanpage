@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Justicon -->
+    <link rel="icon" type="icon" href="/assets/DH.png">
     <!-- reset CSS -->
     <link rel="stylesheet" href="./assets/reset.css" />
     <!-- jquery UI LINK -->
@@ -17,10 +19,13 @@
     />
 
     <link rel="stylesheet" href="./assets/style.css" />
-
+<!-- text Links -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Parisienne&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
-  <body>
+  <body id="backDrop">
      <!-- MODAL -->
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -74,11 +79,11 @@
             </div>
         </nav>
     <!-- Content here -->
-    <div id="destInfo" class="row m-1 align-items-center">
+    <div id="destInfo" class="row p-3  align-items-center">
       <!-- drop -->
       <div class="dropdown col-4 text-center">
         <select
-          class="btn btn-secondary dropdown-toggle m-2 col-6 align-items-baseline"
+          class="btn btn-secondary  m-2 col-6 align-items-baseline"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
@@ -86,19 +91,19 @@
           class="dropdown-menu"
         >
           <option id="Alnwick" value="Alnwick,uk">Hogwarts</option>
-          <option id="Diagon Alley" value="London,uk">Diagon Alley</option>
+          <option id="DiagonAlley" value="London,uk">Diagon Alley</option>
           <option id="Hogsmeade"  value="Scarborough,uk">Hogsmeade</option>
           <option id="Azkaban" value="Virkie,uk">Azkaban</option>
         </select>
         <!-- City description  -->
-        <h1 class="locationName m-4"></h1>
+        <!-- <h1 id="destHead" class="locationName m-4"></h1> -->
         <p id="destinationInfo">
         </p>
       </div>
       <!-- card -->
       <div class="col-4 d-flex align-items-center" >
-        <div class="card-body">
-          <h3 class="text-center card-title locationName"></h3>
+        <div id="weather" class="card-body">
+          <h3 id="weatHead" class="text-center card-title ">Current Weather</h3>
         <div class=" text-center">
           <div class="row">
           <p class="col-5" id="status">Status</p>
@@ -113,8 +118,8 @@
       </div>
       </div>
       <!-- three day  -->
-      <div class="col-4 d-flex align-items-center" style="border: 2px solid red">
-        <div id="destImg"  ></div>
+      <div id="photoBorder" class="col-4 d-flex align-items-center justify-content-center">
+        <div id="destImg" class="d-flex justify-content-center"></div>
       </div>
       <!-- MITCH -->
       <!-- Content here -->
