@@ -112,7 +112,6 @@ function testAnswers() {
   }
 
   if (testCorrect) {
-    console.log("YOU GOT IT!");
     $(secondQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
   } else {
@@ -135,9 +134,7 @@ function shuffleQuiz() {
     randomArrayOfNames.push(answerKeyNames2[random]);
     answerKeyNames2.splice(random, 1);
   }
-  console.log(randomArrayOfNames);
-  console.log(answerKeyNames);
-  console.log();
+  
   var counter = 0;
   for (var x = 0; x < 4; x++) {
     for (var y = 1; y < 6; y++) {
@@ -155,7 +152,6 @@ function shuffleQuiz() {
 
 //submit button showing up
 function showSubmitButton() {
-  console.log(50);
   randomizeSection.append(
     '<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>'
   );
@@ -206,7 +202,20 @@ $("#modal-submit").on("click", function(){
 //Event Listener - Refresh Quiz
 secondQuizDiv.on("click", "#page-refresh-button", function(){
   console.log("refresh works");
-})
+  console.log()
+  randomizeSection.children().eq(x).children()
+//   for (var x = 0; x < 4; x++) {
+//     for (var y = 1;y < randomizeSection.children().eq(x).children().length + 1;
+//       y++
+//     ) {
+//       var liTextItem = randomizeSection
+//         .children()
+//         .eq(x)
+//         .children()
+//         .eq(y)
+//         .text();
+//       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
+// })
 
 //calls on refresh
 $("#quiz-refresh-button").prop("disabled", true);
