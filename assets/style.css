@@ -2,6 +2,10 @@
   border: 0.2rem solid black;
 }
 
+body {
+  font-family: "Merienda", cursive;
+}
+
 #noGood {
   font-family: "Bigelow Rules", cursive;
   font-size: 2rem;
