@@ -75,14 +75,15 @@ nav div ul li a:hover:before {
   transform: scaleX(1);
 }
 
+#footer-main {
+
+}
+
 #footer-text {
   text-align: center;
   font-family: "Bigelow Rules", cursive;
 }
 
-#footer-main  {
-  background-color: tan;
-}
 
 #form-wrapper{
   width:90%;
@@ -119,18 +120,7 @@ nav div ul li a:hover:before {
 }
 view raw
 
-#value-choice1 {
 
-}
-#value-choice2 {
-  
-}
-#value-choice3 {
-  
-}
-#value-choice4 {
-  
-}
 
 /* #sortable1,
 #sortable2,
@@ -167,11 +157,19 @@ view raw
   display: flex;
   flex-direction: row;
 }
-
+/* this css is for advertisment to make it sticky- need to put in ad art */
 #advertisement {
-  position: -webkit-sticky;
-  position: sticky;
-}
+
+  height: 200px;
+  width: 100px;
+  background-color: grey;
+  position: absolute;
+  top: 200px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+        }
+
 
 /* Destintion Info */
 #destInfo {
