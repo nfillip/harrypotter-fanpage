@@ -171,6 +171,67 @@
     <div style="border: 2px solid red;" class="col-9 container" id="chars">
       <div class="row">
         <div class="container col-12 col-md-10 col-lg-10">
+
+          <div class="container" id="backPhoto">
+            <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
+            <input id="bioInput" class="bioClass" type="text" placeholder="Enter Character Name"/>
+            <button id="bio" type="submit" class="btn btn-danger my-5" text-center>Search</button>
+            <div class="charClass">
+              
+                <h1 id="name"></h1>
+                <h5 id="house"></h5>
+                <h6 id="wand">
+                  <span id="wandWood"></span>
+                  <span id="wandCore"></span>
+                  <span id="wandLength"></span>
+                </h6>
+                <h6 id="dateOfBirth"></h6>
+                <h6 id="gender"></h6>
+                <h6 id="species"></h6>
+                <h6 id="patronus"></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container sortable-containment quiz-section" id = "main-quiz-div">
+        <div class = "column quiz-section1" id = "second-quiz-div">
+          <h1>QUIZ- Sort The Houses!</h1>
+          <button type="button" class="btn btn-danger my-2" id="quiz-start-button">Start Quiz</button>
+          <section class = "row d-flex justify-content-center align-items-center d-flex quiz-section2" id = "randomize-section">
+          
+          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable1">
+            <p>GRYFFINDOR</p> 
+            <li class="list-group-item">Dumbledore</li>
+            <li class="list-group-item">Luna Lovegood</li>
+            <li class="list-group-item">Cho Change</li>
+            <li class="list-group-item">Moaning Myrtle</li>
+            <li class="list-group-item">Helena Ravenclaw</li>
+          </ul>
+          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable2">
+            <p>SLYTHERIN</p>
+            <li class="list-group-item">Ginny</li>
+            <li class="list-group-item">Draco Malfoy</li>
+            <li class="list-group-item">Newt Scamander</li>
+            <li class="list-group-item">Nymphadora Tonks</li>
+            <li class="list-group-item">Helga Hufflepuff</li>
+          </ul>
+          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable3">
+            <p>RAVENCLAW</p>
+            <li class="list-group-item">Draco Malfoy</li>
+            <li class="list-group-item">Snape</li>
+            <li class="list-group-item">Harry Potter</li>
+            <li class="list-group-item">Hermoine Granger</li>
+            <li class="list-group-item">Cedric Diggory</li>
+          </ul>
+          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
+            <p>HUFFLEPUFF</p>
+            <li class="list-group-item">Neville Longbottom</li>
+            <li class="list-group-item">Crab</li>
+            <li class="list-group-item">Tom Riddle</li>
+            <li class="list-group-item">Lucius Malfoy</li>
+            <li class="list-group-item">Ron Weasley</li>
+          </ul>
+
           <div class="container">
             <h1>Wizards and Witches BIO</h1>
             <input
@@ -261,7 +322,12 @@
               </section>
             </div>
           </div>
+
         </div>
+      </div>
+      <div class="container col-12 col-md-2 col-lg-2">
+        <!-- ALEX -->
+        RIGHT AD
       </div>
     </div>
     <!-- ALEX / Mitch Right add-->
