@@ -50,7 +50,7 @@
             </div>
         </nav>
     <!-- Content here -->
-    <div class="row" style="border: 2px solid red">
+    <div class="row m-1" style="border: 2px solid red">
       <!-- drop -->
       <div class="dropdown col-4">
         <select
@@ -65,27 +65,28 @@
           <option id="Diagon Alley" value="London,uk">Diagon Alley</option>
           <option id="Hogsmeade"  value="Scarborough,uk">Hogsmeade</option>
           <option id="Azkaban" value="Virkie,uk">Azkaban</option>
-          <option value="Alnwick,uk">Hogwarts</option>
         </select>
         <!-- City description  -->
-        <h2 id="locationName"></h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-          consequatur, possimus, rem delectus itaque odio similique natus
-          repudiandae quisquam id architecto quidem placeat praesentium voluptas
-          distinctio animi accusamus perferendis facilis.
+        <h2 class="locationName"></h2>
+        <p id="destinationInfo">
         </p>
       </div>
       <!-- card -->
       <div class="card col-4">
         <div class="card-body">
-          <h5 id="locationName" class="card-title"></h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <h5 class="card-title locationName"></h5>
+        <div class=" text-center">
+          <div class="row">
+          <p class="col-5" id="status">Status</p>
+          <p class="col-5" id="todayTemp">Temp</p>
+          <div class="w-100 d-none d-md-block"></div>
+          <p class="col-5" id="todayHigh">High</p>
+          <p class="col-5" id="todayLow">Low</p>
+          <p class="col-5" id="todayWind">wind</p>
+          <p class="col-5" id="todayHumid">humidity</p>
         </div>
+        </div>
+      </div>
       </div>
       <!-- three day  -->
       <div class="col-4">
