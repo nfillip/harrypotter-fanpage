@@ -7,6 +7,7 @@ var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
+var blinkTimer = false;
 var GSRH = [
   ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
   ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
@@ -177,6 +178,8 @@ function startTimer(){
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
   $("#page-refresh-button").prop("disabled", true);
+  
+  blinkTimer = false;
 
   
   
@@ -194,11 +197,35 @@ quizStartButton.on("click", function () {
 
 //Event Listener - Modal Submit button
 $("#modal-submit").on("click", function(){
+  console.log(parseInt($("#message-text").val()))
+  console.log(parseInt("hello"));
+  console.log(parseInt("55"));
+  if(parseInt($("#message-text").val())) {
+  $(secondQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
   secondsLeft = $("#message-text").val() 
   showSubmitButton();
   shuffleQuiz();
   startTimer();
   $("#quiz-start-button").prop("disabled", true);
+  } else {
+    blinkTimer = true;
+    $(secondQuizDiv).children("h1").text("ERROR: YOU NEED TO TYPE A NUMBER IN THE TEXT BOX");
+    var blink = true;
+    var blinkerInterval = setInterval(function(){
+      blink = !blink;
+      if (blink){
+        $(secondQuizDiv).children("h1").css("background", "black");
+      }else {
+        $(secondQuizDiv).children("h1").css("background", "white");
+      }
+      if (blinkTimer === false){
+        clearInterval(blinkerInterval);
+        $(secondQuizDiv).children("h1").css("background", "none");
+      }
+    }, 500)
+    
+
+    }
 })
 
 
@@ -215,6 +242,8 @@ secondQuizDiv.on("click", "#page-refresh-button", function(){
         randomizeSection.children().eq(x).append('<li class = "list-group-item">' + RandomArrayOfTwentyNames[z] +'</li>');
         z++;
       }
+  $("#page-refresh-button").prop("disabled", true);
+
   }
   randomizeSection.children().remove("button");
   $("#quiz-start-button").prop("disabled", false);

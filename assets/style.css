@@ -181,26 +181,31 @@ h4 {
   border-bottom: 0.2rem solid rgb(187, 50, 50);
   text-align: center;
   color: rgb(187, 50, 50);
+  font-weight: bolder;
 }
 
 #sortable1 p {
   background-color: rgba(68, 22, 22, 0.5);
   margin-bottom: none;
+  font-weight: bolder;
 }
 
 #sortable2 p {
   background-color: rgba(76, 175, 80, 0.3);
   margin-bottom: none;
+  font-weight: bolder;
 }
 
 #sortable3 p {
   background-color: rgb(230, 230, 250, 0.3);
   margin-bottom: none;
+  font-weight: bolder;
 }
 
 #sortable4 p {
   background-color: rgb(255, 174, 66, 0.3);
   margin-bottom: none;
+  font-weight: bolder;
 }
 
 .sortable-containment {
