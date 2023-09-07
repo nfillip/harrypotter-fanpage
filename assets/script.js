@@ -96,7 +96,6 @@ function testAnswers() {
         .text();
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
-        console.log("WRONG: " + liTextItem + " was in wrong spot");
         $(liBorderEdit).css({
           "background-color": "rgba(68, 22, 22, 0.5)",
           color: "white",
@@ -115,8 +114,7 @@ function testAnswers() {
     $(secondQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
   } else {
-    console.log("YOU LOST");
-    console.log(secondQuizDiv.children());
+   
     $(this).prop("disabled", true);
     $(secondQuizDiv).children("h1").text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
     $("#quiz-start-button").prop("disabled", true);
@@ -124,8 +122,9 @@ function testAnswers() {
     
   }
 }
-//Shuffle Names on Start of Quiz
-function shuffleQuiz() {
+
+//function produce random array of names
+function randomArrayCharacters(){
   var answerKeyNames2 = answerKeyNames.slice();
   //random name
   var randomArrayOfNames = [];
@@ -134,7 +133,11 @@ function shuffleQuiz() {
     randomArrayOfNames.push(answerKeyNames2[random]);
     answerKeyNames2.splice(random, 1);
   }
-  
+  return randomArrayOfNames;
+}
+//Shuffle Names on Start of Quiz
+function shuffleQuiz() {
+  var randomArrayOfNames = randomArrayCharacters();
   var counter = 0;
   for (var x = 0; x < 4; x++) {
     for (var y = 1; y < 6; y++) {
@@ -173,7 +176,7 @@ function startTimer(){
 
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
-
+  $("#page-refresh-button").prop("disabled", true);
 
   
   
@@ -185,6 +188,7 @@ quizStartButton.on("click", function () {
   testAnswers();
   var x = 0;
   secondsLeft = 0;
+  $("#page-refresh-button").prop("disabled", false);
 
 });
 
@@ -201,21 +205,22 @@ $("#modal-submit").on("click", function(){
 
 //Event Listener - Refresh Quiz
 secondQuizDiv.on("click", "#page-refresh-button", function(){
+  var RandomArrayOfTwentyNames = randomArrayCharacters();
+  var z = 0;
   console.log("refresh works");
-  console.log()
-  randomizeSection.children().eq(x).children()
-//   for (var x = 0; x < 4; x++) {
-//     for (var y = 1;y < randomizeSection.children().eq(x).children().length + 1;
-//       y++
-//     ) {
-//       var liTextItem = randomizeSection
-//         .children()
-//         .eq(x)
-//         .children()
-//         .eq(y)
-//         .text();
-//       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
-// })
+  console.log(randomizeSection.children().eq(0));
+  for (var x = 0 ; x<4 ; x++) {
+    randomizeSection.children().eq(x).children().remove("li")
+      for (var y = 1 ; y<5;y++){
+        randomizeSection.children().eq(x).append('<li class = "list-group-item">' + RandomArrayOfTwentyNames[z] +'</li>');
+        z++;
+      }
+  }
+  randomizeSection.children().remove("button");
+  $("#quiz-start-button").prop("disabled", false);
+  $("#quiz-start-button").text("Start/Shuffle Quiz")
+})
+  
 
 //calls on refresh
 $("#quiz-refresh-button").prop("disabled", true);

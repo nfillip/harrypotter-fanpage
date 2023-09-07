@@ -169,12 +169,15 @@ h4 {
   /* background-color: rgb(rgb(240,248,255, 0.6)); */
   background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
+  font-weight: bolder;
 }
 
 .quiz-section1 h1 {
   border-bottom: .2rem solid rgb(187, 50, 50);
-  text-align: center;
+  text-align: left;
   color:rgb(187, 50, 50);
+  font-weight: bolder;
+  
   
 }
 
