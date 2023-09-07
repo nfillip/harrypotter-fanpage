@@ -161,3 +161,28 @@ h4 {
   background-image: url(./quiz-background-image.avif);
   background-size: cover;
 }
+
+#backPhoto {
+  background-image: url(https://img.freepik.com/premium-photo/cozy-reading-nook-with-comfortable-chairs-bookshelves-inviting-students_741910-47531.jpg?w=740);
+  background-attachment: local;
+}
+
+.fontBio {
+  font-size: 25;
+  color: crimson;
+  text-align: center;
+}
+
+.bioClass {
+  background-color: rgb(3, 3, 3);
+  border-style: double;
+  padding: 9px 9px;
+  color: azure;
+}
+
+.charClass {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: fantasy;
+}
