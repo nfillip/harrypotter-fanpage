@@ -26,7 +26,31 @@
     <title>Document</title>
   </head>
   <body id="backDrop">
-    
+     <!-- MODAL -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Quiz Length</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">How long do you want the quiz to be?</label>
+            <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OF MODAL -->
         <!-- ALEX -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <a class="navbar-brand" href="#">Harry Potter Fan Page </a>
@@ -109,15 +133,27 @@
             <button id="bio" type="submit" class="btn btn-danger my-5">Search</button>
             
           </div>
+         
           <div class="container sortable-containment quiz-section" id = "main-quiz-div">
             <div class = "column quiz-section1" id = "second-quiz-div">
             <h1>QUIZ- Sort The Houses!</h1>
-            <button type="button" class="btn btn-danger my-2" id="quiz-start-button">Start Quiz</button>
+            <!-- <button type="button" class="btn btn-danger my-2" id="quiz-start-button" data-bs-toggle="modal" data-bs-target="staticBackdrop">Start/Shuffle Quiz</button> -->
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger my-2" id = "quiz-start-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Start/Shuffle Quiz
+</button>
+<button type="button" class="btn btn-danger my-2" id = "page-refresh-button" >
+  Refresh Quiz
+</button>
+
+
+            
             <section class = "row d-flex justify-content-center align-items-center d-flex quiz-section2" id = "randomize-section">
             
             <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable1">
               <p>GRYFFINDOR</p> 
-              <li class="list-group-item">Dumbledore</li>
+              <li class="list-group-item">Remus Lupin</li>
               <li class="list-group-item">Luna Lovegood</li>
               <li class="list-group-item">Cho Change</li>
               <li class="list-group-item">Moaning Myrtle</li>
@@ -126,7 +162,7 @@
             <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable2">
               <p>SLYTHERIN</p>
               <li class="list-group-item">Ginny</li>
-              <li class="list-group-item">Draco Malfoy</li>
+              <li class="list-group-item">Lucius Malfoy</li>
               <li class="list-group-item">Newt Scamander</li>
               <li class="list-group-item">Nymphadora Tonks</li>
               <li class="list-group-item">Helga Hufflepuff</li>
@@ -136,7 +172,7 @@
               <li class="list-group-item">Draco Malfoy</li>
               <li class="list-group-item">Snape</li>
               <li class="list-group-item">Harry Potter</li>
-              <li class="list-group-item">Hermoine Granger</li>
+              <li class="list-group-item">Hermione Granger</li>
               <li class="list-group-item">Cedric Diggory</li>
             </ul>
             <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
@@ -147,7 +183,7 @@
               <li class="list-group-item">Lucius Malfoy</li>
               <li class="list-group-item">Ron Weasley</li>
             </ul>
-          
+          </section>
             
             </div>
         </div>

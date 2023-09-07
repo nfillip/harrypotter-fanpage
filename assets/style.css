@@ -200,9 +200,10 @@ h4 {
 }
 
 .quiz-section1 h1 {
-  border-bottom: 0.2rem solid rgb(104, 41, 41);
+  border-bottom: .2rem solid rgb(187, 50, 50);
   text-align: center;
-  color: rgb(104, 41, 41);
+  color:rgb(187, 50, 50);
+  
 }
 
 #sortable1 p {
