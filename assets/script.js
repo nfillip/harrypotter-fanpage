@@ -5,6 +5,8 @@ var mainQuizDiv = $("#main-quiz-div");
 var randomizeSection = $("#randomize-section");
 var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
+var secondsLeft = 15;
+var textArea = $("#modal-textarea");
 var GSRH = [
   ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
   ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
@@ -49,14 +51,16 @@ var answerKeyNames = [
 //Sortable Function through jQueryUI - Fillip
 var characterUrl = "https://hp-api.onrender.com/api/characters";
 
-$(function () {
-  $("#sortable1, #sortable2, #sortable3, #sortable4")
-    .sortable({
-      connectWith: ".connectedSortable",
-      containment: ".quiz-section",
-    })
-    .disableSelection();
-});
+function allowSortable() {
+  $(function () {
+    $("#sortable1, #sortable2, #sortable3, #sortable4")
+      .sortable({
+        connectWith: ".connectedSortable",
+        containment: ".quiz-section",
+      })
+      .disableSelection();
+  });
+}
 
 $("#bio").on("click", async function () {
   await fetch(characterUrl)
@@ -125,7 +129,11 @@ function testAnswers() {
     console.log("YOU LOST");
     console.log(secondQuizDiv.children());
     $(this).prop("disabled", true);
-    $(secondQuizDiv).children("h1").text("YOU LOSE! GO REREAD THOSE BOOKS!");
+    $(secondQuizDiv)
+      .children("h1")
+      .text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
+    $("#quiz-start-button").prop("disabled", true);
+    $("#page-refresh-button").show();
   }
 }
 //Shuffle Names on Start of Quiz
@@ -153,6 +161,7 @@ function shuffleQuiz() {
       counter++;
     }
   }
+  allowSortable();
 }
 
 //submit button showing up
@@ -163,18 +172,48 @@ function showSubmitButton() {
   );
   disableSubmitButton = this;
 }
-//Event Listener
-quizStartButton.on("click", function () {
-  console.log(5);
+
+function startTimer() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    quizStartButton.text(secondsLeft);
+    if (secondsLeft <= 0) {
+      clearInterval(timerInterval);
+      testAnswers();
+      quizStartButton.text("0");
+    }
+  }, 1000);
+}
+
+//Event Listener - Start Button
+quizStartButton.on("click", function () {});
+//Event Listener - Submit button
+randomizeSection.on("click", "#quiz-submit-button", function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  testAnswers();
+  var x = 0;
+  secondsLeft = 0;
+});
+
+//Event Listener - Modal Submit button
+$("#modal-submit").on("click", function () {
+  secondsLeft = $("#message-text").val();
   showSubmitButton();
   shuffleQuiz();
-  $(this).prop("disabled", true);
+  startTimer();
+  $("#quiz-start-button").prop("disabled", true);
 });
-//Event Listener - Submit button
-randomizeSection.on("click", function () {
-  var x = 0;
-  testAnswers();
+
+//Event Listener - Refresh Quiz
+secondQuizDiv.on("click", "#page-refresh-button", function () {
+  console.log("refresh works");
 });
+
+//calls on refresh
+$("#quiz-refresh-button").prop("disabled", true);
+$("#page-refresh-button").hide();
+////////// END OF FILLIP SECTION
 
 var destination = $(".locationName");
 var todayCastEl = $("#status");
