@@ -1,13 +1,10 @@
 .container {
   border: 0.2rem solid black;
 }
-@font-face {
-  font-family: lumos;
-  src: url(lumos.ttf);
-}
+
 
 * {
-  font-family: lumos;
+  font-family: "Bigelow Rules", cursive;
   font-weight: bold;
 }
 nav {
