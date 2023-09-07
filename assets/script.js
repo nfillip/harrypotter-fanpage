@@ -5,6 +5,8 @@ var mainQuizDiv = $("#main-quiz-div");
 var randomizeSection = $("#randomize-section");
 var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
+var secondsLeft = 15;
+var textArea = $("#modal-textarea");
 var GSRH = [
   ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
   ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
@@ -49,7 +51,8 @@ var answerKeyNames = [
 //Sortable Function through jQueryUI - Fillip
 var characterUrl = "https://hp-api.onrender.com/api/characters";
 
-$(function () {
+function allowSortable(){
+  $(function () {
   $("#sortable1, #sortable2, #sortable3, #sortable4")
     .sortable({
       connectWith: ".connectedSortable",
@@ -57,6 +60,8 @@ $(function () {
     })
     .disableSelection();
 });
+}
+
 
 $("#bio").on("click", async function () {
   await fetch(characterUrl)
@@ -125,7 +130,10 @@ function testAnswers() {
     console.log("YOU LOST");
     console.log(secondQuizDiv.children());
     $(this).prop("disabled", true);
-    $(secondQuizDiv).children("h1").text("YOU LOSE! GO REREAD THOSE BOOKS!");
+    $(secondQuizDiv).children("h1").text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
+    $("#quiz-start-button").prop("disabled", true);
+    $("#page-refresh-button").show();
+    
   }
 }
 //Shuffle Names on Start of Quiz
@@ -153,6 +161,7 @@ function shuffleQuiz() {
       counter++;
     }
   }
+  allowSortable();
 }
 
 //submit button showing up
@@ -162,19 +171,38 @@ function showSubmitButton() {
     '<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>'
   );
   disableSubmitButton = this;
-}
-//Event Listener
+  }
+
+function startTimer(){
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    quizStartButton.text(secondsLeft);
+    if (secondsLeft <= 0){
+      clearInterval(timerInterval);
+      testAnswers();
+      quizStartButton.text("0")
+      
+    }
+   }, 1000);
+  }
+
+//Event Listener - Start Button
 quizStartButton.on("click", function () {
-  console.log(5);
-  showSubmitButton();
-  shuffleQuiz();
-  $(this).prop("disabled", true);
+
+
+  
+  
 });
 //Event Listener - Submit button
-randomizeSection.on("click", function () {
-  var x = 0;
+  randomizeSection.on("click","#quiz-submit-button", function (event) {
+  event.stopPropagation();
+  event.preventDefault();
   testAnswers();
+  var x = 0;
+  secondsLeft = 0;
+
 });
+
 
 var destination = $(".locationName");
 var todayCastEl = $("#status");
@@ -193,6 +221,46 @@ var meade =
   "Hogsmeade Village, or simply called Hogsmeade is the only all-wizarding village in Britain. It was founded by Hengist of Woodcroft. Students may sometimes come on weekend trips, but only third year students and above with guardian permission are allowed to visit. Mainly, students frequent the High Street in the village which contains the named specialty shops and pubs such as Zonko's Joke Shop and Honeydukes. Otherwise, they wander on to observe the infamous Shrieking Shack.";
 var azzz =
   "Azkaban is a horrendous place, where Sirius Black, along with many Death Eaters, were imprisoned after Lord Voldemort fell from power. Guarded by the hideous dementors, it is located on a remote island and is virtually escape proof. According to Remus Lupin, it is a fortress... set on a tiny island, way out to sea, but they don't need walls and water to keep the prisoners in, not when they're all trapped inside their own heads, incapable of a single cheerful thought. Most of them go mad within weeks. Sirius Black is the first person known to have escaped unassisted. Although several Death Eaters also later escaped, it is believed they were able to escape only because the dementors had deserted the prison, having been promised richer feeding if they became loyal to Lord Voldemort.";
+=======
+//Event Listener - Modal Submit button
+$("#modal-submit").on("click", function(){
+  secondsLeft = $("#message-text").val() 
+  showSubmitButton();
+  shuffleQuiz();
+  startTimer();
+  $("#quiz-start-button").prop("disabled", true);
+})
+
+
+
+//Event Listener - Refresh Quiz
+secondQuizDiv.on("click", "#page-refresh-button", function(){
+  console.log("refresh works");
+})
+
+//calls on refresh
+$("#quiz-refresh-button").prop("disabled", true);
+$("#page-refresh-button").hide();
+////////// END OF FILLIP SECTION
+
+  var destination = $(".locationName");
+  var todayCastEl = $("#status");
+  var todayTempEl = $("#todayTemp");
+  var todayHighEl = $("#todayHigh");
+  var todayLowEl = $("#todayLow");
+  var todayWindEl = $("#todayWind");
+  var todayHumidEl = $("#todayHumid");
+  var placeInfo = $("#destinationInfo");
+  var destinationImg = $("#destImg");
+  var alley =
+    "Diagon Alley is the main wizarding shopping street in London. On this street we can find any number of shops specifically for wizards, including an apothecary, Eeylops Owl Emporium, Florean Fortescue's Ice Cream Parlor, Flourish and Blott's bookstore, Gringotts Wizarding Bank, Madam Malkin's Robes for All Occasions, The Magical Menagerie pet store, Ollivanders: Makers of Fine Wands since 382 BC, and Quality Quidditch Supplies. The Leaky Cauldron pub, which serves as the gateway to Muggle London, backs onto this street, and the entrance to Knockturn Alley lies in this street as well. The merchants of Diagon Alley are well prepared for the annual influx of students needing to buy supplies for their year at Hogwarts.";
+  var hogwarts =
+    "Founded around the 9th century and 10th century by Godric Gryffindor, Rowena Ravenclaw, Helga Hufflepuff and Salazar Slytherin, Hogwarts was established in the Highlands of Scotland to educate young wizards and witches as well as to keep students safe from Muggle persecution. Theory has it that Rowena Ravenclaw came up with the name of Hogwarts after dreaming of a warty hog that led her to a cliff by a lake.[4] Since then, Hogwarts educated most wizarding children with residence in Great Britain and Ireland, keeping its location hidden from other wizarding schools and Muggles.";
+  var meade =
+    "Hogsmeade Village, or simply called Hogsmeade is the only all-wizarding village in Britain. It was founded by Hengist of Woodcroft. Students may sometimes come on weekend trips, but only third year students and above with guardian permission are allowed to visit. Mainly, students frequent the High Street in the village which contains the named specialty shops and pubs such as Zonko's Joke Shop and Honeydukes. Otherwise, they wander on to observe the infamous Shrieking Shack.";
+  var azzz =
+    "Azkaban is a horrendous place, where Sirius Black, along with many Death Eaters, were imprisoned after Lord Voldemort fell from power. Guarded by the hideous dementors, it is located on a remote island and is virtually escape proof. According to Remus Lupin, it is a fortress... set on a tiny island, way out to sea, but they don't need walls and water to keep the prisoners in, not when they're all trapped inside their own heads, incapable of a single cheerful thought. Most of them go mad within weeks. Sirius Black is the first person known to have escaped unassisted. Although several Death Eaters also later escaped, it is believed they were able to escape only because the dementors had deserted the prison, having been promised richer feeding if they became loyal to Lord Voldemort.";
+
 
 $("#dropDown").on("change", getWeather);
 
