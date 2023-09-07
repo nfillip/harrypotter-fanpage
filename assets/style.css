@@ -3,13 +3,10 @@
 }
 
 
-* {
-  font-family: "Bigelow Rules", cursive;
-  font-weight: bold;
-}
 nav {
   border: 0.2rem solid black;
   background:#112c38;
+  font-family: "Bigelow Rules", cursive;
 }
 
 nav div ul{
@@ -30,7 +27,7 @@ nav div ul li a{
   text-decoration:none;
   padding:5px;
   font-size:18px;
-  font-family: lumos;
+  font-family: "Bigelow Rules", cursive;
   color:#fff;
   text-transform:uppercase;
   transition:0.5s;
@@ -70,6 +67,62 @@ nav div ul li a:hover:before{
   transform:scaleX(1);
 }
 
+#footer-text {
+  text-align: center;
+  font-family: "Bigelow Rules", cursive;
+}
+
+#footer-main  {
+  background-color: tan;
+}
+
+#form-wrapper{
+  width:90%;
+  max-width: 500px;
+  min-height: 500px;
+  margin:auto;
+  background-color: rgba(0,0,0,0.6);
+}
+#form-wrapper > form{
+  color:white;
+  padding: 40px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+#form-wrapper > form > input, select{
+  font-family: "Bigelow Rules", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding:0px 6px;
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid white;
+  color: #fff;
+}
+#form-wrapper > form > input[type="submit"]{
+  width:160px;
+  display: block;
+  margin:0px auto;
+  font-size: 26px;
+}
+
+#house-form{
+  background-color: tan;
+}
+view raw
+
+#value-choice1 {
+
+}
+#value-choice2 {
+  
+}
+#value-choice3 {
+  
+}
+#value-choice4 {
+  
+}
 
 /* #sortable1,
 #sortable2,

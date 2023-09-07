@@ -198,8 +198,9 @@
 
     <!-- ALEX -->
     <footer
-      class="text-center text-lg-start text-white my-3"
-      style="background-color: #3e4551" id="footer"
+      
+      style="background-color: tan" id="footer-main"
+      
     >
       <!-- Grid container -->
       <div class="container p-4 pb-0">
@@ -208,8 +209,52 @@
           <!--Grid row-->
           <div class="row">
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Mischief Managed</h5>
+            <div > 
+              <!-- removed class="col-lg-4 col-md-6 mb-4 mb-md-0" to center h3 text -->
+              <h3 class="text-uppercase" id="footer-text">Mischief Managed</h3>
+              <form id="house-form">
+                <h4 class="text-uppercase" id="footer-form">Sorting Ceremony</h4>
+                <label for="wizard-name">Your Name: </label>
+                <input type="text" id="wizard-name" name="wizard-name">
+                <br><br>
+    
+                Are either of your parents a muggle?
+                <br>
+                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
+                <label for="contactChoice1">Yes</label>
+                <br>
+                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
+                <label for="contactChoice2">No</label>
+                <br><br>
+    
+                What is most important to you?
+                <br>
+                <input type="checkbox" id="value-choice1" name="attraction-element" value="bravery">
+                <label for="air-element">Bravery</label>
+                <br>
+                <input type="checkbox" id="value-choice2" name="attraction-element" value="loyalty">
+                <label for="air-element">Loyalty</label>
+                <br>
+                <input type="checkbox" id="value-choice3" name="attraction-element" value="curiosity">
+                <label for="air-element">Curiosity</label>
+                <br>
+                <input type="checkbox" id="value-choice4" name="attraction-element" value="ambition">
+                <label for="air-element">Ambition</label>
+                <br><br>
+    
+                Which is your favorite house at Hogwarts?
+                <br>
+                <select name="fav-house">
+                  <option value="Gryffindor">Gryffindor</option>
+                  <option value="Hufflepuff">Hufflepuff</option>
+                  <option value="Ravenclaw">Ravenclaw</option>
+                  <option value="Slytherin">Slytherin</option>
+                </select>
+                <br></br>
+    
+                <input type="submit" value="Submit">
+    
+              </form>
 
               <p>
 
@@ -221,9 +266,7 @@
  
             <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
+    
 
 
             <!--Grid column-->
@@ -245,7 +288,7 @@
         <!-- Section: CTA -->
         <section class="">
           <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Register for free</span>
+            <span class="me-3">Get my Hogwarts Letter</span>
             <button type="button" class="btn btn-outline-light btn-rounded">
               Sign up!
             </button>
