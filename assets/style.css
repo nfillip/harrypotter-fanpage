@@ -50,3 +50,46 @@ nav {
 #destInfo {
   height: 35rem;
 }
+.connectedSortable:hover {
+  cursor: grab;
+}
+
+.connectedSortable li {
+  /* background-color: rgb(rgb(240,248,255, 0.6)); */
+  background-color: rgb(240,248,255, 0.3);
+  margin-top: none;
+}
+
+.quiz-section1 h1 {
+  border-bottom: .2rem solid rgb(104, 41, 41);
+  text-align: center;
+  color:rgb(104, 41, 41)
+  
+}
+
+#sortable1 p{
+  background-color: rgba(68, 22, 22, 0.5);
+  margin-bottom: none;
+}
+
+#sortable2 p{
+  background-color: rgba(76, 175, 80, 0.3);
+  margin-bottom: none;
+}
+
+#sortable3 p{
+  background-color: 	rgb(230,230,250, .3);
+  margin-bottom: none;
+}
+
+#sortable4 p{
+  background-color: rgb(255, 174,66, 0.3);
+  margin-bottom: none;
+}
+
+.sortable-containment {
+  background-image: url(./quiz-background-image.avif);
+  background-size: cover;
+  
+}
+
