@@ -1,4 +1,11 @@
-/* HEADER */
+.container {
+  border: 0.2rem solid black;
+}
+
+body {
+  font-family: "Merienda", cursive;
+}
+
 #noGood {
   font-family: "Bigelow Rules", cursive;
   font-size: 2rem;
@@ -29,7 +36,6 @@ nav div ul li a {
   padding:5px;
   font-size:18px;
   font-family: "Bigelow Rules", cursive;
-  font-family: lumos;
   color:#fff;
   text-transform:uppercase;
   transition:0.5s;
@@ -39,9 +45,6 @@ nav div ul:hover li a {
   transform: scale(1);
   opacity: 0.2;
   filter: blur(5px);
-  text-decoration: none;
-  color: #fff;
-
 }
 
 nav div ul li a:hover {
@@ -66,214 +69,13 @@ nav div ul li a:before {
   z-index: -1;
 }
 
-
 nav div ul li a:hover:before {
   transition: transform 1s;
   transform-origin: left;
   transform: scaleX(1);
 }
 
-/* WEATHER */
-/* Destintion Info */
-#destInfo {
-  font-family: "Merienda", cursive;
-  height: 35rem;
-  margin-bottom: 1rem;
-}
-
-#destInfo h1,
-h2,
-h3,
-h4 {
-  font-family: "Bigelow Rules", cursive;
-  color: rgb(104, 41, 41);
-}
-
-#destHead,
-#weather {
-  background-color: rgba(240, 243, 246, 0.555);
-  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
-}
-
-#weather {
-  margin: 2rem;
-  font-size: 1.25rem;
-}
-
-#destHead {
-  font-size: 3.25rem;
-}
-
-#dropDown {
-  font-family: "Bigelow Rules", cursive;
-  font-size: 3.5rem;
-  background-color: rgba(240, 243, 246, 0.555);
-  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
-  border: none;
-  color: rgb(104, 41, 41);
-  height: auto;
-  margin-bottom: 2rem;
-}
-
-#weatHead {
-  font-size: 2.5rem;
-  margin: 2rem;
-}
-
-#weather h2 {
-  font-size: 2rem !important;
-}
-
-#destinationInfo {
-  font-size: 1rem;
-  background-color: rgba(240, 243, 246, 0.555);
-  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
-  margin-top: 2rem;
-}
-
-#infoImg {
-  box-shadow: 1px 3px 3px 2px black;
-  height: auto;
-  width: 30rem;
-}
-
-
-/* MAIN BODY */
-
-#photoBorder {
-  box-shadow: 5px 10px 30px 0px black;
-  padding: 2rem;
-  background-image: url(https://img.freepik.com/free-vector/grunge-texture-background_1048-9279.jpg?w=2000);
-}
-
-#backDrop {
-  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
-  background-attachment: fixed;
-}
-
-.container {
-  border: 0.2rem solid black;
-  
-  
-}
-
-#main-element {
-  width: 2000px;
-}
-body {
-  font-family: "Merienda", cursive;
-}
-
-/* CHARACTER SECTION */
-#backPhoto {
-  background-image: url(https://img.freepik.com/premium-photo/cozy-reading-nook-with-comfortable-chairs-bookshelves-inviting-students_741910-47531.jpg?w=740);
-  background-attachment: local;
-}
-.fontBio {
-  font-size: 25;
-  color: crimson;
-  text-align: center;
-}
-
-.bioClass {
-  background-color: rgb(3, 3, 3);
-  border-style: double;
-  padding: 9px 9px;
-  color: azure;
-}
-
-.charClass {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-family: fantasy;
-}
-/* QUIZ SECTION */
-.quizsection {
-  display: flex;
-  flex-direction: row;
-}
-
-.connectedSortable:hover {
-  cursor: grab;
-}
-
-.connectedSortable li {
-  
-  background-color: rgb(240, 248, 255, 0.3);
-  margin-top: none;
-  font-weight: bolder;
-}
-
-.quiz-section1 h1 {
-  border-bottom: 0.2rem solid rgb(187, 50, 50);
-  text-align: center;
-  color: rgb(187, 50, 50);
-  font-weight: bolder;
-}
-
-#sortable1 p {
-  background-color: rgba(68, 22, 22, 0.5);
-  margin-bottom: none;
-  font-weight: bolder;
-}
-
-#sortable2 p {
-  background-color: rgba(76, 175, 80, 0.3);
-  margin-bottom: none;
-  font-weight: bolder;
-}
-
-#sortable3 p {
-  background-color: rgb(230, 230, 250, 0.3);
-  margin-bottom: none;
-  font-weight: bolder;
-}
-
-#sortable4 p {
-  background-color: rgb(255, 174, 66, 0.3);
-  margin-bottom: none;
-  font-weight: bolder;
-}
-
-.sortable-containment {
-  background-image: url(./quiz-background-image.avif);
-  background-size: cover;
-}
-
-/* AD SECTION */
-/* this css is for advertisment to make it sticky- need to put in ad art */
-#advertisement {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-#rightAdd {
-  background-image: url(./lovePotion.png);
-  height: 1200px;
-  width: 300px;
-  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
-}
-
-#addButton {
-  margin-bottom: 2rem;
-  background-color: rgb(249, 39, 179);
-  height: 4rem;
-  width: 8rem;
-  font-size: larger;
-  box-shadow: 0px 0px 20px 20px whitesmoke;
-  padding: 2px;
-}
-
-#addButton:hover {
-  box-shadow: 0px 0px 20px 20px rgb(249, 39, 179);
-  color: rgb(249, 39, 179);
-  background-color: azure;
-}
-
-
-/* FOOTER */
-/* #footer-main {
+#footer-main {
 
 }
 
@@ -316,19 +118,221 @@ body {
 #house-form{
   background-color: tan;
 }
-/* view raw */ */
+view raw
 
 
 
+/* #sortable1,
+#sortable2,
+#sortable3,
+#sortable4,
+#sortable5 {
+  border: 1px solid #106626;
+  width: 142px;
+  min-height: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  float: left;
+  margin-right: 10px;
+  font-size: 0.5rem;
+}
+#sortable1 li,
+#sortable2 li,
+#sortable3 li,
+#sortable4 li,
+#sortable5 li {
+  margin: 0 5px 5px 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  width: 120px;
+  font-size: 0.5rem;
+} */
+
+#testbr {
+  border: 0.2rem solid red;
+}
+
+.quizsection {
+  display: flex;
+  flex-direction: row;
+}
+/* this css is for advertisment to make it sticky- need to put in ad art */
+#advertisement {
+
+  height: 200px;
+  width: 100px;
+  background-color: grey;
+  position: absolute;
+  top: 200px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+        }
 
 
+/* Destintion Info */
+#destInfo {
+  font-family: "Merienda", cursive;
+  height: 35rem;
+  margin-bottom: 1rem;
+}
 
+#destInfo h1,
+h2,
+h3,
+h4 {
+  font-family: "Bigelow Rules", cursive;
+  color: rgb(104, 41, 41);
+}
 
+#destHead,
+#weather {
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+}
 
+#weather {
+  margin: 2rem;
+  font-size: 1.25rem;
+}
 
+#destHead {
+  font-size: 3.25rem;
+}
+#dropDown {
+  font-family: "Bigelow Rules", cursive;
+  font-size: 3.5rem;
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+  border: none;
+  color: rgb(104, 41, 41);
+  height: auto;
+  margin-bottom: 2rem;
+}
 
+#weatHead {
+  font-size: 2.5rem;
+  margin: 2rem;
+}
 
+#weather h2 {
+  font-size: 2rem !important;
+}
 
+#destinationInfo {
+  font-size: 1rem;
+  background-color: rgba(240, 243, 246, 0.555);
+  box-shadow: 0px 0px 40px 30px rgba(240, 243, 246, 0.555);
+  margin-top: 2rem;
+}
 
+#infoImg {
+  box-shadow: 1px 3px 3px 2px black;
+  height: auto;
+  width: 30rem;
+}
 
+#photoBorder {
+  box-shadow: 5px 10px 30px 0px black;
+  padding: 2rem;
+  background-image: url(https://img.freepik.com/free-vector/grunge-texture-background_1048-9279.jpg?w=2000);
+}
 
+#backDrop {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  background-attachment: fixed;
+}
+
+/* Destintion Info End*/
+
+/* Add */
+
+#rightAdd {
+  background-image: url(./lovePotion.png);
+  height: 1200px;
+  width: 300px;
+  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+}
+
+#addButton {
+  margin-bottom: 2rem;
+  background-color: rgb(249, 39, 179);
+  height: 4rem;
+  width: 8rem;
+  font-size: larger;
+  box-shadow: 0px 0px 20px 20px whitesmoke;
+  padding: 2px;
+}
+
+#addButton:hover {
+  box-shadow: 0px 0px 20px 20px rgb(249, 39, 179);
+  color: rgb(249, 39, 179);
+  background-color: azure;
+}
+
+.connectedSortable:hover {
+  cursor: grab;
+}
+
+.connectedSortable li {
+  /* background-color: rgb(rgb(240,248,255, 0.6)); */
+  background-color: rgb(240, 248, 255, 0.3);
+  margin-top: none;
+}
+
+.quiz-section1 h1 {
+  border-bottom: 0.2rem solid rgb(187, 50, 50);
+  text-align: center;
+  color: rgb(187, 50, 50);
+}
+
+#sortable1 p {
+  background-color: rgba(68, 22, 22, 0.5);
+  margin-bottom: none;
+}
+
+#sortable2 p {
+  background-color: rgba(76, 175, 80, 0.3);
+  margin-bottom: none;
+}
+
+#sortable3 p {
+  background-color: rgb(230, 230, 250, 0.3);
+  margin-bottom: none;
+}
+
+#sortable4 p {
+  background-color: rgb(255, 174, 66, 0.3);
+  margin-bottom: none;
+}
+
+.sortable-containment {
+  background-image: url(./quiz-background-image.avif);
+  background-size: cover;
+}
+
+#backPhoto {
+  background-image: url(https://img.freepik.com/premium-photo/cozy-reading-nook-with-comfortable-chairs-bookshelves-inviting-students_741910-47531.jpg?w=740);
+  background-attachment: local;
+}
+
+.fontBio {
+  font-size: 25;
+  color: crimson;
+  text-align: center;
+}
+
+.bioClass {
+  background-color: rgb(3, 3, 3);
+  border-style: double;
+  padding: 9px 9px;
+  color: azure;
+}
+
+.charClass {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: fantasy;
+}
