@@ -10,8 +10,8 @@ var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
 var GSRH = [
-  ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
-  ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
+  ["Harry Potter", "Hermione Granger", "Ron Weasley", "Ginny Weasley", "Neville"],
+  ["Draco Malfoy", "Severus Snape", "Lucius Malfoy", "Vincent Crabbe", "Tom Riddle"],
   [
     "Rowena Ravenclaw",
     "Gilderoy Lockhart",
@@ -23,8 +23,8 @@ var GSRH = [
     "Cedric Diggory",
     "Helga Hufflepuff",
     "Nymphadora Tonks",
-    "New Scamander",
-    "Remus Lupin",
+    "Newt Scamander",
+    "Susan Bones",
   ],
 ];
 var answerKeyHouses = ["gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
@@ -38,17 +38,17 @@ var answerKeyNames = [
   "Helga Hufflepuff",
   "Nymphadora Tonks",
   "New Scamander",
-  "Remus Lupin",
-  "Draco",
-  "Snape",
+  "Susan Bones",
+  "Draco Malfoy",
+  "Severus Snape",
   "Lucius Malfoy",
-  "Crab",
+  "Vincent Crabbe",
   "Tom Riddle",
   "Harry Potter",
-  "Hermione",
-  "Ron",
-  "Ginny",
-  "Neville",
+  "Hermione Granger",
+  "Ron Weasley",
+  "Ginny Weasley",
+  "Neville Longbottom",
 ];
 //Sortable Function through jQueryUI - Fillip
 var characterUrl = "https://hp-api.onrender.com/api/characters";
