@@ -1,4 +1,5 @@
 //QUIZ! -FILLIP SECTION
+
 var quizSubmitButton = $("#quiz-submit-button");
 var quizStartButton = $("#quiz-start-button");
 var mainQuizDiv = $("#main-quiz-div");
@@ -7,6 +8,7 @@ var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
+var blinkTimer = false;
 var GSRH = [
   ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
   ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
@@ -107,7 +109,6 @@ function testAnswers() {
         .text();
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
-        console.log("WRONG: " + liTextItem + " was in wrong spot");
         $(liBorderEdit).css({
           "background-color": "rgba(68, 22, 22, 0.5)",
           color: "white",
@@ -123,12 +124,10 @@ function testAnswers() {
   }
 
   if (testCorrect) {
-    console.log("YOU GOT IT!");
     $(secondQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
   } else {
-    console.log("YOU LOST");
-    console.log(secondQuizDiv.children());
+   
     $(this).prop("disabled", true);
     $(secondQuizDiv).children("h1").text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
     $("#quiz-start-button").prop("disabled", true);
@@ -136,8 +135,9 @@ function testAnswers() {
     
   }
 }
-//Shuffle Names on Start of Quiz
-function shuffleQuiz() {
+
+//function produce random array of names
+function randomArrayCharacters(){
   var answerKeyNames2 = answerKeyNames.slice();
   //random name
   var randomArrayOfNames = [];
@@ -146,9 +146,11 @@ function shuffleQuiz() {
     randomArrayOfNames.push(answerKeyNames2[random]);
     answerKeyNames2.splice(random, 1);
   }
-  console.log(randomArrayOfNames);
-  console.log(answerKeyNames);
-  console.log();
+  return randomArrayOfNames;
+}
+//Shuffle Names on Start of Quiz
+function shuffleQuiz() {
+  var randomArrayOfNames = randomArrayCharacters();
   var counter = 0;
   for (var x = 0; x < 4; x++) {
     for (var y = 1; y < 6; y++) {
@@ -166,7 +168,6 @@ function shuffleQuiz() {
 
 //submit button showing up
 function showSubmitButton() {
-  console.log(50);
   randomizeSection.append(
     '<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>'
   );
@@ -188,7 +189,9 @@ function startTimer(){
 
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
-
+  $("#page-refresh-button").prop("disabled", true);
+  
+  blinkTimer = false;
 
   
   
@@ -200,6 +203,7 @@ quizStartButton.on("click", function () {
   testAnswers();
   var x = 0;
   secondsLeft = 0;
+  $("#page-refresh-button").prop("disabled", false);
 
 });
 
@@ -224,19 +228,59 @@ var azzz =
   
 //Event Listener - Modal Submit button
 $("#modal-submit").on("click", function(){
+  console.log(parseInt($("#message-text").val()))
+  console.log(parseInt("hello"));
+  console.log(parseInt("55"));
+  if(parseInt($("#message-text").val())) {
+  $(secondQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
   secondsLeft = $("#message-text").val() 
   showSubmitButton();
   shuffleQuiz();
   startTimer();
   $("#quiz-start-button").prop("disabled", true);
+  } else {
+    blinkTimer = true;
+    $(secondQuizDiv).children("h1").text("ERROR: YOU NEED TO TYPE A NUMBER IN THE TEXT BOX");
+    var blink = true;
+    var blinkerInterval = setInterval(function(){
+      blink = !blink;
+      if (blink){
+        $(secondQuizDiv).children("h1").css("background", "black");
+      }else {
+        $(secondQuizDiv).children("h1").css("background", "white");
+      }
+      if (blinkTimer === false){
+        clearInterval(blinkerInterval);
+        $(secondQuizDiv).children("h1").css("background", "none");
+      }
+    }, 500)
+    
+
+    }
 })
 
 
 
 //Event Listener - Refresh Quiz
 secondQuizDiv.on("click", "#page-refresh-button", function(){
+  var RandomArrayOfTwentyNames = randomArrayCharacters();
+  var z = 0;
   console.log("refresh works");
+  console.log(randomizeSection.children().eq(0));
+  for (var x = 0 ; x<4 ; x++) {
+    randomizeSection.children().eq(x).children().remove("li")
+      for (var y = 1 ; y<5;y++){
+        randomizeSection.children().eq(x).append('<li class = "list-group-item">' + RandomArrayOfTwentyNames[z] +'</li>');
+        z++;
+      }
+  $("#page-refresh-button").prop("disabled", true);
+
+  }
+  randomizeSection.children().remove("button");
+  $("#quiz-start-button").prop("disabled", false);
+  $("#quiz-start-button").text("Start/Shuffle Quiz")
 })
+  
 
 //calls on refresh
 $("#quiz-refresh-button").prop("disabled", true);
