@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Justicon -->
-    <link rel="icon" type="icon" href="./assets/DH.png" />
+    <link rel="icon" type="icon" href="./assets/DH.png">
     <!-- reset CSS -->
     <link rel="stylesheet" href="./assets/reset.css" />
     <!-- jquery UI LINK -->
@@ -19,77 +19,41 @@
     />
 
     <link rel="stylesheet" href="./assets/style.css" />
-    <!-- text Links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merienda:wght@300&display=swap"
-      rel="stylesheet"
-    />
+<!-- text Links -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merienda:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body id="backDrop">
-    <!-- MODAL -->
+     <!-- MODAL -->
 
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
-              Quiz Length
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Quiz Length</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">How long do you want the quiz to be?</label>
+            <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="message-text" class="col-form-label"
-                  >How long do you want the quiz to be?</label
-                >
-                <textarea
-                  class="form-control"
-                  id="message-text"
-                  placeholder="in seconds..."
-                ></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              id="modal-submit"
-              data-bs-dismiss="modal"
-            >
-              Start Quiz
-            </button>
-          </div>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Start Quiz</button>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+<!-- END OF MODAL -->
+        <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-            <a id="noGood" class="navbar-brand" href="#">I solemny swear that I am up to no good...</a>
+            <a class="navbar-brand" href="#">I solemny swear that I am up to no good...</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -108,18 +72,18 @@
                   <a class="nav-link" href="#quiz-start-button">Exam</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#quiz-start-button">Where's my letter?</a>
+                  <a class="nav-link" href="#quiz-start-button">Sorting Ceremony</a>
                 </li>
               </ul>
 
             </div>
         </nav>
-    <!-- Content here -->
-    <div id="destInfo" class="row p-3 align-items-center">
+    <!-- Destination info-->
+    <div id="destInfo" class="row p-3  align-items-center">
       <!-- drop -->
       <div class="dropdown col-4 text-center">
         <select
-          class="btn btn-secondary m-2 col-6 align-items-baseline"
+          class="btn btn-secondary  m-2 col-6 align-items-baseline"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
@@ -128,43 +92,41 @@
         >
           <option id="Alnwick" value="Alnwick,uk">Hogwarts</option>
           <option id="DiagonAlley" value="London,uk">Diagon Alley</option>
-          <option id="Hogsmeade" value="Scarborough,uk">Hogsmeade</option>
+          <option id="Hogsmeade"  value="Scarborough,uk">Hogsmeade</option>
           <option id="Azkaban" value="Virkie,uk">Azkaban</option>
         </select>
         <!-- City description  -->
         <!-- <h1 id="destHead" class="locationName m-4"></h1> -->
-        <p id="destinationInfo"></p>
+        <p id="destinationInfo">
+        </p>
       </div>
       <!-- card -->
-      <div class="col-4 d-flex align-items-center">
+      <div class="col-4 d-flex align-items-center" >
         <div id="weather" class="card-body">
-          <h3 id="weatHead" class="text-center card-title">Current Weather</h3>
-          <div class="text-center">
-            <div class="row">
-              <p class="col-5" id="status">Status</p>
-              <p class="col-5" id="todayTemp">Temp</p>
-              <div class="w-100 d-none d-md-block"></div>
-              <p class="col-5" id="todayHigh">High</p>
-              <p class="col-5" id="todayLow">Low</p>
-              <p class="col-5" id="todayWind">wind</p>
-              <p class="col-5" id="todayHumid">humidity</p>
-            </div>
-          </div>
+          <h3 id="weatHead" class="text-center card-title ">Current Weather</h3>
+        <div class=" text-center">
+          <div class="row">
+          <p class="col-5" id="status">Status</p>
+          <p class="col-5" id="todayTemp">Temp</p>
+          <div class="w-100 d-none d-md-block"></div>
+          <p class="col-5" id="todayHigh">High</p>
+          <p class="col-5" id="todayLow">Low</p>
+          <p class="col-5" id="todayWind">wind</p>
+          <p class="col-5" id="todayHumid">humidity</p>
+        </div>
         </div>
       </div>
-      <!-- three day  -->
-      <div
-        id="photoBorder"
-        class="col-4 d-flex align-items-center justify-content-center"
-      >
+      </div>
+      <!-- Photo  -->
+      <div id="photoBorder" class="col-4 d-flex align-items-center justify-content-center">
         <div id="destImg" class="d-flex justify-content-center"></div>
       </div>
-      <!-- MITCH -->
-      <!-- Content here -->
     </div>
-  <main class="row">
-    <div id="chars">
-      <div>
+    <!-- main -->
+    <!--Bio  -->
+    <main class="row">
+    <div class="col-9 container" id="chars">
+      <div class="row">
         <div class="container col-12 col-md-10 col-lg-10">
           <div class="container" id="backPhoto">
             <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
@@ -187,56 +149,100 @@
           </div>
         </div>
       </div>
-      <div class="container sortable-containment quiz-section" id = "main-quiz-div">
-        <div class = "column quiz-section1" id = "second-quiz-div">
-          <h1>QUIZ- Sort The Houses!</h1>
-          <button type="button" class="btn btn-danger my-2" id="quiz-start-button">Start Quiz</button>
-          <section class = "row d-flex justify-content-center align-items-center d-flex quiz-section2" id = "randomize-section">
-          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable1">
-            <p>GRYFFINDOR</p> 
-            <li class="list-group-item">Dumbledore</li>
-            <li class="list-group-item">Luna Lovegood</li>
-            <li class="list-group-item">Cho Change</li>
-            <li class="list-group-item">Moaning Myrtle</li>
-            <li class="list-group-item">Helena Ravenclaw</li>
-          </ul>
-          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable2">
-            <p>SLYTHERIN</p>
-            <li class="list-group-item">Ginny</li>
-            <li class="list-group-item">Draco Malfoy</li>
-            <li class="list-group-item">Newt Scamander</li>
-            <li class="list-group-item">Nymphadora Tonks</li>
-            <li class="list-group-item">Helga Hufflepuff</li>
-          </ul>
-          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable3">
-            <p>RAVENCLAW</p>
-            <li class="list-group-item">Draco Malfoy</li>
-            <li class="list-group-item">Snape</li>
-            <li class="list-group-item">Harry Potter</li>
-            <li class="list-group-item">Hermoine Granger</li>
-            <li class="list-group-item">Cedric Diggory</li>
-          </ul>
-          <ul class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable" id="sortable4">
-            <p>HUFFLEPUFF</p>
-            <li class="list-group-item">Neville Longbottom</li>
-            <li class="list-group-item">Crab</li>
-            <li class="list-group-item">Tom Riddle</li>
-            <li class="list-group-item">Lucius Malfoy</li>
-            <li class="list-group-item">Ron Weasley</li>
-          </ul>
+<!-- Quiz  -->
+          <div
+            class="container sortable-containment quiz-section"
+            id="main-quiz-div"
+          >
+            <div class="column quiz-section1" id="second-quiz-div">
+              <h1>QUIZ- Sort The Houses!</h1>
+
+
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-danger my-2"
+                id="quiz-start-button"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Start/Shuffle Quiz
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger my-2"
+                id="page-refresh-button"
+              >
+                Refresh Quiz
+              </button>
+
+              <section 
+                class="row d-flex justify-content-center align-items-center d-flex quiz-section2"
+                id="randomize-section"
+              >
+                <ul
+                  class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable"
+                  id="sortable1"
+                >
+                  <p>GRYFFINDOR</p>
+                  <li class="list-group-item">Remus Lupin</li>
+                  <li class="list-group-item">Luna Lovegood</li>
+                  <li class="list-group-item">Cho Change</li>
+                  <li class="list-group-item">Moaning Myrtle</li>
+                  <li class="list-group-item">Helena Ravenclaw</li>
+                </ul>
+                <ul
+                  class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable"
+                  id="sortable2"
+                >
+                  <p>SLYTHERIN</p>
+                  <li class="list-group-item">Ginny</li>
+                  <li class="list-group-item">Lucius Malfoy</li>
+                  <li class="list-group-item">Newt Scamander</li>
+                  <li class="list-group-item">Nymphadora Tonks</li>
+                  <li class="list-group-item">Helga Hufflepuff</li>
+                </ul>
+                <ul
+                  class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable"
+                  id="sortable3"
+                >
+                  <p>RAVENCLAW</p>
+                  <li class="list-group-item">Draco Malfoy</li>
+                  <li class="list-group-item">Snape</li>
+                  <li class="list-group-item">Harry Potter</li>
+                  <li class="list-group-item">Hermione Granger</li>
+                  <li class="list-group-item">Cedric Diggory</li>
+                </ul>
+                <ul
+                  class="list-group col-md-3 col-lg-3 col-sm-6 connectedSortable"
+                  id="sortable4"
+                >
+                  <p>HUFFLEPUFF</p>
+                  <li class="list-group-item">Neville Longbottom</li>
+                  <li class="list-group-item">Crab</li>
+                  <li class="list-group-item">Tom Riddle</li>
+                  <li class="list-group-item">Lucius Malfoy</li>
+                  <li class="list-group-item">Ron Weasley</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+        <!-- Add Space -->
+        <div id="rightAdd" class="d-flex align-items-end justify-content-center container col-2">
+          <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
         </div>
       </div>
     </div>
   </main>
-  <div class="container col-12 col-md-2 col-lg-2">
-    RIGHT AD
-    </div>
-  <div id="rightAdd" class="col-md-4">
-    <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
-  </div>
+    <!-- Footer -->
     <footer
-      class="text-center text-lg-start text-white my-3"
-      style="background-color: #3e4551" id="footer"
+      
+      style="background-color: tan" id="footer-main"
+      
+      
     >
       <!-- Grid container -->
       <div class="container p-4 pb-0">
@@ -245,14 +251,75 @@
           <!--Grid row-->
           <div class="row">
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Mischief Managed</h5>
-            </div>
-  
-            <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
+            <div > 
+              <!-- removed class="col-lg-4 col-md-6 mb-4 mb-md-0" to center h3 text -->
+              <h3 class="text-uppercase" id="footer-text">Mischief Managed</h3>
+              <form id="house-form" class="col-lg-6 col-md-6">
+                <h4 class="text-uppercase" id="footer-form">Sorting Ceremony</h4>
+                <label for="wizard-name">Your Name: </label>
+                <input type="text" id="wizard-name" name="wizard-name">
+                <br><br>
+    
+                Are either of your parents a muggle?
+                <br>
+                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
+                <label for="contactChoice1">Yes</label>
+                <br>
+                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
+                <label for="contactChoice2">No</label>
+                <br><br>
+    
+                What is most important to you?
+                <br>
+                <input type="checkbox" id="value-choice1" name="attraction-element" value="bravery">
+                <label for="bravery">Bravery</label>
+                <br>
+                <input type="checkbox" id="value-choice2" name="attraction-element" value="loyalty">
+                <label for="loyalty">Loyalty</label>
+                <br>
+                <input type="checkbox" id="value-choice3" name="attraction-element" value="curiosity">
+                <label for="curiosity">Curiosity</label>
+                <br>
+                <input type="checkbox" id="value-choice4" name="attraction-element" value="ambition">
+                <label for="ambition">Ambition</label>
+                <br><br>
+    
+                Which is your favorite house at Hogwarts?
+                <br>
+                <select name="fav-house">
+                  <option value="Gryffindor">Gryffindor</option>
+                  <option value="Hufflepuff">Hufflepuff</option>
+                  <option value="Ravenclaw">Ravenclaw</option>
+                  <option value="Slytherin">Slytherin</option>
+                </select>
+                <br></br>
+    
+                <input type="submit" value="Submit">
+    
+              </form>
 
+              <p>
+
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+ 
+            <!--Grid column-->
+
+    
+
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+
+            <!--Grid column-->
           </div>
           <!--Grid row-->
         </section>
@@ -263,7 +330,7 @@
         <!-- Section: CTA -->
         <section class="">
           <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Register for free</span>
+            <span class="me-3">Get my Hogwarts Letter</span>
             <button type="button" class="btn btn-outline-light btn-rounded">
               Sign up!
             </button>
@@ -333,10 +400,28 @@
         <a class="text-white" href="https://mdbootstrap.com/"
           >MDBootstrap.com</a
         >
-      </div>
-      <!-- Copyright -->
-    </footer>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+    
 
+
+
+
+
+
+  <!-- sticky add jquery sctipt -->
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"       
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+      
+        <!-- CDN link for sticky-kit jquery plugin -->
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"        
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
     <!-- jQuery script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- DayJS script -->
@@ -355,5 +440,6 @@
     ></script>
     <!-- personal JS script -->
     <script src="assets/script.js"></script>
+
   </body>
 </html>
