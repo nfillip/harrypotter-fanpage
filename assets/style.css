@@ -314,7 +314,7 @@ h4 {
 }
 
 #backPhoto {
-  background-image: url(https://img.freepik.com/free-photo/candlelight-illuminates-ancient-still-life-table-generated-by-ai_188544-27984.jpg?t=st=1694157763~exp=1694161363~hmac=0aabf59b637d9efcedaba51c9a2bffbe00f8b276ab285748d2f797760475ec85&w=1380);
+  background-image: url(https://img.freepik.com/free-photo/books-stack-with-copy-space_23-2148898280.jpg?w=1380&t=st=1694202417~exp=1694203017~hmac=37ac7bf51f2ca122fd13b15b3f1a11c5f2ed9b6e8dd20a7ee5ee243c44d62053);
   background-attachment: local;
 }
 
@@ -335,5 +335,8 @@ h4 {
   display: flex;
   flex-direction: column;
   color: rgb(255, 255, 255);
-  font-family: fantasy;
+}
+
+#char-and-quiz {
+  height: 37.5rem;
 }
