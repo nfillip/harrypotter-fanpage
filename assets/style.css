@@ -13,7 +13,8 @@ body {
 }
 nav {
   border: 0.2rem solid black;
-  background: #112c38;
+  background:#112c38;
+  font-family: "Bigelow Rules", cursive;
 }
 
 nav div ul {
@@ -30,20 +31,24 @@ nav div ul li {
 
 nav div ul li a {
   display: block;
-  position: relative;
-  text-decoration: none;
-  padding: 5px;
-  font-size: 18px;
+  position:relative;
+  text-decoration:none;
+  padding:5px;
+  font-size:18px;
+  font-family: "Bigelow Rules", cursive;
   font-family: lumos;
-  color: #fff;
-  text-transform: uppercase;
-  transition: 0.5s;
+  color:#fff;
+  text-transform:uppercase;
+  transition:0.5s;
 }
 
 nav div ul:hover li a {
   transform: scale(1);
   opacity: 0.2;
   filter: blur(5px);
+  text-decoration: none;
+  color: #fff;
+
 }
 
 nav div ul li a:hover {
@@ -75,21 +80,66 @@ nav div ul li a:hover:before {
   transform: scaleX(1);
 }
 
+/* #footer-main {
 
-
-#testbr {
-  border: 0.2rem solid red;
 }
+
+#footer-text {
+  text-align: center;
+  font-family: "Bigelow Rules", cursive;
+}
+
+
+#form-wrapper{
+  width:90%;
+  max-width: 500px;
+  min-height: 500px;
+  margin:auto;
+  background-color: rgba(0,0,0,0.6);
+}
+#form-wrapper > form{
+  color:white;
+  padding: 40px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+#form-wrapper > form > input, select{
+  font-family: "Bigelow Rules", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding:0px 6px;
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid white;
+  color: #fff;
+}
+#form-wrapper > form > input[type="submit"]{
+  width:160px;
+  display: block;
+  margin:0px auto;
+  font-size: 26px;
+}
+
+#house-form{
+  background-color: tan;
+}
+/* view raw */ */
+
+
+
+
+
 
 .quizsection {
   display: flex;
   flex-direction: row;
 }
-
+/* this css is for advertisment to make it sticky- need to put in ad art */
 #advertisement {
   position: -webkit-sticky;
   position: sticky;
 }
+
 
 /* Destintion Info */
 #destInfo {
@@ -120,6 +170,7 @@ h4 {
 #destHead {
   font-size: 3.25rem;
 }
+
 #dropDown {
   font-family: "Bigelow Rules", cursive;
   font-size: 3.5rem;
@@ -164,14 +215,39 @@ h4 {
   background-attachment: fixed;
 }
 
-/* Destintion Info */
+/* Destintion Info End*/
+
+/* Add */
+
+#rightAdd {
+  background-image: url(./lovePotion.png);
+  height: 1200px;
+  width: 300px;
+  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+}
+
+#addButton {
+  margin-bottom: 2rem;
+  background-color: rgb(249, 39, 179);
+  height: 4rem;
+  width: 8rem;
+  font-size: larger;
+  box-shadow: 0px 0px 20px 20px whitesmoke;
+  padding: 2px;
+}
+
+#addButton:hover {
+  box-shadow: 0px 0px 20px 20px rgb(249, 39, 179);
+  color: rgb(249, 39, 179);
+  background-color: azure;
+}
 
 .connectedSortable:hover {
   cursor: grab;
 }
 
 .connectedSortable li {
-  /* background-color: rgb(rgb(240,248,255, 0.6)); */
+  
   background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
   font-weight: bolder;
@@ -211,4 +287,29 @@ h4 {
 .sortable-containment {
   background-image: url(./quiz-background-image.avif);
   background-size: cover;
+}
+
+#backPhoto {
+  background-image: url(https://img.freepik.com/premium-photo/cozy-reading-nook-with-comfortable-chairs-bookshelves-inviting-students_741910-47531.jpg?w=740);
+  background-attachment: local;
+}
+
+.fontBio {
+  font-size: 25;
+  color: crimson;
+  text-align: center;
+}
+
+.bioClass {
+  background-color: rgb(3, 3, 3);
+  border-style: double;
+  padding: 9px 9px;
+  color: azure;
+}
+
+.charClass {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: fantasy;
 }
