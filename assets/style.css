@@ -167,7 +167,10 @@ view raw
   display: flex;
   justify-content: center;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 
 /* Destintion Info */
 #destInfo {
@@ -311,7 +314,7 @@ h4 {
 }
 
 #backPhoto {
-  background-image: url(https://img.freepik.com/premium-photo/cozy-reading-nook-with-comfortable-chairs-bookshelves-inviting-students_741910-47531.jpg?w=740);
+  background-image: url(https://img.freepik.com/free-photo/candlelight-illuminates-ancient-still-life-table-generated-by-ai_188544-27984.jpg?t=st=1694157763~exp=1694161363~hmac=0aabf59b637d9efcedaba51c9a2bffbe00f8b276ab285748d2f797760475ec85&w=1380);
   background-attachment: local;
 }
 
@@ -331,6 +334,6 @@ h4 {
 .charClass {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: fantasy;
 }
