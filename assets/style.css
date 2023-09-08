@@ -13,7 +13,7 @@ body {
 }
 nav {
   border: 0.2rem solid black;
-  background:#112c38;
+  background: #112c38;
   font-family: "Bigelow Rules", cursive;
 }
 
@@ -31,14 +31,14 @@ nav div ul li {
 
 nav div ul li a {
   display: block;
-  position:relative;
-  text-decoration:none;
-  padding:5px;
-  font-size:18px;
+  position: relative;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
   font-family: "Bigelow Rules", cursive;
-  color:#fff;
-  text-transform:uppercase;
-  transition:0.5s;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.5s;
 }
 
 nav div ul:hover li a {
@@ -76,7 +76,6 @@ nav div ul li a:hover:before {
 }
 
 #footer-main {
-
 }
 
 #footer-text {
@@ -84,38 +83,38 @@ nav div ul li a:hover:before {
   font-family: "Bigelow Rules", cursive;
 }
 
-
-#form-wrapper{
-  width:90%;
+#form-wrapper {
+  width: 90%;
   max-width: 500px;
   min-height: 500px;
-  margin:auto;
-  background-color: rgba(0,0,0,0.6);
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
-#form-wrapper > form{
-  color:white;
+#form-wrapper > form {
+  color: white;
   padding: 40px;
   font-family: "Bigelow Rules", cursive;
   font-size: 26px;
   letter-spacing: 1px;
 }
-#form-wrapper > form > input, select{
+#form-wrapper > form > input,
+select {
   font-family: "Bigelow Rules", cursive;
   font-size: 22px;
   letter-spacing: 1px;
-  padding:0px 6px;
-  background-color: rgba(0,0,0,0.4);
+  padding: 0px 6px;
+  background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid white;
   color: #fff;
 }
-#form-wrapper > form > input[type="submit"]{
-  width:160px;
+#form-wrapper > form > input[type="submit"] {
+  width: 160px;
   display: block;
-  margin:0px auto;
+  margin: 0px auto;
   font-size: 26px;
 }
 
-#house-form{
+#house-form {
   background-color: tan;
 }
 view raw
@@ -159,7 +158,6 @@ view raw
 }
 /* this css is for advertisment to make it sticky- need to put in ad art */
 #advertisement {
-
   height: 200px;
   width: 100px;
   background-color: grey;
@@ -168,14 +166,14 @@ view raw
   right: 5px;
   display: flex;
   justify-content: center;
-        }
+}
 
 
 /* Destintion Info */
 #destInfo {
   font-family: "Merienda", cursive;
   height: 35rem;
-  margin-bottom: 1rem;
+  margin: 1rem 1rem;
 }
 
 #destInfo h1,
