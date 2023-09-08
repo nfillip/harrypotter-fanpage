@@ -14,7 +14,7 @@ body {
 nav {
   border: 0.2rem solid black;
   background:#112c38;
-  font-family: "Bigelow Rules", cursive;
+  /* font-family: "Bigelow Rules", cursive; */
 }
 
 nav div ul {
@@ -35,7 +35,8 @@ nav div ul li a {
   text-decoration:none;
   padding:5px;
   font-size:18px;
-  font-family: "Bigelow Rules", cursive;
+  /* font-family: "Bigelow Rules", cursive; */
+  font-family: lumos;
   color:#fff;
   text-transform:uppercase;
   transition:0.5s;
@@ -45,6 +46,9 @@ nav div ul:hover li a {
   transform: scale(1);
   opacity: 0.2;
   filter: blur(5px);
+  text-decoration: none;
+  color: #fff;
+
 }
 
 nav div ul li a:hover {
@@ -75,7 +79,7 @@ nav div ul li a:hover:before {
   transform: scaleX(1);
 }
 
-#footer-main {
+/* #footer-main {
 
 }
 
@@ -118,7 +122,7 @@ nav div ul li a:hover:before {
 #house-form{
   background-color: tan;
 }
-view raw
+view raw */
 
 
 
@@ -159,16 +163,9 @@ view raw
 }
 /* this css is for advertisment to make it sticky- need to put in ad art */
 #advertisement {
-
-  height: 200px;
-  width: 100px;
-  background-color: grey;
-  position: absolute;
-  top: 200px;
-  right: 5px;
-  display: flex;
-  justify-content: center;
-        }
+  position: -webkit-sticky;
+  position: sticky;
+}
 
 
 /* Destintion Info */
@@ -200,6 +197,7 @@ h4 {
 #destHead {
   font-size: 3.25rem;
 }
+
 #dropDown {
   font-family: "Bigelow Rules", cursive;
   font-size: 3.5rem;
