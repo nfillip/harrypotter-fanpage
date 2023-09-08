@@ -156,17 +156,6 @@ view raw
   display: flex;
   flex-direction: row;
 }
-/* this css is for advertisment to make it sticky- need to put in ad art */
-#advertisement {
-  height: 200px;
-  width: 100px;
-  background-color: grey;
-  position: absolute;
-  top: 200px;
-  right: 5px;
-  display: flex;
-  justify-content: center;
-}
 
 /* Destintion Info */
 #destInfo {
@@ -244,6 +233,17 @@ h4 {
 /* Destintion Info End*/
 
 /* Add */
+/* this css is for advertisment to make it sticky- need to put in ad art */
+#advertisement {
+  height: 200px;
+  width: 100px;
+  background-color: grey;
+  position: absolute;
+  top: 200px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+}
 
 #rightAdd {
   background-image: url(./lovePotion.png);
