@@ -111,13 +111,13 @@ function testAnswers() {
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
           "background-color": "rgba(68, 22, 22, 0.5)",
-          color: "white",
+          "color": "white",
         });
         testCorrect = false;
       } else {
         $(liBorderEdit).css({
           "background-color": "rgba(76, 175, 80, 0.3)",
-          color: "white",
+          "color": "white",
         });
       }
     }
@@ -257,8 +257,7 @@ $("#modal-submit").on("click", function () {
 mainQuizDiv.on("click", "#page-refresh-button", function () {
   var RandomArrayOfTwentyNames = randomArrayCharacters();
   var z = 0;
-  console.log("refresh works");
-  console.log(randomizeSection.children().eq(0));
+  
   for (var x = 0; x < 4; x++) {
     randomizeSection.children().eq(x).children().remove("li");
     for (var y = 1; y < 5; y++) {

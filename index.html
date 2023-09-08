@@ -79,9 +79,9 @@
             </div>
         </nav>
     
-  <div class = "container m-5">
+  <div class = "container my-3">
     <!-- Destination info-->
-    <div class = "row" id = "destination-main-div">
+    <div class = "row mb-3 mx-3" id = "destination-main-div">
     <!-- <div id="destInfo" class="row p-3  align-items-center"> -->
       <!-- drop -->
       <div class="dropdown col-12 col-md-4 col-lg-4 text-center">
@@ -127,15 +127,15 @@
     <!-- </div> -->
   </div>
     <!-- main -->
-    <main class="row">
+    <main class="row mx-3 mb-5">
       
-      <div class="column col-10 mx=0" id="chars-and-quiz" style = "border: .2rem solid blue;">
+      <div class="column col-12 col-md-10 col-lg-10 pe-5" id="chars-and-quiz" >
         <!-- BIO -->
-        <div class="row" id="backPhoto">
-            <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
-            <input id="bioInput" class="bioClass" type="text" placeholder="Enter Character Name"/>
-            <button id="bio" type="submit" class="btn btn-danger my-5" text-center>Search</button>
-            <div class="charClass">
+        <div class="row mb-5 d-flex flex-column align-items-start " id="backPhoto">
+            <h1 style="text-decoration:underline" class="fontBio p-0 m-0">Wizards and Witches BIO</h1>
+            <input id="bioInput" class="bioClass ms-4 my-4" type="text" placeholder="Enter Character Name"/>
+            <button id="bio" type="submit" class="btn btn-danger ms-4">Search</button>
+            <div class="charClass ms-4 my-4">
                 <h1 id="name"></h1>
                 <h5 id="house"></h5>
                 <h5>
@@ -154,15 +154,15 @@
       </div>
 <!-- Quiz  -->
       <div
-            class="row sortable-containment quiz-section align-items-start"
-            id="main-quiz-div" style = "border: .2rem solid red;"
+            class="row sortable-containment quiz-section d-flex flex-column align-items-between"
+            id="main-quiz-div"
           >
             
               <h1>QUIZ- Sort The Houses!</h1>
              <!-- Button trigger modal -->
               <button
                 type="button"
-                class="btn btn-danger my-2"
+                class="btn btn-danger ms-2 mb-4"
                 id="quiz-start-button"
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
@@ -171,14 +171,15 @@
               </button>
               <button
                 type="button"
-                class="btn btn-danger my-2"
+                class="btn btn-danger ms-2 mb-2"
                 id="page-refresh-button"
+                
               >
                 Refresh Quiz
               </button>
 
               <section 
-                class="row d-flex justify-content-center align-items-center d-flex quiz-section2"
+                class= "ms-2 row d-flex justify-content-center align-items-center d-flex quiz-section2"
                 id="randomize-section"
               >
                 <ul
@@ -232,7 +233,7 @@
       </div>
       
         <!-- Add Space -->
-      <div id="rightAdd" class="column d-flex align-items-end justify-content-center col-2">
+      <div id="rightAdd" class="column col-12 col-md-2 col-lg-2 d-flex flex-column align-items-center justify-content-end">
         <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
       </div>
       
