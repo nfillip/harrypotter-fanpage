@@ -14,7 +14,7 @@ body {
 nav {
   border: 0.2rem solid black;
   background:#112c38;
-  /* font-family: "Bigelow Rules", cursive; */
+  font-family: "Bigelow Rules", cursive;
 }
 
 nav div ul {
@@ -35,7 +35,7 @@ nav div ul li a {
   text-decoration:none;
   padding:5px;
   font-size:18px;
-  /* font-family: "Bigelow Rules", cursive; */
+  font-family: "Bigelow Rules", cursive;
   font-family: lumos;
   color:#fff;
   text-transform:uppercase;
@@ -122,40 +122,12 @@ nav div ul li a:hover:before {
 #house-form{
   background-color: tan;
 }
-view raw */
+/* view raw */ */
 
 
 
-/* #sortable1,
-#sortable2,
-#sortable3,
-#sortable4,
-#sortable5 {
-  border: 1px solid #106626;
-  width: 142px;
-  min-height: 20px;
-  list-style-type: none;
-  margin: 0;
-  padding: 5px 0 0 0;
-  float: left;
-  margin-right: 10px;
-  font-size: 0.5rem;
-}
-#sortable1 li,
-#sortable2 li,
-#sortable3 li,
-#sortable4 li,
-#sortable5 li {
-  margin: 0 5px 5px 5px;
-  padding: 5px;
-  font-size: 1.2em;
-  width: 120px;
-  font-size: 0.5rem;
-} */
 
-#testbr {
-  border: 0.2rem solid red;
-}
+
 
 .quizsection {
   display: flex;
@@ -274,7 +246,7 @@ h4 {
 }
 
 .connectedSortable li {
-  /* background-color: rgb(rgb(240,248,255, 0.6)); */
+  
   background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
 }
