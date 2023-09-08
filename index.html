@@ -79,9 +79,10 @@
             </div>
         </nav>
     <!-- Destination info-->
+    <div class = "container-fluid px-5" id = "destination-main-div">
     <div id="destInfo" class="row p-3  align-items-center">
       <!-- drop -->
-      <div class="dropdown col-4 text-center">
+      <div class="dropdown col-12 col-md-4 col-lg-4 text-center">
         <select
           class="btn btn-secondary  m-2 col-6 align-items-baseline"
           type="button"
@@ -101,7 +102,7 @@
         </p>
       </div>
       <!-- card -->
-      <div class="col-4 d-flex align-items-center" >
+      <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center" >
         <div id="weather" class="card-body">
           <h3 id="weatHead" class="text-center card-title ">Current Weather</h3>
         <div class=" text-center">
@@ -118,17 +119,17 @@
       </div>
       </div>
       <!-- Photo  -->
-      <div id="photoBorder" class="col-4 d-flex align-items-center justify-content-center">
+      <div id="photoBorder" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
         <div id="destImg" class="d-flex justify-content-center"></div>
       </div>
     </div>
+  </div>
     <!-- main -->
-    <!--Bio  -->
-    <main class="row">
-    <div class="col-9 container" id="chars">
+    <main class="container-fluid">
       <div class="row">
-        <div class="container col-12 col-md-10 col-lg-10">
-          <div class="container" id="backPhoto">
+      <div class="column col-10 mx=0" id="chars-and-quiz" style = "border: .2rem solid blue;">
+        <!-- BIO -->
+        <div class="container" id="backPhoto">
             <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
             <input id="bioInput" class="bioClass" type="text" placeholder="Enter Character Name"/>
             <button id="bio" type="submit" class="btn btn-danger my-5" text-center>Search</button>
@@ -146,15 +147,15 @@
                 <h5 id="species"></h5>
                 <h5 id="patronus"></h5>
             </div>
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
       </div>
 <!-- Quiz  -->
-          <div
+      <div
             class="container sortable-containment quiz-section"
-            id="main-quiz-div"
+            id="main-quiz-div" style = "border: .2rem solid red;"
           >
-            <div class="column quiz-section1" id="second-quiz-div">
+            <!-- <div class="column quiz-section1" id="second-quiz-div"> -->
               <h1>QUIZ- Sort The Houses!</h1>
 
 
@@ -185,7 +186,7 @@
                   id="sortable1"
                 >
                   <p>GRYFFINDOR</p>
-                  <li class="list-group-item">Remus Lupin</li>
+                  <li class="list-group-item">Susan Bones</li>
                   <li class="list-group-item">Luna Lovegood</li>
                   <li class="list-group-item">Cho Change</li>
                   <li class="list-group-item">Moaning Myrtle</li>
@@ -196,7 +197,7 @@
                   id="sortable2"
                 >
                   <p>SLYTHERIN</p>
-                  <li class="list-group-item">Ginny</li>
+                  <li class="list-group-item">Ginny Weasley</li>
                   <li class="list-group-item">Lucius Malfoy</li>
                   <li class="list-group-item">Newt Scamander</li>
                   <li class="list-group-item">Nymphadora Tonks</li>
@@ -208,7 +209,7 @@
                 >
                   <p>RAVENCLAW</p>
                   <li class="list-group-item">Draco Malfoy</li>
-                  <li class="list-group-item">Snape</li>
+                  <li class="list-group-item">Severus Snape</li>
                   <li class="list-group-item">Harry Potter</li>
                   <li class="list-group-item">Hermione Granger</li>
                   <li class="list-group-item">Cedric Diggory</li>
@@ -219,24 +220,24 @@
                 >
                   <p>HUFFLEPUFF</p>
                   <li class="list-group-item">Neville Longbottom</li>
-                  <li class="list-group-item">Crab</li>
+                  <li class="list-group-item">Vincent Crabbe</li>
                   <li class="list-group-item">Tom Riddle</li>
                   <li class="list-group-item">Lucius Malfoy</li>
                   <li class="list-group-item">Ron Weasley</li>
                 </ul>
               </section>
-            </div>
-          </div>
+            <!-- </div> -->
+      </div>
 
-        </div>
       </div>
+      
         <!-- Add Space -->
-        <div id="rightAdd" class="d-flex align-items-end justify-content-center container col-2">
-          <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
-        </div>
+      <div id="rightAdd" class="d-flex align-items-end justify-content-center col-2">
+        <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
       </div>
-    </div>
-  </main>
+      </div>
+    </main>
+
     <!-- Footer -->
     <footer
       

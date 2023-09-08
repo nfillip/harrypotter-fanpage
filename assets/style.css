@@ -4,6 +4,7 @@
 
 body {
   font-family: "Merienda", cursive;
+  
 }
 
 #noGood {
@@ -117,8 +118,28 @@ select {
 #house-form {
   background-color: tan;
 }
-view raw
 
+
+#main-quiz-div {
+  height: 50%;
+  min-height: 600px;
+}
+#chars-and-quiz {
+  
+  height: 100%;
+  
+}
+#backPhoto {
+  min-height: 600px;
+  height: 50%;
+}
+
+#destination-main-div {
+  height: 100%;
+}
+#destInfo {
+  height: 100%;
+}
 
 
 /* #sortable1,
@@ -167,10 +188,6 @@ view raw
   display: flex;
   justify-content: center;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 
 /* Destintion Info */
 #destInfo {
@@ -251,8 +268,8 @@ h4 {
 
 #rightAdd {
   background-image: url(./lovePotion.png);
-  height: 1200px;
-  width: 300px;
+  /* height: 1200px;
+  width: 300px; */
   box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
 }
 
@@ -335,5 +352,5 @@ h4 {
   display: flex;
   flex-direction: column;
   color: rgb(255, 255, 255);
-  font-family: fantasy;
+  
 }
