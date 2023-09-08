@@ -1,4 +1,5 @@
 //QUIZ! -FILLIP SECTION
+
 var quizSubmitButton = $("#quiz-submit-button");
 var quizStartButton = $("#quiz-start-button");
 var mainQuizDiv = $("#main-quiz-div");
