@@ -4,14 +4,14 @@ var quizSubmitButton = $("#quiz-submit-button");
 var quizStartButton = $("#quiz-start-button");
 var mainQuizDiv = $("#main-quiz-div");
 var randomizeSection = $("#randomize-section");
-var secondQuizDiv = $("#second-quiz-div");
+// var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
 var GSRH = [
-  ["Harry Potter", "Hermione", "Ron", "Ginny", "Neville"],
-  ["Draco", "Snape", "Lucius Malfoy", "Crab", "Tom Riddle"],
+  ["Harry Potter", "Hermione Granger", "Ron Weasley", "Ginny Weasley", "Neville"],
+  ["Draco Malfoy", "Severus Snape", "Lucius Malfoy", "Vincent Crabbe", "Tom Riddle"],
   [
     "Rowena Ravenclaw",
     "Gilderoy Lockhart",
@@ -23,8 +23,8 @@ var GSRH = [
     "Cedric Diggory",
     "Helga Hufflepuff",
     "Nymphadora Tonks",
-    "New Scamander",
-    "Remus Lupin",
+    "Newt Scamander",
+    "Susan Bones",
   ],
 ];
 var answerKeyHouses = ["gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
@@ -38,17 +38,17 @@ var answerKeyNames = [
   "Helga Hufflepuff",
   "Nymphadora Tonks",
   "New Scamander",
-  "Remus Lupin",
-  "Draco",
-  "Snape",
+  "Susan Bones",
+  "Draco Malfoy",
+  "Severus Snape",
   "Lucius Malfoy",
-  "Crab",
+  "Vincent Crabbe",
   "Tom Riddle",
   "Harry Potter",
-  "Hermione",
-  "Ron",
-  "Ginny",
-  "Neville",
+  "Hermione Granger",
+  "Ron Weasley",
+  "Ginny Weasley",
+  "Neville Longbottom",
 ];
 //Sortable Function through jQueryUI - Fillip
 var characterUrl = "https://hp-api.onrender.com/api/characters";
@@ -111,24 +111,24 @@ function testAnswers() {
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
           "background-color": "rgba(68, 22, 22, 0.5)",
-          color: "white",
+          "color": "white",
         });
         testCorrect = false;
       } else {
         $(liBorderEdit).css({
           "background-color": "rgba(76, 175, 80, 0.3)",
-          color: "white",
+          "color": "white",
         });
       }
     }
   }
 
   if (testCorrect) {
-    $(secondQuizDiv).children("h1").text("CONGRATS YOU WIN!");
+    $(mainQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
   } else {
     $(this).prop("disabled", true);
-    $(secondQuizDiv)
+    $(mainQuizDiv)
       .children("h1")
       .text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
     $("#quiz-start-button").prop("disabled", true);
@@ -208,7 +208,7 @@ $("#modal-submit").on("click", function () {
   console.log(parseInt("hello"));
   console.log(parseInt("55"));
   if (parseInt($("#message-text").val())) {
-    $(secondQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
+    $(mainQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
     secondsLeft = $("#message-text").val();
     showSubmitButton();
     shuffleQuiz();
@@ -216,31 +216,30 @@ $("#modal-submit").on("click", function () {
     $("#quiz-start-button").prop("disabled", true);
   } else {
     blinkTimer = true;
-    $(secondQuizDiv)
+    $(mainQuizDiv)
       .children("h1")
       .text("ERROR: YOU NEED TO TYPE A NUMBER IN THE TEXT BOX");
     var blink = true;
     var blinkerInterval = setInterval(function () {
       blink = !blink;
       if (blink) {
-        $(secondQuizDiv).children("h1").css("background", "black");
+        $(mainQuizDiv).children("h1").css("background", "black");
       } else {
-        $(secondQuizDiv).children("h1").css("background", "white");
+        $(mainQuizDiv).children("h1").css("background", "white");
       }
       if (blinkTimer === false) {
         clearInterval(blinkerInterval);
-        $(secondQuizDiv).children("h1").css("background", "none");
+        $(mainQuizDiv).children("h1").css("background", "none");
       }
     }, 500);
   }
 });
 
 //Event Listener - Refresh Quiz
-secondQuizDiv.on("click", "#page-refresh-button", function () {
+mainQuizDiv.on("click", "#page-refresh-button", function () {
   var RandomArrayOfTwentyNames = randomArrayCharacters();
   var z = 0;
-  console.log("refresh works");
-  console.log(randomizeSection.children().eq(0));
+  
   for (var x = 0; x < 4; x++) {
     randomizeSection.children().eq(x).children().remove("li");
     for (var y = 1; y < 5; y++) {
