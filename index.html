@@ -79,9 +79,10 @@
             </div>
         </nav>
     <!-- Destination info-->
-    <div id="destInfo" class="row p-3  align-items-center">
+    <div class="container-fluid">
+    <div id="destInfo" class="row p-3 align-items-center">
       <!-- drop -->
-      <div class="dropdown col-4 text-center">
+      <div class="dropdown col-lg-4 col-md-6 col-sm-12 text-center">
         <select
           class="btn btn-secondary  m-2 col-6 align-items-baseline"
           type="button"
@@ -101,7 +102,7 @@
         </p>
       </div>
       <!-- card -->
-      <div class="col-4 d-flex align-items-center" >
+      <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-center" >
         <div id="weather" class="card-body">
           <h3 id="weatHead" class="text-center card-title ">Current Weather</h3>
         <div class=" text-center">
@@ -118,16 +119,17 @@
       </div>
       </div>
       <!-- Photo  -->
-      <div id="photoBorder" class="col-4 d-flex align-items-center justify-content-center">
+      <div id="photoBorder" class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
         <div id="destImg" class="d-flex justify-content-center"></div>
       </div>
     </div>
+  </div>
     <!-- main -->
     <!--Bio  -->
+<div class="container-fluid">
     <main class="row">
-    <div class="col-9 container" id="chars">
-      <div class="row">
-        <div class="container col-12 col-md-10 col-lg-10">
+    <div class="col-9 container" style="border: 2px solid red" id="chars">
+      
           <div class="container" id="backPhoto">
             <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
             <input id="bioInput" class="bioClass" type="text" placeholder="Enter Character Name"/>
@@ -146,8 +148,7 @@
                 <h5 id="species"></h5>
                 <h5 id="patronus"></h5>
             </div>
-          </div>
-        </div>
+
       </div>
 <!-- Quiz  -->
           <div
@@ -229,14 +230,12 @@
           </div>
 
         </div>
-      </div>
-        <!-- Add Space -->
-        <div id="rightAdd" class="d-flex align-items-end justify-content-center container col-2">
-          <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
-        </div>
-      </div>
+      </main>
     </div>
-  </main>
+  <div id="rightAdd" class="d-flex align-items-end justify-content-center container col-2">
+       <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
+     </div>
+</div>
     <!-- Footer -->
     <footer
       
