@@ -265,6 +265,9 @@ $("#quiz-refresh-button").prop("disabled", true);
 $("#page-refresh-button").hide();
 ////////// END OF FILLIP SECTION
 
+
+//////////////////////// destination 
+
 var destination = $(".locationName");
 var todayCastEl = $("#status");
 var todayTempEl = $("#todayTemp");
@@ -351,3 +354,6 @@ function getWeather() {
   });
 }
 getWeather();
+
+
+////////////////// the button! also im really wine drunk///////////////////
