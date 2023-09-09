@@ -9,6 +9,7 @@ var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
+var wandAdSpot = 0; 
 var GSRH = [
   ["Harry Potter", "Hermione Granger", "Ron Weasley", "Ginny Weasley", "Neville"],
   ["Draco Malfoy", "Severus Snape", "Lucius Malfoy", "Vincent Crabbe", "Tom Riddle"],
@@ -186,6 +187,84 @@ function startTimer() {
   }, 1000);
 }
 
+function startAdTimer() {
+  
+  var secondsUntilAd = 4;
+  var adStartTimer = setInterval(function(){
+    secondsUntilAd--;
+    if (secondsUntilAd <=0){
+      clearInterval(adStartTimer);
+      
+      endAdTimer();
+    }
+  }, 1000)
+  }
+
+ function endAdTimer() {
+  console.log("start end ad");
+  mainQuizDiv.append('<div class = "popUpWand container"></div>');
+  $(".popUpWand").append('<div class = "popUpWand1 container"></div>');
+  $(".popUpWand1").append('<p class = "popUpWandClose">Close [x]</p');
+  $(".popUpWand1").append('<div class = "popUpWandDiv"></div');
+  $(".popUpWand1").append('<button class = "popUpWandButton">Click Here</div');
+  $(".popUpWandDiv").append('<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p');
+  $(".popUpWandDiv").append('<img id = "popUpWandImage" src = "./assets/transparent-ad-wand3.png"></img')
+  var endAdTimerSecondsLeft = 40;
+  var popUpColor = 0;
+  var endAdTimerCount = setInterval(function() {
+    if(popUpColor === 0) {
+    $(".popUpWand").css("border", "2rem solid #740001");
+    } else if (popUpColor === 1) {
+      $(".popUpWand").css("border", "2rem solid #eeb939");
+    } else if (popUpColor === 2) {
+      $(".popUpWand").css("border", "2rem solid #222f5b");
+    } else if (popUpColor === 3) {
+      $(".popUpWand").css("border", "2rem solid #1a472a");
+    }
+    
+    if(endAdTimerSecondsLeft <=0) {
+      console.log("remove this item")
+      clearInterval(endAdTimerCount);
+      $(".popUpWand").remove();
+    }
+    popUpColor++;
+    if (popUpColor === 4) {
+      popUpColor =0
+    }
+    endAdTimerSecondsLeft--;
+  },250)
+ } 
+
+//Event Listener - WandDysf Ad Close X
+mainQuizDiv.on("mouseover", ".popUpWandClose", function () {
+  
+  if (wandAdSpot === 0){
+    $(".popUpWand").css({"top": "10vh", "left": "10vw"})
+  } else if (wandAdSpot === 1){
+    $(".popUpWand").css({"top": "50vh", "left": "10vw"})
+  } else if (wandAdSpot === 2){
+    $(".popUpWand").css({"top": "50vh", "left": "50vw"})
+  } else if (wandAdSpot === 3){
+    $(".popUpWand").css({"top": "10vw", "left": "50vw"})
+    wandAdSpot = 0;
+  } 
+  wandAdSpot++;
+   })
+ //Event Listener - WandDysf Ad Button
+ mainQuizDiv.on("click", ".popUpWandButton", function () {
+  
+  if (wandAdSpot === 0){
+    $(".popUpWand").css({"top": "10vh", "left": "10vw"})
+  } else if (wandAdSpot === 1){
+    $(".popUpWand").css({"top": "70vh", "left": "10vw"})
+  } else if (wandAdSpot === 2){
+    $(".popUpWand").css({"top": "70vh", "left": "70vw"})
+  } else if (wandAdSpot === 3){
+    $(".popUpWand").css({"top": "10vw", "left": "70vw"})
+    wandAdSpot = 0;
+  } 
+  wandAdSpot++;
+   })
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
   $("#page-refresh-button").prop("disabled", true);
@@ -232,6 +311,7 @@ $("#modal-submit").on("click", function () {
     shuffleQuiz();
     startTimer();
     $("#quiz-start-button").prop("disabled", true);
+    startAdTimer();
   } else {
     blinkTimer = true;
     $(mainQuizDiv)

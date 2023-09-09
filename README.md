@@ -32,6 +32,7 @@ THEN I am taken to that section of the web page
 
 
 # Page Screenshot
-
+### Bootstrap Wire Frame
+![BootStrap Wire Frame](./assets/wireframe-bootstrap.png)
 
 # Deployed link 
