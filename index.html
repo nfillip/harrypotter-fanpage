@@ -81,10 +81,10 @@
     
   <div class = "container my-3">
     <!-- Destination info-->
-    <div class = "row mb-3 mx-3" id = "destination-main-div">
+    <div class = "row mb-3 mx-3 d-flex justify-content-center" id = "destCon">
     <!-- <div id="destInfo" class="row p-3  align-items-center"> -->
       <!-- drop -->
-      <div class="dropdown col-12 col-md-4 col-lg-4 text-center">
+      <div class=" col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center flex-column text-center">
         <select
           class="btn btn-secondary  m-2 col-6 align-items-baseline"
           type="button"
@@ -106,7 +106,7 @@
       <!-- card -->
       <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center" >
         <div id="weather" class="card-body">
-          <h3 id="weatHead" class="text-center card-title ">Current Weather</h3>
+          <h2 id="weatHead" class="text-center card-title ">Current Weather</h2>
         <div class=" text-center">
           <div class="row">
           <p class="col-5" id="status">Status</p>
@@ -121,15 +121,15 @@
       </div>
       </div>
       <!-- Photo  -->
-      <div id="photoBorder" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
-        <div id="destImg" class="d-flex justify-content-center"></div>
+      <div id="photoBorder" class="col-12 col-md-11 col-lg-4 d-flex align-items-center justify-content-center">
+        <div id="destImg" class="d-flex col-lg-11 col-md-11 col-sm-11 m-2 justify-content-center"></div>
       </div>
     <!-- </div> -->
   </div>
     <!-- main -->
-    <main class="row mx-3 mb-5">
+    <main class="row mx-3 mb-5 d-flex justify-content-center" style="border: 2px solid red;">
       
-      <div class="column col-12 col-md-10 col-lg-10 pe-5" id="chars-and-quiz" >
+      <div class="column col-12 col-md-10 col-lg-9 pe-5" id="chars-and-quiz" >
         <!-- BIO -->
         <div class="row mb-5 d-flex flex-column align-items-start " id="backPhoto">
             <h1 style="text-decoration:underline" class="fontBio p-0 m-0">Wizards and Witches BIO</h1>
@@ -234,7 +234,7 @@
       </div>
       
         <!-- Add Space -->
-      <div id="rightAdd" class="column col-12 col-md-2 col-lg-2 d-flex flex-column align-items-center justify-content-end">
+      <div id="rightAdd" class="column col-2 col-md-2 col-lg-2 d-flex flex-column align-items-center justify-content-end">
         <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
       </div>
       
