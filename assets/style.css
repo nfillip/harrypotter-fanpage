@@ -178,6 +178,7 @@ select {
 }
 #chars-and-quiz {
   height: 100%;
+  padding-right: 2rem;
 }
 #backPhoto {
   min-height: 600px;
@@ -268,13 +269,19 @@ h4 {
 /* Add  */
 
 #rightAdd {
+  display: flex;
   background-image: url(./lovePotion.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
   border-radius: 8px;
-  width: 320px;
-  height: 1200px;
-  margin-top: 2rem;
-  margin-left: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  /* width: 320px;
+  height: 1200px; */
+  /* margin-top: 2rem;
+  margin-left: 2rem; */
 }
 
 #addButton {
@@ -318,6 +325,10 @@ h4 {
   /* background-color: rgb(rgb(240,248,255, 0.6)); */
   background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
+}
+
+.connectedSortable p {
+  margin-top: 2rem;
 }
 
 .quiz-section h1 {
@@ -395,4 +406,54 @@ h4 {
       width: 90%;
   }
   }
+
+@media (width <770px) {
+  #rightAdd {
+    background-image: url(./lovePotion2.PNG);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    width: 100%;
+    min-height: 20rem;
+    height: 100%;
+    box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    
+  }
+  
+}
+
+@media (width <770px) {
+  #rightAdd {
+    background-image: url(./lovepotion2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    padding-right: 0px;
+    margin-right:0px;
+    
+    
+  }
+  
+  #addButton {
+    margin: 0.5rem;
+    background-color: rgb(249, 39, 179,0.5);
+    box-shadow: 0px 0px 10px 0px whitesmoke;
+  
+  }
+
+  #chars-and-quiz {
+    /* margin-right: 0rem; */
+   
+  }
+  
+}
 
