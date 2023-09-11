@@ -31,7 +31,7 @@ nav {
 .navbar-light .navbar-nav .nav-link {
   color: black;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 5;
 }
 
@@ -552,6 +552,7 @@ h4 {
   vertical-align: auto;
   margin: 300px auto;
   width: 500px;
+  max-width: 50%; 
   height: 250px;
   background: linear-gradient(0deg, #000, #272727);
   overflow-y: auto;
@@ -612,3 +613,4 @@ h4 {
     max-width: 100vw !important;
   }
 }
+
