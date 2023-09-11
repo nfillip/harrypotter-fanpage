@@ -93,7 +93,7 @@ nav {
 .navbar-light .navbar-nav .nav-link {
   color: black;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 5;
 }
 
@@ -553,6 +553,16 @@ h4 {
     font-size: 1rem;
   }
 }
+#myPageModal {
+  position: sticky;
+  vertical-align: auto;
+  margin: 300px auto;
+  width: 500px;
+  max-width: 50%; 
+  height: 250px;
+  background: linear-gradient(0deg, #000, #272727);
+  overflow-y: auto;
+}
 
 @media (width<550px){
   #myPageModal {
@@ -614,6 +624,8 @@ label {
   font-weight: bolder;
   color: black;
 }
+
+
 
 #submitForm {
   background-color: #ff0000;

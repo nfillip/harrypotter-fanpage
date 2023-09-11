@@ -475,6 +475,9 @@ $("#iSwear").on("click", function (event) {
 
   return false;
 });
+
+var submitApplyBtn = $("#submitForm");
+var urlSecond ="./application_redirect/yourenotawizard.html";
 $("#submitForm").click(function () {
   window.open(urlSecond, "_blank");
   return false;
