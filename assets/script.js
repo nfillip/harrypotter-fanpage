@@ -108,6 +108,8 @@ $("#bio").on("click", async function () {
       $("#hairColor").text("Hair Color: " + data[0].hairColour);
       $(".hidden").addClass("visible").removeClass("hidden");
     });
+
+    $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
 });
 
 //Quiz Functions
@@ -130,8 +132,8 @@ function testAnswers() {
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
-          "background-color": "red",
-          color: "white",
+          "background-color": "rgba(255, 0, 0, 0.3",
+          "color": "white",
         });
         testCorrect = false;
       } else {
