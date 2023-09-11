@@ -1,16 +1,20 @@
-//QUIZ! -FILLIP SECTION
-
+// GLOBAL VARIABLES
+var swearBtn = $("#iSwear");
+var submitApplyBtn = $("#submitForm");
+var urlSecond =
+  "file:///Users/alexpurfield/Desktop/Project1/harrypotter-fanpage/application%20redirect/yourenotawizard.html";
+// quiz-global variables
 var quizSubmitButton = $("#quiz-submit-button");
 var quizStartButton = $("#quiz-start-button");
 var mainQuizDiv = $("#main-quiz-div");
 var randomizeSection = $("#randomize-section");
-// var secondQuizDiv = $("#second-quiz-div");
 var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
 var wandAdSpot = 0;
 var wandDysfAdOnce = true;
+var submitButtonClicked = false;
 var GSRH = [
   [
     "Harry Potter",
@@ -66,312 +70,8 @@ var answerKeyNames = [
   "Ginny Weasley",
   "Neville Longbottom",
 ];
-//Sortable Function through jQueryUI - Fillip
 var characterUrl = "https://hp-api.onrender.com/api/characters";
-
-function allowSortable() {
-  $(function () {
-    $("#sortable1, #sortable2, #sortable3, #sortable4")
-      .sortable({
-        connectWith: ".connectedSortable",
-        containment: ".quiz-section",
-      })
-      .disableSelection();
-  });
-}
-
-$("#bio").on("click", async function () {
-  await fetch(characterUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      var input = $(".bioClass").val();
-      var char = data.filter(function (char) {
-        var name = char.name;
-        return name.toLowerCase().includes(input.toLowerCase());
-      });
-      return char;
-    })
-    .then(function (data) {
-      $("#name").text("Name: " + data[0].name);
-      $("#house").text("House: " + data[0].house);
-      $("#wand").text("   Wand Details   ");
-      $("#descriptors").text("   Descriptors   ");
-      $("#wandLength").text("Length: " + data[0].wand.length + " inches");
-      $("#wandWood").text("Type of Wood: " + data[0].wand.wood);
-      $("#wandCore").text("Core Materiel: " + data[0].wand.core);
-      $("#dateOfBirth").text("Date of Birth: " + data[0].dateOfBirth);
-      $("#gender").text("Gender: " + data[0].gender);
-      $("#species").text("Species: " + data[0].species);
-      $("#patronus").text("Patronus: " + data[0].patronus);
-      $("#ancestry").text("Ancestry: " + data[0].ancestry);
-      $("#eyeColor").text("Eye Color: " + data[0].eyeColour);
-      $("#hairColor").text("Hair Color: " + data[0].hairColour);
-      $(".hidden").addClass("visible").removeClass("hidden");
-    });
-
-  $(".charClass").css("background-color", "rgb(105,105,105,0.4)");
-});
-
-//Quiz Functions
-//testanswers
-function testAnswers() {
-  var testCorrect = true;
-  var countering = 0;
-  for (var x = 0; x < 4; x++) {
-    for (
-      var y = 1;
-      y < randomizeSection.children().eq(x).children().length;
-      y++
-    ) {
-      var liTextItem = randomizeSection
-        .children()
-        .eq(x)
-        .children()
-        .eq(y)
-        .text();
-      var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
-      if (GSRH[x].indexOf(liTextItem) === -1) {
-        $(liBorderEdit).css({
-          "background-color": "red",
-          color: "white",
-        });
-        testCorrect = false;
-      } else {
-        $(liBorderEdit).css({
-          "background-color": "rgba(76, 175, 80, 0.3)",
-          color: "white",
-        });
-      }
-    }
-  }
-
-  if (testCorrect) {
-    $(mainQuizDiv).children("h1").text("CONGRATS YOU WIN!");
-    $(this).prop("disabled", true);
-    $("#page-refresh-button").show();
-  } else {
-    $(this).prop("disabled", true);
-    $(mainQuizDiv)
-      .children("h1")
-      .text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
-    $("#quiz-start-button").prop("disabled", true);
-    $("#page-refresh-button").show();
-  }
-}
-
-//function produce random array of names
-function randomArrayCharacters() {
-  var answerKeyNames2 = answerKeyNames.slice();
-  //random name
-  var randomArrayOfNames = [];
-  for (var j = 0; j < 20; j++) {
-    var random = Math.floor(Math.random() * answerKeyNames2.length);
-    randomArrayOfNames.push(answerKeyNames2[random]);
-    answerKeyNames2.splice(random, 1);
-  }
-  return randomArrayOfNames;
-}
-//Shuffle Names on Start of Quiz
-function shuffleQuiz() {
-  var randomArrayOfNames = randomArrayCharacters();
-  var counter = 0;
-  for (var x = 0; x < 4; x++) {
-    for (var y = 1; y < 6; y++) {
-      randomizeSection
-        .children()
-        .eq(x)
-        .children()
-        .eq(y)
-        .text(randomArrayOfNames[counter]);
-      counter++;
-    }
-  }
-  allowSortable();
-}
-
-//submit button showing up
-function showSubmitButton() {
-  randomizeSection.append(
-    '<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>'
-  );
-  disableSubmitButton = this;
-}
-
-function startTimer() {
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    quizStartButton.text(secondsLeft);
-    if (secondsLeft <= 0 && submitButtonClicked === false) {
-      clearInterval(timerInterval);
-      testAnswers();
-      quizStartButton.text("0");
-    } else if (secondsLeft <= 0 && submitButtonClicked === true) {
-      clearInterval(timerInterval);
-      quizStartButton.text("0");
-    }
-  }, 1000);
-}
-
-function startAdTimer() {
-  var secondsUntilAd = 4;
-  var adStartTimer = setInterval(function () {
-    secondsUntilAd--;
-    if (secondsUntilAd <= 0) {
-      clearInterval(adStartTimer);
-
-      endAdTimer();
-    }
-  }, 1000);
-}
-
-function endAdTimer() {
-  mainQuizDiv.append('<div class = "popUpWand"></div>');
-  $(".popUpWand").append('<p class = "popUpWandClose">Close [x]</p');
-  $(".popUpWand").append('<div class = "popUpWandDiv1"></div');
-  $(".popUpWandDiv1").append(
-    '<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p'
-  );
-  $(".popUpWandDiv1").append(
-    '<button class = "popUpWandButton">Click Here</div'
-  );
-
-  var endAdTimerSecondsLeft = 40;
-  var popUpColor = 0;
-  var endAdTimerCount = setInterval(function () {
-    if (popUpColor === 0) {
-      $(".popUpWand").css("border", "2rem solid #740001");
-    } else if (popUpColor === 1) {
-      $(".popUpWand").css("border", "2rem solid #eeb939");
-    } else if (popUpColor === 2) {
-      $(".popUpWand").css("border", "2rem solid #222f5b");
-    } else if (popUpColor === 3) {
-      $(".popUpWand").css("border", "2rem solid #1a472a");
-    }
-
-    if (endAdTimerSecondsLeft <= 0) {
-      clearInterval(endAdTimerCount);
-      $(".popUpWand").remove();
-    }
-    popUpColor++;
-    if (popUpColor === 4) {
-      popUpColor = 0;
-    }
-    endAdTimerSecondsLeft--;
-  }, 250);
-}
-
-//Event Listener - WandDysf Ad Close X
-mainQuizDiv.on("mouseover", ".popUpWandClose", function () {
-  if (wandAdSpot === 0) {
-    $(".popUpWand").css({ top: "10vh", left: "10vw" });
-  } else if (wandAdSpot === 1) {
-    $(".popUpWand").css({ top: "50vh", left: "10vw" });
-  } else if (wandAdSpot === 2) {
-    $(".popUpWand").css({ top: "50vh", left: "50vw" });
-  } else if (wandAdSpot === 3) {
-    $(".popUpWand").css({ top: "10vw", left: "50vw" });
-    wandAdSpot = 0;
-  }
-  wandAdSpot++;
-});
-//Event Listener - WandDysf Ad Button
-mainQuizDiv.on("click", ".popUpWandButton", function () {
-  if (wandAdSpot === 0) {
-    $(".popUpWand").css({ top: "10vh", left: "10vw" });
-  } else if (wandAdSpot === 1) {
-    $(".popUpWand").css({ top: "70vh", left: "10vw" });
-  } else if (wandAdSpot === 2) {
-    $(".popUpWand").css({ top: "70vh", left: "70vw" });
-  } else if (wandAdSpot === 3) {
-    $(".popUpWand").css({ top: "10vw", left: "70vw" });
-    wandAdSpot = 0;
-  }
-  wandAdSpot++;
-});
-//Event Listener - Start Button
-quizStartButton.on("click", function () {
-  $("#page-refresh-button").prop("disabled", true);
-
-  blinkTimer = false;
-});
-//Event Listener - Submit button
-randomizeSection.on("click", "#quiz-submit-button", function (event) {
-  event.stopPropagation();
-  event.preventDefault();
-  testAnswers();
-  var x = 0;
-  submitButtonClicked = true;
-  secondsLeft = 0;
-  $("#page-refresh-button").prop("disabled", false);
-});
-
-//Event Listener - Modal Submit button
-$("#modal-submit").on("click", function () {
-  if (parseInt($("#message-text").val())) {
-    $(mainQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
-    secondsLeft = $("#message-text").val();
-    showSubmitButton();
-    shuffleQuiz();
-    startTimer();
-    $("#quiz-start-button").prop("disabled", true);
-    if (wandDysfAdOnce) {
-      startAdTimer();
-      wandDysfAdOnce = !wandDysfAdOnce;
-    }
-  } else {
-    blinkTimer = true;
-    $(mainQuizDiv)
-      .children("h1")
-      .text("ERROR: YOU NEED TO TYPE A NUMBER IN THE TEXT BOX");
-    var blink = true;
-    var blinkerInterval = setInterval(function () {
-      blink = !blink;
-      if (blink) {
-        $(mainQuizDiv).children("h1").css("background", "black");
-      } else {
-        $(mainQuizDiv).children("h1").css("background", "white");
-      }
-      if (blinkTimer === false) {
-        clearInterval(blinkerInterval);
-        $(mainQuizDiv).children("h1").css("background", "none");
-      }
-    }, 500);
-  }
-});
-
-//Event Listener - Refresh Quiz
-mainQuizDiv.on("click", "#page-refresh-button", function () {
-  var RandomArrayOfTwentyNames = randomArrayCharacters();
-  var z = 0;
-
-  for (var x = 0; x < 4; x++) {
-    randomizeSection.children().eq(x).children().remove("li");
-    for (var y = 1; y < 6; y++) {
-      randomizeSection
-        .children()
-        .eq(x)
-        .append(
-          '<li class = "list-group-item">' +
-            RandomArrayOfTwentyNames[z] +
-            "</li>"
-        );
-      z++;
-    }
-    $("#page-refresh-button").prop("disabled", true);
-  }
-  randomizeSection.children().remove("button");
-  $("#quiz-start-button").prop("disabled", false);
-  $("#quiz-start-button").text("Start/Shuffle Quiz");
-});
-
-//calls on refresh
-$("#quiz-refresh-button").prop("disabled", true);
-$("#page-refresh-button").hide();
-////////// END OF FILLIP SECTION
-
-//////////////////////// destination
+// destination -global variables
 
 var destination = $(".locationName");
 var todayCastEl = $("#status");
@@ -392,8 +92,171 @@ var meade =
 var azzz =
   "Azkaban is a horrendous place, where Sirius Black, along with many Death Eaters, were imprisoned after Lord Voldemort fell from power. Guarded by the hideous dementors, it is located on a remote island and is virtually escape proof. According to Remus Lupin, it is a fortress... set on a tiny island, way out to sea, but they don't need walls and water to keep the prisoners in, not when they're all trapped inside their own heads, incapable of a single cheerful thought. Most of them go mad within weeks. Sirius Black is the first person known to have escaped unassisted. Although several Death Eaters also later escaped, it is believed they were able to escape only because the dementors had deserted the prison, having been promised richer feeding if they became loyal to Lord Voldemort.";
 
-$("#dropDown").on("change", getWeather);
+// ::FUNCTIONS
+// ::::Quiz Functions
+  //Sortable Function through jQueryUI - Fillip
 
+function allowSortable() {
+  $(function () {
+    $("#sortable1, #sortable2, #sortable3, #sortable4")
+      .sortable({
+        connectWith: ".connectedSortable",
+        containment: ".quiz-section",
+      })
+      .disableSelection();
+  });
+}
+
+//Function: testanswers for quiz
+function testAnswers() {
+  var testCorrect = true;
+  var countering = 0;
+  for (var x = 0; x < 4; x++) {
+    for (
+      var y = 1;
+      y < randomizeSection.children().eq(x).children().length;
+      y++
+    ) {
+      var liTextItem = randomizeSection
+        .children()
+        .eq(x)
+        .children()
+        .eq(y)
+        .text();
+      var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
+      if (GSRH[x].indexOf(liTextItem) === -1) {
+        $(liBorderEdit).css({
+          "background-color": "rgb(255, 0, 0, 0.3",
+          color: "white",
+        });
+        testCorrect = false;
+      } else {
+        $(liBorderEdit).css({
+          "background-color": "rgba(76, 175, 80, 0.3)",
+          color: "white",
+        });
+      }
+    }
+  }
+  if (testCorrect) {
+    $(mainQuizDiv).children("h1").text("CONGRATS YOU WIN!");
+    $(this).prop("disabled", true);
+    $("#page-refresh-button").show();
+  } else {
+    $(this).prop("disabled", true);
+    $(mainQuizDiv)
+      .children("h1")
+      .text("YOU LOSE! but keep trying & then GO REREAD THOSE BOOKS!");
+    $("#quiz-start-button").prop("disabled", true);
+    $("#page-refresh-button").show();
+  }
+}
+
+//Function: produce random array of names
+function randomArrayCharacters() {
+  var answerKeyNames2 = answerKeyNames.slice();
+  //random name
+  var randomArrayOfNames = [];
+  for (var j = 0; j < 20; j++) {
+    var random = Math.floor(Math.random() * answerKeyNames2.length);
+    randomArrayOfNames.push(answerKeyNames2[random]);
+    answerKeyNames2.splice(random, 1);
+  }
+  return randomArrayOfNames;
+}
+
+//function: Shuffle Names on Start of Quiz
+function shuffleQuiz() {
+  var randomArrayOfNames = randomArrayCharacters();
+  var counter = 0;
+  for (var x = 0; x < 4; x++) {
+    for (var y = 1; y < 6; y++) {
+      randomizeSection
+        .children()
+        .eq(x)
+        .children()
+        .eq(y)
+        .text(randomArrayOfNames[counter]);
+      counter++;
+    }
+  }
+  allowSortable();
+}
+
+//Function: submit button showing up
+function showSubmitButton() {
+  randomizeSection.append(
+    '<button class = "btn btn-danger my-2" type = "button" id = "quiz-submit-button">SUBMIT </button>'
+  );
+  disableSubmitButton = this;
+}
+
+// Function: start quiz timer
+function startTimer() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    quizStartButton.text(secondsLeft);
+    if (secondsLeft <= 0 && submitButtonClicked === false) {
+      clearInterval(timerInterval);
+      testAnswers();
+      quizStartButton.text("0");
+      $("#page-refresh-button").prop("disabled", false);
+    } else if (secondsLeft <= 0 && submitButtonClicked === true) {
+      clearInterval(timerInterval);
+      quizStartButton.text("0");
+    }
+  }, 1000);
+}
+
+// Function: Start the timer before ad pops up
+function startAdTimer() {
+  var secondsUntilAd = 4;
+  var adStartTimer = setInterval(function () {
+    secondsUntilAd--;
+    if (secondsUntilAd <= 0) {
+      clearInterval(adStartTimer);
+
+      endAdTimer();
+    }
+  }, 1000);
+}
+
+// Function: Start timer after ad pops up for it to disappear
+function endAdTimer() {
+  mainQuizDiv.append('<div class = "popUpWand"></div>');
+  $(".popUpWand").append('<p class = "popUpWandClose">Close [x]</p');
+  $(".popUpWand").append('<div class = "popUpWandDiv1"></div');
+  $(".popUpWandDiv1").append(
+    '<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p'
+  );
+  $(".popUpWandDiv1").append(
+    '<button class = "popUpWandButton">Click Here</div'
+  );
+  var endAdTimerSecondsLeft = 40;
+  var popUpColor = 0;
+  var endAdTimerCount = setInterval(function () {
+    if (popUpColor === 0) {
+      $(".popUpWand").css("border", "2rem solid #740001");
+    } else if (popUpColor === 1) {
+      $(".popUpWand").css("border", "2rem solid #eeb939");
+    } else if (popUpColor === 2) {
+      $(".popUpWand").css("border", "2rem solid #222f5b");
+    } else if (popUpColor === 3) {
+      $(".popUpWand").css("border", "2rem solid #1a472a");
+    }
+    if (endAdTimerSecondsLeft <= 0) {
+      clearInterval(endAdTimerCount);
+      $(".popUpWand").remove();
+    }
+    popUpColor++;
+    if (popUpColor === 4) {
+      popUpColor = 0;
+    }
+    endAdTimerSecondsLeft--;
+  }, 250);
+}
+
+// Function: Get Weather Info: 
 function getWeather() {
   var selectedOption = $("#dropDown").val();
   var requestWeather = `https://api.openweathermap.org/data/2.5/weather?q=${selectedOption}&units=imperial&APPID=6125957e3b746825efbf44ae31af7452`;
@@ -458,18 +321,156 @@ function getWeather() {
     },
   });
 }
-getWeather();
 
+// ::::EVENT LISTENERS
+//Event Listener - WandDysf Ad Close X
+mainQuizDiv.on("mouseover", ".popUpWandClose", function () {
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "50vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "50vh", left: "50vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "50vw" });
+    wandAdSpot = 0;
+  }
+  wandAdSpot++;
+});
+//Event Listener - WandDysf Ad Button
+mainQuizDiv.on("click", ".popUpWandButton", function () {
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "40vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "40vh", left: "40vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "40vw" });
+    wandAdSpot = 0;
+  }
+  wandAdSpot++;
+});
+//Event Listener - Start Quiz Button
+quizStartButton.on("click", function () {
+  $("#page-refresh-button").prop("disabled", true);
+
+  blinkTimer = false;
+});
+//Event Listener - Submit Quiz button
+randomizeSection.on("click", "#quiz-submit-button", function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  testAnswers();
+  var x = 0;
+  submitButtonClicked = true;
+  secondsLeft = 0;
+  $("#page-refresh-button").prop("disabled", false);
+});
+//Event Listener - Modal Quiz Submit button
+$("#modal-submit").on("click", function () {
+  if (parseInt($("#message-text").val())) {
+    $(mainQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
+    secondsLeft = $("#message-text").val();
+    showSubmitButton();
+    shuffleQuiz();
+    startTimer();
+    $("#quiz-start-button").prop("disabled", true);
+    if (wandDysfAdOnce) {
+      startAdTimer();
+      wandDysfAdOnce = !wandDysfAdOnce;
+    }
+  } else {
+    blinkTimer = true;
+    $(mainQuizDiv)
+      .children("h1")
+      .text("ERROR: YOU NEED TO TYPE A NUMBER IN THE TEXT BOX");
+    var blink = true;
+    var blinkerInterval = setInterval(function () {
+      blink = !blink;
+      if (blink) {
+        $(mainQuizDiv).children("h1").css("background", "black");
+      } else {
+        $(mainQuizDiv).children("h1").css("background", "white");
+      }
+      if (blinkTimer === false) {
+        clearInterval(blinkerInterval);
+        $(mainQuizDiv).children("h1").css("background", "none");
+      }
+    }, 500);
+  }
+});
+//Event Listener - Refresh Quiz Button
+mainQuizDiv.on("click", "#page-refresh-button", function () {
+  var RandomArrayOfTwentyNames = randomArrayCharacters();
+  var z = 0;
+  for (var x = 0; x < 4; x++) {
+    randomizeSection.children().eq(x).children().remove("li");
+    for (var y = 1; y < 6; y++) {
+      randomizeSection
+        .children()
+        .eq(x)
+        .append(
+          '<li class = "list-group-item">' +
+            RandomArrayOfTwentyNames[z] +
+            "</li>"
+        );
+      z++;
+    }
+    $("#page-refresh-button").prop("disabled", true);
+  }
+  randomizeSection.children().remove("button");
+  $("#quiz-start-button").prop("disabled", false);
+  $("#quiz-start-button").text("Start/Shuffle Quiz");
+});
+// Event Listener - Character Bio Pull Information 
+$("#bio").on("click", async function () {
+  await fetch(characterUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var input = $(".bioClass").val();
+      var char = data.filter(function (char) {
+        var name = char.name;
+        return name.toLowerCase().includes(input.toLowerCase());
+      });
+      return char;
+    })
+    .then(function (data) {
+      console.log(data);
+      $("#name").text("Name: " + data[0].name);
+      $("#house").text("House: " + data[0].house);
+      $("#wand").text("   Wand Details   ");
+      $("#descriptors").text("   Descriptors   ");
+      $("#wandLength").text("Length: " + data[0].wand.length + " inches");
+      $("#wandWood").text("Type of Wood: " + data[0].wand.wood);
+      $("#wandCore").text("Core Materiel: " + data[0].wand.core);
+      $("#dateOfBirth").text("Date of Birth: " + data[0].dateOfBirth);
+      $("#gender").text("Gender: " + data[0].gender);
+      $("#species").text("Species: " + data[0].species);
+      $("#patronus").text("Patronus: " + data[0].patronus);
+      $("#ancestry").text("Ancestry: " + data[0].ancestry);
+      $("#eyeColor").text("Eye Color: " + data[0].eyeColour);
+      $("#hairColor").text("Hair Color: " + data[0].hairColour);
+      if(data[0].image !== ""){
+        $("#characterImageDiv").children().remove();
+        $("#characterImageDiv").append('<img id = "characterImage" alt = "image of char" src =' +data[0].image + '></img>');
+      }else {
+        $("#characterImageDiv").children().remove();
+      }
+      $(".hidden").addClass("visible").removeClass("hidden");
+    });
+
+  $(".charClass").css("background-color", "rgb(105,105,105,0.4)");
+});
+// EventListener - Up-To-No-Good-page modal
 $(document).ready(function (event) {
-  //event.preventDefault();
   $("#myPageModal").modal("show");
   return false;
 });
-
-var swearBtn = $("#iSwear");
-
+// Event Listener - Up-to-no-good modal close
 $("#iSwear").on("click", function (event) {
-  //event.preventDefault();
   $("#myPageModal").modal("hide");
 
   return false;
@@ -481,3 +482,10 @@ $("#submitForm").click(function () {
   window.open(urlSecond, "_blank");
   return false;
 });
+
+//IMMEDIATE OCCURRENCES 
+$("#quiz-refresh-button").prop("disabled", true);
+$("#page-refresh-button").hide();
+$("#dropDown").on("change", getWeather);
+getWeather();
+

@@ -1,3 +1,4 @@
+/* FULL PAGE SELECTORS */
 .container-xxl {
   border: 0.2rem solid black;
 }
@@ -12,6 +13,67 @@ body {
   font-size: 2rem;
   margin-left: 2rem;
 }
+
+/* STARTING MODAL */
+#myPageModal {
+  position: sticky;
+  vertical-align: auto;
+  margin: 300px auto;
+  width: 500px;
+  height: 250px;
+  background: linear-gradient(0deg, #000, #272727);
+  overflow-y: auto;
+}
+
+#myPageModal:before, #myPageModal:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block:after {
+  filter: blur(50px);
+}
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 100vw !important;
+  }
+}
+
+/* NAV BAR */
 nav {
   background: #112c38;
   font-family: "Bigelow Rules", cursive;
@@ -37,10 +99,6 @@ nav {
 
 nav ::backdrop {
   opacity: 0.5;
-}
-main {
-  overflow: hidden;
-  overflow-y: scroll;
 }
 
 nav div ul {
@@ -103,131 +161,13 @@ nav div ul li a:hover:before {
   transform: scaleX(1);
 }
 
-#footer-main {
-  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
-  color: black;
+/* MAIN SECTION */
+main {
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
-#footer-text {
-  text-align: center;
-  font-family: "Bigelow Rules", cursive;
-  font-weight: bolder;
-  font-size: 50px;
-}
-
-#form-wrapper {
-  width: 90%;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-#form-wrapper > form {
-  color: white;
-  padding: 40px;
-  font-family: "Bigelow Rules", cursive;
-  font-size: 26px;
-  letter-spacing: 1px;
-}
-#form-wrapper > form > input,
-select {
-  font-family: "Bigelow Rules", cursive;
-  font-size: 30px;
-  letter-spacing: 1px;
-  padding: 0px 6px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid white;
-  color: #fff;
-}
-
-#house-form {
-  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
-}
-label {
-  font-size: 20px;
-}
-
-#form-question {
-  font-family: "Merienda", cursive;
-  font-size: 20px;
-  font-weight: bolder;
-  color: black;
-}
-
-#submitForm {
-  background-color: #ff0000;
-  color: whitesmoke;
-  font-size: 20px;
-}
-
-.popUpWand {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 50%;
-  width: 50%;
-  top: 25vh;
-  left: 25vw;
-  background-image: url(./wand-dysfunction-ad4.avif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 2rem solid black;
-}
-
-.popUpWandClose {
-  width: 100%;
-  font-size: 1rem;
-  text-align: right;
-  font-weight: bolder;
-  margin: 0px;
-}
-
-.popUpWandDiv1 {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.popUpWandButton {
-  border: 0.2rem solid black;
-  width: 50%;
-  min-width: 4rem;
-  height: 100%;
-  background-color: rgb(249, 39, 179, 0.5);
-}
-
-.popUpWandPar {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  text-align: left;
-  margin: 0px;
-  padding: 0px;
-}
-#main-quiz-div {
-  height: 50%;
-  min-height: 600px;
-  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
-  border-radius: 8px;
-}
-#chars-and-quiz {
-  height: 100%;
-  padding-right: 2rem;
-}
-#backPhoto {
-  min-height: 600px;
-  height: 50%;
-  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
-  border-radius: 8px;
-}
-
-.quizsection {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Destintion Info */
+/* DESTINATION WEATHER */
 #destInfo {
   font-family: "Merienda", cursive;
 }
@@ -297,42 +237,94 @@ h4 {
   margin-bottom: 3rem !important;
 }
 
-/* Destintion Info End*/
 
-/* Add  */
+/* CHARACTER BIO SECTION */
 
-/* this css is for advertisment to make it sticky- need to put in ad art */
-
-#rightAdd {
-  display: flex;
-  background-image: url(./lovePotion.png);
-  background-repeat: no-repeat;
+#backPhoto {
+  background-image: url(./train.avif);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.fontBio {
+  font-size: 25;
+  color: crimson;
+  text-align: center;
+  text-decoration: underline;
+  
+}
+
+.bioClass {
+  background-color: rgb(3, 3, 3);
+  border-style: double;
+  padding: 9px 9px;
+  color: azure;
+}
+
+#bio {
+  width: 40%;
+  min-width: 14rem;
+}
+
+#bioInput {
+  width: 40%;
+  min-width: 14rem;
+  justify-content: center;
+}
+
+#characterImageDiv {
+  margin-bottom: 2rem;
+  
+  
+}
+
+#characterImage {
+  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+  border-radius: 8px ;
+}
+#characterInfo {
+  margin-top: 0px;
+  
+  
+}
+.charClass {
+  display: flex;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  
+  }
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+/* QUIZ SECTION */
+#main-quiz-div {
+  height: 50%;
+  min-height: 600px;
   box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
   border-radius: 8px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
- 
+}
+#chars-and-quiz {
+  height: 100%;
+  padding-right: 2rem;
+}
+#backPhoto {
+  min-height: 600px;
+  height: 50%;
+  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+  border-radius: 8px;
 }
 
-#addButton {
-  margin-bottom: 2rem;
-  background-color: rgb(249, 39, 179);
-  height: 4rem;
-  width: 8rem;
-  font-size: larger;
-  box-shadow: 0px 0px 20px 20px whitesmoke;
-  padding: 2px;
+.quizsection {
+  display: flex;
+  flex-direction: row;
 }
-
-#addButton:hover {
-  box-shadow: 0px 0px 20px 20px rgb(249, 39, 179);
-  color: rgb(249, 39, 179);
-  background-color: azure;
-}
-
-/* add end  */
 
 #quiz-start-button {
   width: 25%;
@@ -389,66 +381,91 @@ h4 {
   background-size: cover;
 }
 
-#backPhoto {
-  background-image: url(./train.avif);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-/* #backPic {
-  background-image: url(https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg?w=1060&t=st=1694416042~exp=1694416642~hmac=b6495d459a7564b968cee1c2c03a94572b972290e03442f5eecc9685efa2fdee);
-  background-attachment: local;
-  width: 550px;
-  height: 600px;
-} */
-
-.fontBio {
-  font-size: 25;
-  color: crimson;
-  text-align: center;
-  text-decoration: underline;
-}
-
-.bioClass {
-  background-color: rgb(3, 3, 3);
-  border-style: double;
-  padding: 9px 9px;
-  color: azure;
-}
-
-#bio {
-  width: 40%;
-}
-
-#bioInput {
-  width: 40%;
-  min-width: 14rem;
-  justify-content: center;
-}
-.charClass {
+/* QUIZ-AD-POPUP */
+.popUpWand {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  color: rgb(255, 255, 255);
-  width: 75%;
-  }
-@media (width<1100px) {
-  .charClass {
-    width: 95%;
-  }
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+  top: 25vh;
+  left: 25vw;
+  background-image: url(./wand-dysfunction-ad4.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2rem solid black;
+}
+
+.popUpWandClose {
+  width: 100%;
+  font-size: 1rem;
+  text-align: right;
+  font-weight: bolder;
+  margin: 0px;
+}
+
+.popUpWandDiv1 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUpWandButton {
+  border: 0.2rem solid black;
+  width: 50%;
+  min-width: 4rem;
+  height: 100%;
+  background-color: rgb(249, 39, 179, 0.5);
+}
+
+.popUpWandPar {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* LOVE POTION ASIDE AD */
+
+#rightAdd {
+  display: flex;
+  background-image: url(./lovePotion.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 10px 10px 10px 0px black, 0px -10px 30px 2px whitesmoke;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
  
 }
-.hidden {
-  display: none;
+
+#addButton {
+  margin-bottom: 2rem;
+  background-color: rgb(249, 39, 179);
+  height: 4rem;
+  width: 8rem;
+  font-size: larger;
+  box-shadow: 0px 0px 20px 20px whitesmoke;
+  padding: 2px;
 }
 
-.visible {
-  display: flex;
+#addButton:hover {
+  box-shadow: 0px 0px 20px 20px rgb(249, 39, 179);
+  color: rgb(249, 39, 179);
+  background-color: azure;
 }
 
+/* MEDIA QUERIES */
 @media (width<1240px) {
   .popUpWand {
     background-image: url(./wand-dysfunction-ad-med.PNG);
   }
-
   .popUpWandClose {
     width: 100%;
     font-size: 1rem;
@@ -456,7 +473,6 @@ h4 {
     font-weight: bolder;
     margin: 0px;
   }
-
   .popUpWandButton {
     border: 0.2rem solid black;
     width: 50%;
@@ -464,24 +480,14 @@ h4 {
     height: 100%;
     background-color: rgb(249, 39, 179, 0.5);
   }
-
   .popUpWandPar {
     font-size: 1rem;
-  }
-}
-@media (width< 700px) {
-  #quiz-start-button,
-  #quiz-refresh-button,
-  #bio,
-  #bioInput {
-    width: 90%;
   }
 }
 
 @media (width <770px) {
   #rightAdd {
     background-image: url(./lovePotion2.PNG);
-    /* background-repeat: no-repeat; */
     background-size: cover;
     width: 100%;
     min-height: 20rem;
@@ -509,24 +515,26 @@ h4 {
     padding-right: 0px;
     margin-right: 0px;
   }
-
   #addButton {
     margin: 0.5rem;
     background-color: rgb(249, 39, 179, 0.5);
     box-shadow: 0px 0px 10px 0px whitesmoke;
   }
+  }
 
-  /* #chars-and-quiz { */
-  /* margin-right: 0rem; */
+@media (width< 700px) {
+  #quiz-start-button,
+  #quiz-refresh-button,
+  #bio,
+  #bioInput {
+    width: 90%;
+  }
 }
-
-/* } */
 
 @media (width<580px) {
   .popUpWand {
     background-image: url(./wand-dysfunction-ad-mobile.PNG);
   }
-
   .popUpWandClose {
     width: 100%;
     font-size: 1rem;
@@ -534,7 +542,6 @@ h4 {
     font-weight: bolder;
     margin: 0px;
   }
-
   .popUpWandButton {
     border: 0.2rem solid black;
     width: 50%;
@@ -542,7 +549,6 @@ h4 {
     height: 100%;
     background-color: rgb(249, 39, 179, 0.5);
   }
-
   .popUpWandPar {
     font-size: 1rem;
   }
@@ -566,51 +572,61 @@ h4 {
   }
 }
 
-#myPageModal:before, #myPageModal:after {
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(
-    45deg,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000
-  );
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: steam 20s linear infinite;
+/* FOOTER */
+#footer-main {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  color: black;
 }
 
-
-@keyframes steam {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+#footer-text {
+  text-align: center;
+  font-family: "Bigelow Rules", cursive;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
-.block:after {
-  filter: blur(50px);
-}
-@media (min-width: 576px) {
-  .container,
-  .container-sm {
-    max-width: 100vw !important;
-  }
+#form-wrapper {
+  width: 90%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
+#form-wrapper > form {
+  color: white;
+  padding: 40px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+#form-wrapper > form > input,
+select {
+  font-family: "Bigelow Rules", cursive;
+  font-size: 30px;
+  letter-spacing: 1px;
+  padding: 0px 6px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  color: #fff;
+}
+
+#house-form {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+}
+
+label {
+  font-size: 20px;
+}
+
+#form-question {
+  font-family: "Merienda", cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+}
+
+#submitForm {
+  background-color: #ff0000;
+  color: whitesmoke;
+  font-size: 20px;
+}
