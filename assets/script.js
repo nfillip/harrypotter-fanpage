@@ -13,18 +13,20 @@ var wandAdSpot = 0;
 var wandDysfAdOnce = true;
 var GSRH = [
   [
-    "Harry Potter",
-    "Hermione Granger",
-    "Ron Weasley",
-    "Ginny Weasley",
-    "Neville Longbottom",
+  "Harry Potter",
+  "Hermione Granger",
+  "Ron Weasley",
+  "Ginny Weasley",
+   "Neville Longbottom",
+  ,
   ],
   [
     "Draco Malfoy",
-    "Severus Snape",
-    "Lucius Malfoy",
-    "Vincent Crabbe",
-    "Tom Riddle",
+  "Severus Snape",
+   "Lucius Malfoy",
+  "Vincent Crabbe",
+   "Tom Riddle",
+  ,
   ],
   [
     "Rowena Ravenclaw",
@@ -132,7 +134,7 @@ function testAnswers() {
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
-          "background-color": "rgba(255, 0, 0, 0.3",
+          "background-color": "red",
           "color": "white",
         });
         testCorrect = false;
@@ -418,7 +420,7 @@ function getWeather() {
       var meadeImg =
         "https://i.pinimg.com/originals/ca/e5/5a/cae55a87045ef2b7c2b303ffaad1ca1a.jpg";
       var azcaImg =
-        "https://static.wikia.nocookie.net/harrypotter/images/b/b6/Azkaban_concept_art.png/revision/latest?cb=20161216053518";
+        "https://static.wikia.nocookie.net/harrypotter/images/b/b6/Azkaban_concept_art.png";
       destinationImg.empty();
 
       if (selectedOption === "London,uk") {
