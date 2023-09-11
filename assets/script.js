@@ -453,6 +453,7 @@ getWeather();
 $(document).ready(function(event){
   //event.preventDefault();
   $("#myPageModal").modal('show');
+  return false
 });
 
 var swearBtn = $("#iSwear");

@@ -283,65 +283,58 @@
             <!--Grid column-->
             <div > 
               <!-- removed class="col-lg-4 col-md-6 mb-4 mb-md-0" to center h3 text -->
-              <h3 class="text-uppercase" id="footer-text">20+ Years Old and Still Haven't Received Your Letter?</h3>
-              <h4 class="text-uppercase" id="footer-text"> Fill out our form below to get your house assignment and letter!</h4>
-              <form id="house-form" class="col-lg-6 col-md-6">
-                <h4 class="text-uppercase" id="footer-form">?</h4>
-                <label for="wizard-name">Your Name: </label>
+              <h1 class="text-uppercase" id="footer-text">20+ Years Old and Still Haven't Received Your Letter?</h1>
+              <h2 class="text-uppercase" id="footer-text"> Fill out our form below and submit to become a witch or wizard!</h2>
+              <form>
+                <label for="wizard-name" id="input-name">Your Name: </label>
                 <input type="text" id="wizard-name" name="wizard-name">
                 <br><br>
     
-               What is your favorite animal?
+              <h3 id="form-question"> Which is most important to you?"</h3>
                 <br>
-                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
-                <label for="contactChoice1">Badger</label>
+                <input type="radio" id="loyalty" name="trait-loyal" value="yes">
+                <label for="contactChoice1">Loyalty</label>
                 <br>
-                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
-                <label for="contactChoice2">Lion</label>
+                <input type="radio" id="courage" name="trait-courage" value="yes">
+                <label for="contactChoice2">Courage</label>
                 <br>
-                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
-                <label for="contactChoice1">Raven</label>
+                <input type="radio" id="curiosity" name="trait-curiosity" value="yes">
+                <label for="contactChoice3">Curiosity</label> 
+                <br> 
+                <input type="radio" id="power" name="trait-power" value="yes">
+                <label for="contactChoice4">Power</label>
                 <br>
-                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
-                <label for="contactChoice2">Snake</label>
                 <br><br>
     
-                What is most important to you?
+                <h3 id="form-question">Which element you naturally attract to:</h3>
                 <br>
-                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
-                <label for="contactChoice1">Bravery</label>
+                <input type="checkbox" id="air-element" name="attraction-element" value="air">
+                <label for="air-element">Air</label>
                 <br>
-                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
-                <label for="contactChoice2">Loyalty</label>
+                <input type="checkbox" id="water-element" name="attraction-element" value="water">
+                <label for="air-element">Water</label>
                 <br>
-                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
-                <label for="contactChoice1">Curiosity</label>
-                <br>
-                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
-                <label for="contactChoice2">Ambition</label>
+                <input type="checkbox" id="fire-element" name="attraction-element" value="fire">
+                <label for="air-element">Fire</label>
                 <br><br>
     
-                Which is your favorite house at Hogwarts? (Rememebr the sorting hat takes your choice into consideration)
+                <h3 id="form-question">Which is your favorite house at Hogwarts?</h3>
                 <br>
-                <select name="fav-house" onchange="location = this.value;">
-
-                  <option id="select-house">Select a house</option>
-
-                  <option id="gryffindor-option" value="https://www.wizardingworld.com/collections/gryffindor" >Gryffindor</option>
-
-                  <option 
-                  id="hufflepuff-option" value="https://www.wizardingworld.com/collections/hufflepuff">Hufflepuff</option>
-
-                  <option id="ravenclaw-option" value="https://www.wizardingworld.com/collections/ravenclaw">Ravenclaw</option>
-
-                  <option id="slytherin-option" value="https://www.wizardingworld.com/collections/slytherin">Slytherin</option>
-
+                <select name="fav-house">
+                  <option value="Gryffindor">Gryffindor</option>
+                  <option value="Hufflepuff">Hufflepuff</option>
+                  <option value="Ravenclaw">Ravenclaw</option>
+                  <option value="Slytherin">Slytherin</option>
                 </select>
                 <br></br>
     
-                <input type="submit" value="Submit" id="form-submit">
+                <input id = "submitForm" type="button" value="Submit">
     
               </form>
+            </div>
+        </div>
+      </body>
+    </html>
 
               <p>
 
