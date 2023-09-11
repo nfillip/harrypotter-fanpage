@@ -91,6 +91,8 @@ $("#bio").on("click", async function () {
       $("#species").text("Species: " + data[0].species);
       $("#patronus").text("Patronus: " + data[0].patronus);
     });
+
+    $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
 });
 
 //Quiz Functions
