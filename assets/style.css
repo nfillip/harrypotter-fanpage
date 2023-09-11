@@ -394,17 +394,18 @@ h4 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-#backPic {
+/* #backPic {
   background-image: url(https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg?w=1060&t=st=1694416042~exp=1694416642~hmac=b6495d459a7564b968cee1c2c03a94572b972290e03442f5eecc9685efa2fdee);
   background-attachment: local;
   width: 550px;
   height: 600px;
-}
+} */
 
 .fontBio {
   font-size: 25;
   color: crimson;
   text-align: center;
+  text-decoration: underline;
 }
 
 .bioClass {
