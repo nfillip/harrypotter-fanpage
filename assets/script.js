@@ -13,29 +13,19 @@ var wandAdSpot = 0;
 var wandDysfAdOnce = true;
 var GSRH = [
   [
-    
-    "Harry Potter",
-   
-    "Hermione Granger",
-   
-    "Ron Weasley",
-   
-    "Ginny Weasley",
-   
-    "Neville Longbottom",
+  "Harry Potter",
+  "Hermione Granger",
+  "Ron Weasley",
+  "Ginny Weasley",
+   "Neville Longbottom",
   ,
   ],
   [
-    
     "Draco Malfoy",
-   
-    "Severus Snape",
-   
-    "Lucius Malfoy",
-   
-    "Vincent Crabbe",
-   
-    "Tom Riddle",
+  "Severus Snape",
+   "Lucius Malfoy",
+  "Vincent Crabbe",
+   "Tom Riddle",
   ,
   ],
   [
