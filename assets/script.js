@@ -13,20 +13,20 @@ var wandAdSpot = 0;
 var wandDysfAdOnce = true;
 var GSRH = [
   [
-  "Harry Potter",
-  "Hermione Granger",
-  "Ron Weasley",
-  "Ginny Weasley",
-   "Neville Longbottom",
-  ,
+    "Harry Potter",
+    "Hermione Granger",
+    "Ron Weasley",
+    "Ginny Weasley",
+    "Neville Longbottom",
+    ,
   ],
   [
     "Draco Malfoy",
-  "Severus Snape",
-   "Lucius Malfoy",
-  "Vincent Crabbe",
-   "Tom Riddle",
-  ,
+    "Severus Snape",
+    "Lucius Malfoy",
+    "Vincent Crabbe",
+    "Tom Riddle",
+    ,
   ],
   [
     "Rowena Ravenclaw",
@@ -111,7 +111,7 @@ $("#bio").on("click", async function () {
       $(".hidden").addClass("visible").removeClass("hidden");
     });
 
-    $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
+  $(".charClass").css("background-color", "rgb(105,105,105,0.4)");
 });
 
 //Quiz Functions
@@ -135,7 +135,7 @@ function testAnswers() {
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
           "background-color": "red",
-          "color": "white",
+          color: "white",
         });
         testCorrect = false;
       } else {
@@ -414,9 +414,9 @@ function getWeather() {
       todayHumidEl.text(`Humidity: ${data.main.humidity}%`);
 
       var alleyImg =
-        "https://imgix.bustle.com/rehost/2016/9/13/bc5f1c4d-c4a5-4ade-a16b-05fadd1ad391.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress";
+        "https://imgix.bustle.com/rehost/2016/9/13/bc5f1c4d-c4a5-4ade-a16b-05fadd1ad391.jpg";
       var hogImg =
-        "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg/revision/latest?cb=20120128145344";
+        "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg";
       var meadeImg =
         "https://i.pinimg.com/originals/ca/e5/5a/cae55a87045ef2b7c2b303ffaad1ca1a.jpg";
       var azcaImg =
