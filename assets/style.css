@@ -527,8 +527,8 @@ h4 {
   }
 }
 #myPageModal {
-  position: fixed;
-  left: 20rem;
+  position: sticky;
+  vertical-align: auto;
   margin: 300px auto 0;
   width: 500px;
   height: 250px;
