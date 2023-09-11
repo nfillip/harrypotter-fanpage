@@ -392,8 +392,14 @@ h4 {
 }
 
 #backPhoto {
-  background-image: url(https://img.freepik.com/free-photo/candlelight-illuminates-ancient-still-life-table-generated-by-ai_188544-27984.jpg?t=st=1694157763~exp=1694161363~hmac=0aabf59b637d9efcedaba51c9a2bffbe00f8b276ab285748d2f797760475ec85&w=1380);
+  background-image: url(https://img.freepik.com/free-photo/solid-concrete-wall-textured-backdrop_53876-129493.jpg?w=1380&t=st=1694415706~exp=1694416306~hmac=19a7e33d867fc316d2ef4473fafd0ac77602da6e7c477f508df1bb749e52ba86);
   background-attachment: local;
+}
+#backPic {
+  background-image: url(https://img.freepik.com/free-photo/grunge-vintage-paper-background-with-stains_1048-15821.jpg?w=1060&t=st=1694416042~exp=1694416642~hmac=b6495d459a7564b968cee1c2c03a94572b972290e03442f5eecc9685efa2fdee);
+  background-attachment: local;
+  width: 550px;
+  height: 600px;
 }
 
 .fontBio {
@@ -416,11 +422,19 @@ h4 {
 #bioInput {
   width: 40%;
   min-width: 14rem;
+  justify-content: center;
 }
 .charClass {
   display: flex;
   flex-direction: column;
   color: rgb(255, 255, 255);
+}
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
 }
 
 @media (width<1240px) {
