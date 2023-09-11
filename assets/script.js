@@ -450,4 +450,25 @@ function getWeather() {
 getWeather();
 
 
-////////////////// the button! also im really wine drunk///////////////////
+$(document).ready(function(event){
+  //event.preventDefault();
+  $("#myPageModal").modal('show');
+  return false
+});
+
+var swearBtn = $("#iSwear");
+
+$("#iSwear").on("click", function(event) {
+  //event.preventDefault();
+  $("#myPageModal").modal('hide');
+  
+  return false
+
+});
+
+var submitApplyBtn = $("#submitForm");
+var urlSecond = "file:///Users/alexpurfield/Desktop/Project1/harrypotter-fanpage/application%20redirect/yourenotawizard.html";
+$('#submitForm').click(function() {
+  window.open(urlSecond, '_blank');
+  return false;
+});

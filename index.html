@@ -23,9 +23,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merienda:wght@300&display=swap" rel="stylesheet">
+
+
     <title>Document</title>
+    
   </head>
   <body id="backDrop">
+
+    <!-- Button trigger modal -->
+
+
+<!-- Up to no good Modal -->
+<div id="myPageModal" class="modal fade">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">I solemnly swear that I am up to no good...</h5>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+  
+              <form>
+
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal" id="iSwear">I swear</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
      <!-- MODAL -->
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -60,19 +85,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#navbar">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#navbar">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#destImg">Flying Weather</a>
+                  <a class="nav-link" href="#weather">Flying Weather</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#chars">Witches and WIzards</a>
+                  <a class="nav-link" href="#bio">Witches and Wizards</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#quiz-start-button">Exam</a>
+                  <a class="nav-link" href="#main-quiz-div">Sorting Hat Quiz</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#quiz-start-button">Sorting Ceremony</a>
+                  <a class="nav-link" href="#footer-text">Apply to Hogwarts</a>
                 </li>
               </ul>
 
@@ -258,38 +283,42 @@
             <!--Grid column-->
             <div > 
               <!-- removed class="col-lg-4 col-md-6 mb-4 mb-md-0" to center h3 text -->
-              <h3 class="text-uppercase" id="footer-text">Mischief Managed</h3>
-              <form id="house-form" class="col-lg-6 col-md-6">
-                <h4 class="text-uppercase" id="footer-form">Sorting Ceremony</h4>
-                <label for="wizard-name">Your Name: </label>
+              <h1 class="text-uppercase" id="footer-text">20+ Years Old and Still Haven't Received Your Letter?</h1>
+              <h2 class="text-uppercase" id="footer-text"> Fill out our form below and submit to become a witch or wizard!</h2>
+              <form>
+                <label for="wizard-name" id="input-name">Your Name: </label>
                 <input type="text" id="wizard-name" name="wizard-name">
                 <br><br>
     
-                Are either of your parents a muggle?
+              <h3 id="form-question"> Which is most important to you?"</h3>
                 <br>
-                <input type="radio" id="yes-muggle" name="muggle-parent" value="yes">
-                <label for="contactChoice1">Yes</label>
+                <input type="radio" id="loyalty" name="trait-loyal" value="yes">
+                <label for="contactChoice1">Loyalty</label>
                 <br>
-                <input type="radio" id="no-muggle" name="muggle-parent" value="no">
-                <label for="contactChoice2">No</label>
+                <input type="radio" id="courage" name="trait-courage" value="yes">
+                <label for="contactChoice2">Courage</label>
+                <br>
+                <input type="radio" id="curiosity" name="trait-curiosity" value="yes">
+                <label for="contactChoice3">Curiosity</label> 
+                <br> 
+                <input type="radio" id="power" name="trait-power" value="yes">
+                <label for="contactChoice4">Power</label>
+                <br>
                 <br><br>
     
-                What is most important to you?
+                <h3 id="form-question">Which element you naturally attract to:</h3>
                 <br>
-                <input type="checkbox" id="value-choice1" name="attraction-element" value="bravery">
-                <label for="bravery">Bravery</label>
+                <input type="checkbox" id="air-element" name="attraction-element" value="air">
+                <label for="air-element">Air</label>
                 <br>
-                <input type="checkbox" id="value-choice2" name="attraction-element" value="loyalty">
-                <label for="loyalty">Loyalty</label>
+                <input type="checkbox" id="water-element" name="attraction-element" value="water">
+                <label for="air-element">Water</label>
                 <br>
-                <input type="checkbox" id="value-choice3" name="attraction-element" value="curiosity">
-                <label for="curiosity">Curiosity</label>
-                <br>
-                <input type="checkbox" id="value-choice4" name="attraction-element" value="ambition">
-                <label for="ambition">Ambition</label>
+                <input type="checkbox" id="fire-element" name="attraction-element" value="fire">
+                <label for="air-element">Fire</label>
                 <br><br>
     
-                Which is your favorite house at Hogwarts?
+                <h3 id="form-question">Which is your favorite house at Hogwarts?</h3>
                 <br>
                 <select name="fav-house">
                   <option value="Gryffindor">Gryffindor</option>
@@ -299,9 +328,13 @@
                 </select>
                 <br></br>
     
-                <input type="submit" value="Submit">
+                <input id = "submitForm" type="button" value="Submit">
     
               </form>
+            </div>
+        </div>
+      </body>
+    </html>
 
               <p>
 
@@ -309,94 +342,6 @@
             </div>
             <!--Grid column-->
 
-            <!--Grid column-->
- 
-            <!--Grid column-->
-
-    
-
-
-            <!--Grid column-->
-
-            <!--Grid column-->
-
-            <!--Grid column-->
-
-            <!--Grid column-->
-
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-
-        <hr class="mb-4" />
-
-        <!-- Section: CTA -->
-        <section class="">
-          <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Get my Hogwarts Letter</span>
-            <button type="button" class="btn btn-outline-light btn-rounded">
-              Sign up!
-            </button>
-          </p>
-        </section>
-        <!-- Section: CTA -->
-
-        <hr class="mb-4" />
-
-        <!-- Section: Social media -->
-        <section class="mb-4 text-center">
-          <!-- Facebook -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-
-          <!-- Twitter -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-twitter"></i
-          ></a>
-
-          <!-- Google -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-google"></i
-          ></a>
-
-          <!-- Instagram -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-instagram"></i
-          ></a>
-
-          <!-- Linkedin -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-
-          <!-- Github -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
       <!-- Grid container -->
 
       <!-- Copyright -->
