@@ -78,9 +78,11 @@
 
             </div>
         </nav>
+    
+  <div class = "container m-5">
     <!-- Destination info-->
-    <div class = "container-fluid px-5" id = "destination-main-div">
-    <div id="destInfo" class="row p-3  align-items-center">
+    <div class = "row" id = "destination-main-div">
+    <!-- <div id="destInfo" class="row p-3  align-items-center"> -->
       <!-- drop -->
       <div class="dropdown col-12 col-md-4 col-lg-4 text-center">
         <select
@@ -122,14 +124,14 @@
       <div id="photoBorder" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
         <div id="destImg" class="d-flex justify-content-center"></div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
     <!-- main -->
-    <main class="container-fluid">
-      <div class="row">
+    <main class="row">
+      
       <div class="column col-10 mx=0" id="chars-and-quiz" style = "border: .2rem solid blue;">
         <!-- BIO -->
-        <div class="container" id="backPhoto">
+        <div class="row" id="backPhoto">
             <h1 style="text-decoration:underline" class="fontBio">Wizards and Witches BIO</h1>
             <input id="bioInput" class="bioClass" type="text" placeholder="Enter Character Name"/>
             <button id="bio" type="submit" class="btn btn-danger my-5" text-center>Search</button>
@@ -152,12 +154,12 @@
       </div>
 <!-- Quiz  -->
       <div
-            class="container sortable-containment quiz-section"
+            class="row sortable-containment quiz-section align-items-start"
             id="main-quiz-div" style = "border: .2rem solid red;"
           >
-            <!-- <div class="column quiz-section1" id="second-quiz-div"> -->
+            
               <h1>QUIZ- Sort The Houses!</h1>
-              <!-- Button trigger modal -->
+             <!-- Button trigger modal -->
               <button
                 type="button"
                 class="btn btn-danger my-2"
@@ -230,11 +232,13 @@
       </div>
       
         <!-- Add Space -->
-      <div id="rightAdd" class="d-flex align-items-end justify-content-center col-2">
+      <div id="rightAdd" class="column d-flex align-items-end justify-content-center col-2">
         <button type="button" id="addButton" class="btn mb-6 btn-secondary">Get Love ❤️</button>
       </div>
-      </div>
+      
     </main>
+  </div>
+
 
     <!-- Footer -->
     <footer
