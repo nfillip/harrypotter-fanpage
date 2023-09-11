@@ -9,9 +9,23 @@ var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
+var wandAdSpot = 0;
+var wandDysfAdOnce = true;
 var GSRH = [
-  ["Harry Potter", "Hermione Granger", "Ron Weasley", "Ginny Weasley", "Neville"],
-  ["Draco Malfoy", "Severus Snape", "Lucius Malfoy", "Vincent Crabbe", "Tom Riddle"],
+  [
+    "Harry Potter",
+    "Hermione Granger",
+    "Ron Weasley",
+    "Ginny Weasley",
+    "Neville Longbottom",
+  ],
+  [
+    "Draco Malfoy",
+    "Severus Snape",
+    "Lucius Malfoy",
+    "Vincent Crabbe",
+    "Tom Riddle",
+  ],
   [
     "Rowena Ravenclaw",
     "Gilderoy Lockhart",
@@ -37,7 +51,7 @@ var answerKeyNames = [
   "Cedric Diggory",
   "Helga Hufflepuff",
   "Nymphadora Tonks",
-  "New Scamander",
+  "Newt Scamander",
   "Susan Bones",
   "Draco Malfoy",
   "Severus Snape",
@@ -80,14 +94,19 @@ $("#bio").on("click", async function () {
     .then(function (data) {
       $("#name").text("Name: " + data[0].name);
       $("#house").text("House: " + data[0].house);
-      $("#wand").text("___Wand Details___");
-      $("#wandLength").text("Length: " + data[0].wand.length + "inches");
+      $("#wand").text("   Wand Details   ");
+      $("#descriptors").text("   Descriptors   ");
+      $("#wandLength").text("Length: " + data[0].wand.length + " inches");
       $("#wandWood").text("Type of Wood: " + data[0].wand.wood);
       $("#wandCore").text("Core Materiel: " + data[0].wand.core);
       $("#dateOfBirth").text("Date of Birth: " + data[0].dateOfBirth);
       $("#gender").text("Gender: " + data[0].gender);
       $("#species").text("Species: " + data[0].species);
       $("#patronus").text("Patronus: " + data[0].patronus);
+      $("#ancestry").text("Ancestry: " + data[0].ancestry);
+      $("#eyeColor").text("Eye Color: " + data[0].eyeColour);
+      $("#hairColor").text("Hair Color: " + data[0].hairColour);
+      $(".hidden").addClass("visible").removeClass("hidden");
     });
 });
 
@@ -95,10 +114,11 @@ $("#bio").on("click", async function () {
 //testanswers
 function testAnswers() {
   var testCorrect = true;
+  var countering = 0;
   for (var x = 0; x < 4; x++) {
     for (
       var y = 1;
-      y < randomizeSection.children().eq(x).children().length + 1;
+      y < randomizeSection.children().eq(x).children().length;
       y++
     ) {
       var liTextItem = randomizeSection
@@ -110,7 +130,7 @@ function testAnswers() {
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
-          "background-color": "rgba(68, 22, 22, 0.5)",
+          "background-color": "red",
           color: "white",
         });
         testCorrect = false;
@@ -126,6 +146,7 @@ function testAnswers() {
   if (testCorrect) {
     $(mainQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
+    $("#page-refresh-button").show();
   } else {
     $(this).prop("disabled", true);
     $(mainQuizDiv)
@@ -178,14 +199,93 @@ function startTimer() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
     quizStartButton.text(secondsLeft);
-    if (secondsLeft <= 0) {
+    if (secondsLeft <= 0 && submitButtonClicked === false) {
       clearInterval(timerInterval);
       testAnswers();
+      quizStartButton.text("0");
+    } else if (secondsLeft <= 0 && submitButtonClicked === true) {
+      clearInterval(timerInterval);
       quizStartButton.text("0");
     }
   }, 1000);
 }
 
+function startAdTimer() {
+  var secondsUntilAd = 4;
+  var adStartTimer = setInterval(function () {
+    secondsUntilAd--;
+    if (secondsUntilAd <= 0) {
+      clearInterval(adStartTimer);
+
+      endAdTimer();
+    }
+  }, 1000);
+}
+
+function endAdTimer() {
+  mainQuizDiv.append('<div class = "popUpWand"></div>');
+  $(".popUpWand").append('<p class = "popUpWandClose">Close [x]</p');
+  $(".popUpWand").append('<div class = "popUpWandDiv1"></div');
+  $(".popUpWandDiv1").append(
+    '<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p'
+  );
+  $(".popUpWandDiv1").append(
+    '<button class = "popUpWandButton">Click Here</div'
+  );
+
+  var endAdTimerSecondsLeft = 40;
+  var popUpColor = 0;
+  var endAdTimerCount = setInterval(function () {
+    if (popUpColor === 0) {
+      $(".popUpWand").css("border", "2rem solid #740001");
+    } else if (popUpColor === 1) {
+      $(".popUpWand").css("border", "2rem solid #eeb939");
+    } else if (popUpColor === 2) {
+      $(".popUpWand").css("border", "2rem solid #222f5b");
+    } else if (popUpColor === 3) {
+      $(".popUpWand").css("border", "2rem solid #1a472a");
+    }
+
+    if (endAdTimerSecondsLeft <= 0) {
+      clearInterval(endAdTimerCount);
+      $(".popUpWand").remove();
+    }
+    popUpColor++;
+    if (popUpColor === 4) {
+      popUpColor = 0;
+    }
+    endAdTimerSecondsLeft--;
+  }, 250);
+}
+
+//Event Listener - WandDysf Ad Close X
+mainQuizDiv.on("mouseover", ".popUpWandClose", function () {
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "50vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "50vh", left: "50vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "50vw" });
+    wandAdSpot = 0;
+  }
+  wandAdSpot++;
+});
+//Event Listener - WandDysf Ad Button
+mainQuizDiv.on("click", ".popUpWandButton", function () {
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "70vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "70vh", left: "70vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "70vw" });
+    wandAdSpot = 0;
+  }
+  wandAdSpot++;
+});
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
   $("#page-refresh-button").prop("disabled", true);
@@ -198,33 +298,13 @@ randomizeSection.on("click", "#quiz-submit-button", function (event) {
   event.preventDefault();
   testAnswers();
   var x = 0;
+  submitButtonClicked = true;
   secondsLeft = 0;
   $("#page-refresh-button").prop("disabled", false);
 });
 
-var destination = $(".locationName");
-var todayCastEl = $("#status");
-var todayTempEl = $("#todayTemp");
-var todayHighEl = $("#todayHigh");
-var todayLowEl = $("#todayLow");
-var todayWindEl = $("#todayWind");
-var todayHumidEl = $("#todayHumid");
-var placeInfo = $("#destinationInfo");
-var destinationImg = $("#destImg");
-var alley =
-  "Diagon Alley is the main wizarding shopping street in London. On this street we can find any number of shops specifically for wizards, including an apothecary, Eeylops Owl Emporium, Florean Fortescue's Ice Cream Parlor, Flourish and Blott's bookstore, Gringotts Wizarding Bank, Madam Malkin's Robes for All Occasions, The Magical Menagerie pet store, Ollivanders: Makers of Fine Wands since 382 BC, and Quality Quidditch Supplies. The Leaky Cauldron pub, which serves as the gateway to Muggle London, backs onto this street, and the entrance to Knockturn Alley lies in this street as well. The merchants of Diagon Alley are well prepared for the annual influx of students needing to buy supplies for their year at Hogwarts.";
-var hogwarts =
-  "Founded around the 9th century and 10th century by Godric Gryffindor, Rowena Ravenclaw, Helga Hufflepuff and Salazar Slytherin, Hogwarts was established in the Highlands of Scotland to educate young wizards and witches as well as to keep students safe from Muggle persecution. Theory has it that Rowena Ravenclaw came up with the name of Hogwarts after dreaming of a warty hog that led her to a cliff by a lake.[4] Since then, Hogwarts educated most wizarding children with residence in Great Britain and Ireland, keeping its location hidden from other wizarding schools and Muggles.";
-var meade =
-  "Hogsmeade Village, or simply called Hogsmeade is the only all-wizarding village in Britain. It was founded by Hengist of Woodcroft. Students may sometimes come on weekend trips, but only third year students and above with guardian permission are allowed to visit. Mainly, students frequent the High Street in the village which contains the named specialty shops and pubs such as Zonko's Joke Shop and Honeydukes. Otherwise, they wander on to observe the infamous Shrieking Shack.";
-var azzz =
-  "Azkaban is a horrendous place, where Sirius Black, along with many Death Eaters, were imprisoned after Lord Voldemort fell from power. Guarded by the hideous dementors, it is located on a remote island and is virtually escape proof. According to Remus Lupin, it is a fortress... set on a tiny island, way out to sea, but they don't need walls and water to keep the prisoners in, not when they're all trapped inside their own heads, incapable of a single cheerful thought. Most of them go mad within weeks. Sirius Black is the first person known to have escaped unassisted. Although several Death Eaters also later escaped, it is believed they were able to escape only because the dementors had deserted the prison, having been promised richer feeding if they became loyal to Lord Voldemort.";
-
 //Event Listener - Modal Submit button
 $("#modal-submit").on("click", function () {
-  console.log(parseInt($("#message-text").val()));
-  console.log(parseInt("hello"));
-  console.log(parseInt("55"));
   if (parseInt($("#message-text").val())) {
     $(mainQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
     secondsLeft = $("#message-text").val();
@@ -232,6 +312,10 @@ $("#modal-submit").on("click", function () {
     shuffleQuiz();
     startTimer();
     $("#quiz-start-button").prop("disabled", true);
+    if (wandDysfAdOnce) {
+      startAdTimer();
+      wandDysfAdOnce = !wandDysfAdOnce;
+    }
   } else {
     blinkTimer = true;
     $(mainQuizDiv)
@@ -257,11 +341,10 @@ $("#modal-submit").on("click", function () {
 mainQuizDiv.on("click", "#page-refresh-button", function () {
   var RandomArrayOfTwentyNames = randomArrayCharacters();
   var z = 0;
-  console.log("refresh works");
-  console.log(randomizeSection.children().eq(0));
+
   for (var x = 0; x < 4; x++) {
     randomizeSection.children().eq(x).children().remove("li");
-    for (var y = 1; y < 5; y++) {
+    for (var y = 1; y < 6; y++) {
       randomizeSection
         .children()
         .eq(x)
@@ -284,6 +367,8 @@ $("#quiz-refresh-button").prop("disabled", true);
 $("#page-refresh-button").hide();
 ////////// END OF FILLIP SECTION
 
+//////////////////////// destination
+
 var destination = $(".locationName");
 var todayCastEl = $("#status");
 var todayTempEl = $("#todayTemp");
@@ -293,6 +378,7 @@ var todayWindEl = $("#todayWind");
 var todayHumidEl = $("#todayHumid");
 var placeInfo = $("#destinationInfo");
 var destinationImg = $("#destImg");
+
 var alley =
   "Diagon Alley is the main wizarding shopping street in London. On this street we can find any number of shops specifically for wizards, including an apothecary, Eeylops Owl Emporium, Florean Fortescue's Ice Cream Parlor, Flourish and Blott's bookstore, Gringotts Wizarding Bank, Madam Malkin's Robes for All Occasions, The Magical Menagerie pet store, Ollivanders: Makers of Fine Wands since 382 BC, and Quality Quidditch Supplies. The Leaky Cauldron pub, which serves as the gateway to Muggle London, backs onto this street, and the entrance to Knockturn Alley lies in this street as well. The merchants of Diagon Alley are well prepared for the annual influx of students needing to buy supplies for their year at Hogwarts.";
 var hogwarts =
@@ -369,3 +455,5 @@ function getWeather() {
   });
 }
 getWeather();
+
+////////////////// the button! also im really wine drunk///////////////////
