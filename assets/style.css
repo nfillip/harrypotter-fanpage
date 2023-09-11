@@ -422,11 +422,19 @@ h4 {
 #bioInput {
   width: 40%;
   min-width: 14rem;
+  justify-content: center;
 }
 .charClass {
   display: flex;
   flex-direction: column;
   color: rgb(255, 255, 255);
+}
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
 }
 
 @media (width<1240px) {
