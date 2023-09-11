@@ -13,7 +13,7 @@ body {
   margin-left: 2rem;
 }
 nav {
- 
+  
   background: #112c38;
   font-family: "Bigelow Rules", cursive;
   background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
@@ -322,10 +322,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: end;
-  /* width: 320px;
-  height: 1200px; */
-  /* margin-top: 2rem;
-  margin-left: 2rem; */
+ 
 }
 
 #addButton {
@@ -362,7 +359,7 @@ h4 {
 }
 
 .connectedSortable li {
-  /* background-color: rgb(rgb(240,248,255, 0.6)); */
+ 
   background-color: rgb(240, 248, 255, 0.3);
   margin-top: none;
 }
@@ -545,14 +542,19 @@ h4 {
   }
 }
 #myPageModal {
-  position: relative;
-  margin: 300px auto 0;
+  position: fixed;
+  margin: 300px auto 0; */
+  height: 50%;
+  width: 50%;
+  top: 25vh;
+  left: 25vw;
   width: 500px;
   height: 250px;
   background: linear-gradient(0deg, #000, #272727);
+  overflow-y: auto;
 }
 
-.modal:before, .modal:after {
+#myPageModal:before, #myPageModal:after {
   content: '';
   position: absolute;
   left: -2px;
@@ -565,6 +567,7 @@ h4 {
   z-index: -1;
   animation: steam 20s linear infinite;
 }
+
 
 @keyframes steam {
   0% {
