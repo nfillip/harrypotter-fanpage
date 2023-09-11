@@ -18,6 +18,7 @@ var GSRH = [
     "Ron Weasley",
     "Ginny Weasley",
     "Neville Longbottom",
+    ,
   ],
   [
     "Draco Malfoy",
@@ -25,6 +26,7 @@ var GSRH = [
     "Lucius Malfoy",
     "Vincent Crabbe",
     "Tom Riddle",
+    ,
   ],
   [
     "Rowena Ravenclaw",
@@ -109,7 +111,7 @@ $("#bio").on("click", async function () {
       $(".hidden").addClass("visible").removeClass("hidden");
     });
 
-    $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
+  $(".charClass").css("background-color", "rgb(105,105,105,0.4)");
 });
 
 //Quiz Functions
@@ -132,8 +134,8 @@ function testAnswers() {
       var liBorderEdit = randomizeSection.children().eq(x).children().eq(y);
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
-          "background-color": "rgba(255, 0, 0, 0.3",
-          "color": "white",
+          "background-color": "red",
+          color: "white",
         });
         testCorrect = false;
       } else {
@@ -412,13 +414,13 @@ function getWeather() {
       todayHumidEl.text(`Humidity: ${data.main.humidity}%`);
 
       var alleyImg =
-        "https://imgix.bustle.com/rehost/2016/9/13/bc5f1c4d-c4a5-4ade-a16b-05fadd1ad391.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress";
+        "https://imgix.bustle.com/rehost/2016/9/13/bc5f1c4d-c4a5-4ade-a16b-05fadd1ad391.jpg";
       var hogImg =
-        "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg/revision/latest?cb=20120128145344";
+        "https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg";
       var meadeImg =
         "https://i.pinimg.com/originals/ca/e5/5a/cae55a87045ef2b7c2b303ffaad1ca1a.jpg";
       var azcaImg =
-        "https://static.wikia.nocookie.net/harrypotter/images/b/b6/Azkaban_concept_art.png/revision/latest?cb=20161216053518";
+        "https://static.wikia.nocookie.net/harrypotter/images/b/b6/Azkaban_concept_art.png";
       destinationImg.empty();
 
       if (selectedOption === "London,uk") {
