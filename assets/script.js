@@ -13,18 +13,30 @@ var wandAdSpot = 0;
 var wandDysfAdOnce = true;
 var GSRH = [
   [
+    
     "Harry Potter",
+   
     "Hermione Granger",
+   
     "Ron Weasley",
+   
     "Ginny Weasley",
+   
     "Neville Longbottom",
+  ,
   ],
   [
+    
     "Draco Malfoy",
+   
     "Severus Snape",
+   
     "Lucius Malfoy",
+   
     "Vincent Crabbe",
+   
     "Tom Riddle",
+  ,
   ],
   [
     "Rowena Ravenclaw",
@@ -94,15 +106,22 @@ $("#bio").on("click", async function () {
     .then(function (data) {
       $("#name").text("Name: " + data[0].name);
       $("#house").text("House: " + data[0].house);
-      $("#wand").text("___Wand Details___");
-      $("#wandLength").text("Length: " + data[0].wand.length + "inches");
+      $("#wand").text("   Wand Details   ");
+      $("#descriptors").text("   Descriptors   ");
+      $("#wandLength").text("Length: " + data[0].wand.length + " inches");
       $("#wandWood").text("Type of Wood: " + data[0].wand.wood);
       $("#wandCore").text("Core Materiel: " + data[0].wand.core);
       $("#dateOfBirth").text("Date of Birth: " + data[0].dateOfBirth);
       $("#gender").text("Gender: " + data[0].gender);
       $("#species").text("Species: " + data[0].species);
       $("#patronus").text("Patronus: " + data[0].patronus);
+      $("#ancestry").text("Ancestry: " + data[0].ancestry);
+      $("#eyeColor").text("Eye Color: " + data[0].eyeColour);
+      $("#hairColor").text("Hair Color: " + data[0].hairColour);
+      $(".hidden").addClass("visible").removeClass("hidden");
     });
+
+    $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
 });
 
 //Quiz Functions
@@ -126,7 +145,7 @@ function testAnswers() {
       if (GSRH[x].indexOf(liTextItem) === -1) {
         $(liBorderEdit).css({
           "background-color": "red",
-          color: "white",
+          "color": "white",
         });
         testCorrect = false;
       } else {
