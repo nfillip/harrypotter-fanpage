@@ -8,7 +8,7 @@ var $coverWindow = $("#cover");
 $popupLink.on("click", function (event) {
   event.preventDefault();
   $popupWindow.css("display", "block");
-  $coverWindow.css("opacity", 0.5);
+  $coverWindow.css("opacity", 0.7);
   $coverWindow.css("display", "block");
 });
 
