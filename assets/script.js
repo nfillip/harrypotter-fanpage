@@ -450,4 +450,18 @@ function getWeather() {
 getWeather();
 
 
-////////////////// the button! also im really wine drunk///////////////////
+$(document).ready(function(event){
+  //event.preventDefault();
+  $("#myPageModal").modal('show');
+});
+
+var swearBtn = $("#iSwear");
+
+$("#iSwear").on("click", function(event) {
+  //event.preventDefault();
+  $("#myPageModal").modal('hide');
+  
+  return false
+
+});
+

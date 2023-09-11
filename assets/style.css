@@ -16,18 +16,35 @@ nav {
   border: 0.2rem solid black;
   background: #112c38;
   font-family: "Bigelow Rules", cursive;
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: bolder !important; 
+}
+
+
+nav ::backdrop {
+  opacity: .5;
+}
+main {
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 nav div ul {
   margin: 0;
   padding: 0;
   display: flex;
+
 }
 
 nav div ul li {
   list-style: none;
   margin: 0 20px;
   transition: 0.5s;
+
 }
 
 nav div ul li a {
@@ -53,7 +70,7 @@ nav div ul li a:hover {
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
-  color: #fff;
+  color: navy;
 }
 
 nav div ul li a:before {
@@ -63,11 +80,12 @@ nav div ul li a:before {
   left: 0;
   width: 100%;
   height: 80%;
-  background: tan;
+  background: red;
   transition: 1s;
   transform-origin: right;
   transform: scaleX(0);
   z-index: -1;
+  color:whitesmoke;
 }
 
 nav div ul li a:hover:before {
@@ -77,6 +95,9 @@ nav div ul li a:hover:before {
 }
 
 #footer-main {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  color: black;
+  
 }
 
 #footer-text {
@@ -108,7 +129,8 @@ select {
 }
 
 #house-form {
-  background-color: tan;
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  
 }
 
 .popUpWand{
@@ -263,6 +285,10 @@ h4 {
 /* Destintion Info End*/
 
 /* Add  */
+
+/* this css is for advertisment to make it sticky- need to put in ad art */
+
+
 
 #rightAdd {
   display: flex;
@@ -474,12 +500,12 @@ h4 {
   
   }
 
-  #chars-and-quiz {
+  /* #chars-and-quiz { */
     /* margin-right: 0rem; */
    
   }
   
-}
+/* } */
 
 
 
@@ -517,7 +543,43 @@ h4 {
   
   }
 }
+#myPageModal {
+  position: relative;
+  margin: 300px auto 0;
+  width: 500px;
+  height: 250px;
+  background: linear-gradient(0deg, #000, #272727);
+}
 
+.modal:before, .modal:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block:after {
+  filter: blur(50px);
+}
 @media (min-width: 576px) {
   .container,
   .container-sm {
