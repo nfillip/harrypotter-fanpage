@@ -13,21 +13,49 @@ body {
   margin-left: 2rem;
 }
 nav {
-  border: 0.2rem solid black;
+ 
   background: #112c38;
   font-family: "Bigelow Rules", cursive;
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  margin: 10px;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: bold; 
+}
+.navbar-light .navbar-brand {
+  color: black;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+  letter-spacing: 5;
+}
+
+nav ::backdrop {
+  opacity: .5;
+}
+main {
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 nav div ul {
   margin: 0;
   padding: 0;
   display: flex;
+
 }
 
 nav div ul li {
   list-style: none;
   margin: 0 20px;
   transition: 0.5s;
+
 }
 
 nav div ul li a {
@@ -53,7 +81,7 @@ nav div ul li a:hover {
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
-  color: #fff;
+  color: navy;
 }
 
 nav div ul li a:before {
@@ -63,11 +91,13 @@ nav div ul li a:before {
   left: 0;
   width: 100%;
   height: 80%;
-  background: tan;
+  background: whitesmoke;
   transition: 1s;
   transform-origin: right;
   transform: scaleX(0);
   z-index: -1;
+  color:whitesmoke;
+  border-radius: .5;
 }
 
 nav div ul li a:hover:before {
@@ -77,11 +107,16 @@ nav div ul li a:hover:before {
 }
 
 #footer-main {
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  color: black;
+  
 }
 
 #footer-text {
   text-align: center;
   font-family: "Bigelow Rules", cursive;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
 #form-wrapper {
@@ -99,7 +134,7 @@ nav div ul li a:hover:before {
 #form-wrapper > form > input,
 select {
   font-family: "Bigelow Rules", cursive;
-  font-size: 22px;
+  font-size: 30px;
   letter-spacing: 1px;
   padding: 0px 6px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -108,7 +143,26 @@ select {
 }
 
 #house-form {
-  background-color: tan;
+  background-image: url(https://img.freepik.com/premium-photo/old-brown-paper-grunge-abstract-frame-liquid-coffee-color-texture_51524-10155.jpg?w=2000);
+  
+}
+label {
+  font-size: 20px;
+}
+
+#form-question {
+  font-family: "Merienda", cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+}
+
+#submitForm {
+  background-color: #ff0000;
+  color: whitesmoke;
+  font-size: 20px;
+
+
 }
 
 .popUpWand {
@@ -253,6 +307,10 @@ h4 {
 /* Destintion Info End*/
 
 /* Add  */
+
+/* this css is for advertisment to make it sticky- need to put in ad art */
+
+
 
 #rightAdd {
   display: flex;
@@ -448,14 +506,19 @@ h4 {
     box-shadow: 0px 0px 10px 0px whitesmoke;
   }
 
-  #chars-and-quiz {
+  /* #chars-and-quiz { */
     /* margin-right: 0rem; */
   }
-}
+  
+/* } */
 
-@media (width<580px) {
-  .popUpWand {
-    background-image: url(./wand-dysfunction-ad-mobile.PNG);
+
+
+
+ @media (width<580px){
+  .popUpWand{
+        background-image: url(./wand-dysfunction-ad-mobile.PNG);
+    
   }
 
   .popUpWandClose {
@@ -476,9 +539,48 @@ h4 {
 
   .popUpWandPar {
     font-size: 1rem;
+    
+  
+  
+  }
+}
+#myPageModal {
+  position: relative;
+  margin: 300px auto 0;
+  width: 500px;
+  height: 250px;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.modal:before, .modal:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
+.block:after {
+  filter: blur(50px);
+}
 @media (min-width: 576px) {
   .container,
   .container-sm {
