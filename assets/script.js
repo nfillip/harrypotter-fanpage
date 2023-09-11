@@ -472,8 +472,7 @@ $("#iSwear").on("click", function (event) {
 });
 
 var submitApplyBtn = $("#submitForm");
-var urlSecond =
-  "file:///Users/alexpurfield/Desktop/Project1/harrypotter-fanpage/application%20redirect/yourenotawizard.html";
+var urlSecond ="./application_redirect/yourenotawizard.html";
 $("#submitForm").click(function () {
   window.open(urlSecond, "_blank");
   return false;
