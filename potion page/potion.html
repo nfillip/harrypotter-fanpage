@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Love Potion</title>
     <link rel="stylesheet" href="./potion.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,14 +13,15 @@
     />
   </head>
   <body>
-    <header>
-      <h1>❤️ Love Potion ❤️</h1>
-    </header>
+    <header></header>
     <main>
-      <img src="./lovepotion 2.png" alt="love potion" />
-      <h2>Amorelixir Eternum: The Elixir of Eternal Love</h2>
-      <div>
-        <h3>Brought to you by the same makes of "The Audacity"</h3>
+      <img src="./lovepotion2.png" alt="love potion" />
+      <h1>Amorelixir Eternum: The Elixir of Eternal Love</h1>
+      <div id="maindiv">
+        <h3>
+          Brought to you by the same makes of "The Audacity" & the cure for Wand
+          Disfunction
+        </h3>
         <p>
           Amorelixir Eternum is an exquisite, velvety potion that captivates
           hearts and kindles the flames of affection like no other. Brewed with
@@ -72,10 +73,15 @@
           purchase Amorelixir Eternum, and any unauthorized use can result in
           severe penalties.
         </p>
+        <button id="orderButton">❤️ Place Your Order ❤️</button>
+      </p>
+    </div>
+  
+</main>
         <div id="dis">
           <h5>Disclaimer</h5>
           <p id="Disclaimer">
-            1. Heartfelt Hilarity: Warning! The consumption of love potions may
+            1. Warning! The consumption of love potions may
             induce spontaneous romantic gestures, heartfelt confessions, and
             bouts of passionate poetry writing. Please make sure you have a
             ready supply of chocolates and flowers on hand. 2. Do Not Mix with
@@ -113,11 +119,35 @@
             of love potions. Unauthorized use may lead to unexpected
             engagements, marriage proposals, and surprise double dates. Use
             responsibly!
-          </p>
-        </div>
-      </div>
+          </div>
+          <side id="cover"></side>
+          <div id="popup-window">
+            <h1>!!!!  Warning  !!!!</h1>
+            <p>!!!!  IT APPEARS YOU ARE A MUGGLE LEAVE THIS PAGE IMMEDIATELY  !!!!</p>
+            <button href="/index.html" id="close-button">!!!!  LEAVE NOW  !!!!</button>
+          </div> 
 
-      <button>❤️ Place You Order ❤️</button>
-    </main>
+          <script src=
+          "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"       
+                  crossorigin="anonymous" referrerpolicy="no-referrer">
+              </script>
+            
+              <!-- CDN link for sticky-kit jquery plugin -->
+              <script src=
+          "https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"        
+                  crossorigin="anonymous" referrerpolicy="no-referrer">
+              </script>
+          <!-- jQuery script -->
+          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+          <!-- DayJS script -->
+          <script
+            src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+            integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+            crossorigin="anonymous"
+          ></script>
+          <!-- jquery UI script -->
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="./lovepotion.js"></script>
+        
   </body>
 </html>
