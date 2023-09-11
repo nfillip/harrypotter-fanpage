@@ -9,11 +9,23 @@ var disableSubmitButton;
 var secondsLeft = 15;
 var textArea = $("#modal-textarea");
 var blinkTimer = false;
-var wandAdSpot = 0; 
+var wandAdSpot = 0;
 var wandDysfAdOnce = true;
 var GSRH = [
-  ["Harry Potter", "Hermione Granger", "Ron Weasley", "Ginny Weasley", "Neville Longbottom"],
-  ["Draco Malfoy", "Severus Snape", "Lucius Malfoy", "Vincent Crabbe", "Tom Riddle"],
+  [
+    "Harry Potter",
+    "Hermione Granger",
+    "Ron Weasley",
+    "Ginny Weasley",
+    "Neville Longbottom",
+  ],
+  [
+    "Draco Malfoy",
+    "Severus Snape",
+    "Lucius Malfoy",
+    "Vincent Crabbe",
+    "Tom Riddle",
+  ],
   [
     "Rowena Ravenclaw",
     "Gilderoy Lockhart",
@@ -82,14 +94,19 @@ $("#bio").on("click", async function () {
     .then(function (data) {
       $("#name").text("Name: " + data[0].name);
       $("#house").text("House: " + data[0].house);
-      $("#wand").text("___Wand Details___");
-      $("#wandLength").text("Length: " + data[0].wand.length + "inches");
+      $("#wand").text("   Wand Details   ");
+      $("#descriptors").text("   Descriptors   ");
+      $("#wandLength").text("Length: " + data[0].wand.length + " inches");
       $("#wandWood").text("Type of Wood: " + data[0].wand.wood);
       $("#wandCore").text("Core Materiel: " + data[0].wand.core);
       $("#dateOfBirth").text("Date of Birth: " + data[0].dateOfBirth);
       $("#gender").text("Gender: " + data[0].gender);
       $("#species").text("Species: " + data[0].species);
       $("#patronus").text("Patronus: " + data[0].patronus);
+      $("#ancestry").text("Ancestry: " + data[0].ancestry);
+      $("#eyeColor").text("Eye Color: " + data[0].eyeColour);
+      $("#hairColor").text("Hair Color: " + data[0].hairColour);
+      $(".hidden").addClass("visible").removeClass("hidden");
     });
 
     $(".charClass").css("background-color", "rgb(105,105,105,0.4)")
@@ -106,7 +123,6 @@ function testAnswers() {
       y < randomizeSection.children().eq(x).children().length;
       y++
     ) {
-      
       var liTextItem = randomizeSection
         .children()
         .eq(x)
@@ -120,19 +136,16 @@ function testAnswers() {
           "color": "white",
         });
         testCorrect = false;
-        
       } else {
         $(liBorderEdit).css({
           "background-color": "rgba(76, 175, 80, 0.3)",
-          "color": "white",
+          color: "white",
         });
       }
-      
     }
   }
-  
+
   if (testCorrect) {
-   
     $(mainQuizDiv).children("h1").text("CONGRATS YOU WIN!");
     $(this).prop("disabled", true);
     $("#page-refresh-button").show();
@@ -192,41 +205,41 @@ function startTimer() {
       clearInterval(timerInterval);
       testAnswers();
       quizStartButton.text("0");
-    } else if (secondsLeft <= 0 && submitButtonClicked === true){
+    } else if (secondsLeft <= 0 && submitButtonClicked === true) {
       clearInterval(timerInterval);
       quizStartButton.text("0");
     }
-
   }, 1000);
 }
 
 function startAdTimer() {
-  
   var secondsUntilAd = 4;
-  var adStartTimer = setInterval(function(){
+  var adStartTimer = setInterval(function () {
     secondsUntilAd--;
-    if (secondsUntilAd <=0){
+    if (secondsUntilAd <= 0) {
       clearInterval(adStartTimer);
-      
+
       endAdTimer();
     }
-  }, 1000)
-  }
+  }, 1000);
+}
 
- function endAdTimer() {
-  
+function endAdTimer() {
   mainQuizDiv.append('<div class = "popUpWand"></div>');
   $(".popUpWand").append('<p class = "popUpWandClose">Close [x]</p');
   $(".popUpWand").append('<div class = "popUpWandDiv1"></div');
-  $(".popUpWandDiv1").append('<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p');
-  $(".popUpWandDiv1").append('<button class = "popUpWandButton">Click Here</div');
-  
-  
+  $(".popUpWandDiv1").append(
+    '<p class = "popUpWandPar">Do You Have Wand Dysfunction? LOOK NO FURTHER!!!</p'
+  );
+  $(".popUpWandDiv1").append(
+    '<button class = "popUpWandButton">Click Here</div'
+  );
+
   var endAdTimerSecondsLeft = 40;
   var popUpColor = 0;
-  var endAdTimerCount = setInterval(function() {
-    if(popUpColor === 0) {
-    $(".popUpWand").css("border", "2rem solid #740001");
+  var endAdTimerCount = setInterval(function () {
+    if (popUpColor === 0) {
+      $(".popUpWand").css("border", "2rem solid #740001");
     } else if (popUpColor === 1) {
       $(".popUpWand").css("border", "2rem solid #eeb939");
     } else if (popUpColor === 2) {
@@ -234,50 +247,47 @@ function startAdTimer() {
     } else if (popUpColor === 3) {
       $(".popUpWand").css("border", "2rem solid #1a472a");
     }
-    
-    if(endAdTimerSecondsLeft <=0) {
-      
+
+    if (endAdTimerSecondsLeft <= 0) {
       clearInterval(endAdTimerCount);
       $(".popUpWand").remove();
     }
     popUpColor++;
     if (popUpColor === 4) {
-      popUpColor =0
+      popUpColor = 0;
     }
     endAdTimerSecondsLeft--;
-  },250)
- } 
+  }, 250);
+}
 
 //Event Listener - WandDysf Ad Close X
 mainQuizDiv.on("mouseover", ".popUpWandClose", function () {
-  
-  if (wandAdSpot === 0){
-    $(".popUpWand").css({"top": "10vh", "left": "10vw"})
-  } else if (wandAdSpot === 1){
-    $(".popUpWand").css({"top": "50vh", "left": "10vw"})
-  } else if (wandAdSpot === 2){
-    $(".popUpWand").css({"top": "50vh", "left": "50vw"})
-  } else if (wandAdSpot === 3){
-    $(".popUpWand").css({"top": "10vw", "left": "50vw"})
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "50vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "50vh", left: "50vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "50vw" });
     wandAdSpot = 0;
-  } 
+  }
   wandAdSpot++;
-   })
- //Event Listener - WandDysf Ad Button
- mainQuizDiv.on("click", ".popUpWandButton", function () {
-  
-  if (wandAdSpot === 0){
-    $(".popUpWand").css({"top": "10vh", "left": "10vw"})
-  } else if (wandAdSpot === 1){
-    $(".popUpWand").css({"top": "70vh", "left": "10vw"})
-  } else if (wandAdSpot === 2){
-    $(".popUpWand").css({"top": "70vh", "left": "70vw"})
-  } else if (wandAdSpot === 3){
-    $(".popUpWand").css({"top": "10vw", "left": "70vw"})
+});
+//Event Listener - WandDysf Ad Button
+mainQuizDiv.on("click", ".popUpWandButton", function () {
+  if (wandAdSpot === 0) {
+    $(".popUpWand").css({ top: "10vh", left: "10vw" });
+  } else if (wandAdSpot === 1) {
+    $(".popUpWand").css({ top: "70vh", left: "10vw" });
+  } else if (wandAdSpot === 2) {
+    $(".popUpWand").css({ top: "70vh", left: "70vw" });
+  } else if (wandAdSpot === 3) {
+    $(".popUpWand").css({ top: "10vw", left: "70vw" });
     wandAdSpot = 0;
-  } 
+  }
   wandAdSpot++;
-   })
+});
 //Event Listener - Start Button
 quizStartButton.on("click", function () {
   $("#page-refresh-button").prop("disabled", true);
@@ -297,7 +307,6 @@ randomizeSection.on("click", "#quiz-submit-button", function (event) {
 
 //Event Listener - Modal Submit button
 $("#modal-submit").on("click", function () {
-
   if (parseInt($("#message-text").val())) {
     $(mainQuizDiv).children("h1").text("QUIZ- Sort The Houses! ");
     secondsLeft = $("#message-text").val();
@@ -305,11 +314,10 @@ $("#modal-submit").on("click", function () {
     shuffleQuiz();
     startTimer();
     $("#quiz-start-button").prop("disabled", true);
-    if (wandDysfAdOnce){
+    if (wandDysfAdOnce) {
       startAdTimer();
       wandDysfAdOnce = !wandDysfAdOnce;
     }
-    
   } else {
     blinkTimer = true;
     $(mainQuizDiv)
@@ -335,7 +343,7 @@ $("#modal-submit").on("click", function () {
 mainQuizDiv.on("click", "#page-refresh-button", function () {
   var RandomArrayOfTwentyNames = randomArrayCharacters();
   var z = 0;
-  
+
   for (var x = 0; x < 4; x++) {
     randomizeSection.children().eq(x).children().remove("li");
     for (var y = 1; y < 6; y++) {
@@ -361,8 +369,7 @@ $("#quiz-refresh-button").prop("disabled", true);
 $("#page-refresh-button").hide();
 ////////// END OF FILLIP SECTION
 
-
-//////////////////////// destination 
+//////////////////////// destination
 
 var destination = $(".locationName");
 var todayCastEl = $("#status");
@@ -451,26 +458,25 @@ function getWeather() {
 }
 getWeather();
 
-
-$(document).ready(function(event){
+$(document).ready(function (event) {
   //event.preventDefault();
-  $("#myPageModal").modal('show');
-  return false
+  $("#myPageModal").modal("show");
+  return false;
 });
 
 var swearBtn = $("#iSwear");
 
-$("#iSwear").on("click", function(event) {
+$("#iSwear").on("click", function (event) {
   //event.preventDefault();
-  $("#myPageModal").modal('hide');
-  
-  return false
+  $("#myPageModal").modal("hide");
 
+  return false;
 });
 
 var submitApplyBtn = $("#submitForm");
-var urlSecond = "file:///Users/alexpurfield/Desktop/Project1/harrypotter-fanpage/application%20redirect/yourenotawizard.html";
-$('#submitForm').click(function() {
-  window.open(urlSecond, '_blank');
+var urlSecond =
+  "file:///Users/alexpurfield/Desktop/Project1/harrypotter-fanpage/application%20redirect/yourenotawizard.html";
+$("#submitForm").click(function () {
+  window.open(urlSecond, "_blank");
   return false;
 });

@@ -157,25 +157,32 @@
       <div class="column mb-3 col-12 col-md-8 col-lg-9 col-xxl-10" id="chars-and-quiz" >
         <!-- BIO -->
         <div class="row mb-5 d-flex flex-column align-items-start " id="backPhoto">
-            <h1 style="text-decoration:underline" class="fontBio p-0 m-0">Wizards and Witches BIO</h1>
-            <input id="bioInput" class="bioClass ms-4 my-4" type="text" placeholder="Enter Character Name"/>
-            <button id="bio" type="submit" class="btn btn-danger ms-4">Search</button>
-            <div class="charClass ms-4 my-4">
-                <h1 id="name"></h1>
-                <h5 id="house"></h5>
-                <h5>
-                <ul id="wand"></ul>
-                <ul id="wandWood"></ul>
-                <ul id="wandCore"></ul>
-                <ul id="wandLength"></ul>
-                </h5>
-                <h5 id="dateOfBirth"></h5>
-                <h5 id="gender"></h5>
-                <h5 id="species"></h5>
-                <h5 id="patronus"></h5>
-            </div>
-         
-      </div>
+          <h1 style="font-size: 70px; text-align: center;" class="fontBio p-0 m-0">Wizards and Witches BIO</h1>
+          <input id="bioInput" class="bioClass ms-4 my-4" type="text" placeholder="Enter Character Name"/>
+          <button id="bio" type="submit" class="btn btn-danger ms-4">Search</button>
+          <div class="charClass ms-4 my-4 hidden" id="backPic">
+            <h1 id="name" style="color: white;"></h1>
+            <h5 style="font-size: 35px; color: white;" id="house"></h5>
+            <h5>
+              <ul id="descriptors" style="text-decoration: underline; font-size: 25px; color: white;"></ul>
+              <ul id="dateOfBirth" style="color: white;"></ul>
+              <ul id="hairColor" style="color: white;"></ul>
+              <ul id="eyeColor" style="color: white;"style="color: white;"></ul>
+              <ul id="gender" style="color: white;"></ul>
+              <ul id="species" style="color: white;"></ul>
+              <ul id="ancestry" style="color: white;"></ul>
+              <ul id="patronus" style="color: white;"></ul>
+              </h5>
+              <h5>
+              <ul id="wand" style="text-decoration: underline; font-size: 25px; color: white;"></ul>
+              <ul id="wandWood" style="color: white;"></ul>
+              <ul id="wandCore" style="color: white;"></ul>
+              <ul id="wandLength" style="color: white;"></ul>
+              </h5>
+          </div>
+        <!-- </div>
+      </div> -->
+    </div>
 <!-- Quiz  -->
       <div
             class="row sortable-containment quiz-section d-flex flex-column align-items-between"
