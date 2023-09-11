@@ -553,7 +553,7 @@ h4 {
   background: linear-gradient(0deg, #000, #272727);
 }
 
-.modal:before, .modal:after {
+#myPageModal:before, #MyPageModal:after {
   content: '';
   position: absolute;
   left: -2px;
