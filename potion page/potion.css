@@ -49,6 +49,7 @@ img {
   background-image: url(https://img.freepik.com/premium-photo/old-yellowed-kraft-paper-surface-background-texture_271293-283.jpg?w=1060);
   background-size: 100%;
   background-repeat: repeat;
+  background-attachment: local;
 }
 
 h3 {
@@ -135,8 +136,16 @@ button:hover {
 
 #close-button {
   font-size: 1rem;
+  font-weight: bolder;
   padding: 1rem;
   margin: 1rem;
+  color: azure;
+  background-color: red;
+}
+
+#close-button:hover {
+  color: red;
+  background-color: azure;
 }
 
 #cover {
