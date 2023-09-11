@@ -542,12 +542,9 @@ h4 {
   }
 }
 #myPageModal {
-  position: fixed;
-  margin: 300px auto 0; */
-  height: 50%;
-  width: 50%;
-  top: 25vh;
-  left: 25vw;
+  position: sticky;
+  vertical-align: auto;
+  margin: 300px auto 0;
   width: 500px;
   height: 250px;
   background: linear-gradient(0deg, #000, #272727);
