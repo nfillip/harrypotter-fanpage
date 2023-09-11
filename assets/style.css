@@ -552,6 +552,7 @@ h4 {
   vertical-align: auto;
   margin: 300px auto 0;
   width: 500px;
+   max-width: 50%; 
   height: 250px;
   background: linear-gradient(0deg, #000, #272727);
   overflow-y: auto;
@@ -604,3 +605,4 @@ h4 {
     max-width: 100vw !important;
   }
 }
+
